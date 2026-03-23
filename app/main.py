@@ -6,6 +6,7 @@ Includes tier-based rate limiting (free/pro/enterprise) and auth.
 """
 
 import asyncio
+import logging
 import re
 
 from fastapi import FastAPI, HTTPException, Query, Depends, Request, Response
@@ -14,6 +15,7 @@ from pydantic import BaseModel, Field
 from typing import Optional
 
 from data.ingredients import lookup_ingredient, check_ingredients, INGREDIENTS
+from data.products import search_products, get_product_by_barcode, get_products_count, get_brand_stats
 from app.barcode import assess_barcode, BarcodeAssessment
 from app.ratelimit import rate_limiter, RateLimiter, TIERS
 from app.auth import (
@@ -27,13 +29,24 @@ from app.auth import (
     KeyInfo,
     StripeSubscribeRequest,
     StripeSubscribeResponse,
+    StripePortalResponse,
+)
+from app.stripe import (
+    create_checkout_session,
+    create_billing_portal_session,
+    verify_webhook_signature,
+    process_webhook_event,
+    apply_webhook_action,
+    is_configured as stripe_is_configured,
 )
 
 app = FastAPI(
     title="Halal Check API",
     description="Check food ingredients for halal/haram/doubtful status. Supports direct ingredient lookup and barcode-based product scanning via Open Food Facts.",
-    version="0.4.0",
+    version="0.5.0",
 )
+
+logger = logging.getLogger(__name__)
 
 
 # --- API Key Extraction Helper ---
@@ -201,9 +214,10 @@ async def health_check(request: Request):
     request.state.rate_limit_headers = headers
     return HealthResponse(
         status="ok",
-        version="0.4.0",
+        version="0.5.0",
         database_entries=len(INGREDIENTS),
     )
+
 
 
 @app.get("/api/v1/ingredient/{name}", response_model=IngredientResult, tags=["ingredients"])
@@ -692,22 +706,245 @@ async def subscribe(body: SubscribeRequest, request: Request):
 @app.post("/api/v1/auth/subscribe/stripe", response_model=StripeSubscribeResponse, tags=["auth"])
 async def subscribe_stripe(body: StripeSubscribeRequest, request: Request):
     """
-    Stripe checkout placeholder for future payment integration.
+    Create a Stripe Checkout Session for Pro tier subscription.
 
-    This endpoint will create a Stripe Checkout Session when
-    Stripe integration is fully configured.
+    Pricing:
+    - Pro Monthly: $9/month
+    - Pro Yearly: $79/year (save ~27%)
 
-    Planned pricing:
-    - Pro: $9/month or $79/year
-    - Enterprise: Custom pricing
+    After successful payment, Stripe will send a webhook that automatically
+    activates your subscription. You'll need to authenticate with X-API-Key.
 
-    For now, use POST /api/v1/auth/subscribe for manual tier upgrades.
+    Pass X-API-Key header to identify yourself.
     """
+    if not stripe_is_configured():
+        return StripeSubscribeResponse(
+            message="Stripe is not configured. Set the required environment variables. Use POST /api/v1/auth/subscribe for manual tier upgrades.",
+            checkout_url=None,
+            status="not_configured",
+        )
+
+    api_key = _extract_api_key(request)
+    if api_key == "anonymous":
+        raise HTTPException(
+            status_code=401,
+            detail={"error": "Authentication required", "message": "Pass X-API-Key header."},
+        )
+
+    user = auth_store.get_user_by_key(api_key)
+    if not user:
+        raise HTTPException(
+            status_code=401,
+            detail={"error": "Invalid API key", "message": "The provided API key is not recognized."},
+        )
+
+    try:
+        result = create_checkout_session(
+            user_email=user.email,
+            api_key=api_key,
+            tier=body.tier,
+            billing_period=body.billing_period,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail={"error": str(e)})
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail={"error": "Stripe error", "message": str(e)},
+        )
+
     return StripeSubscribeResponse(
-        message="Stripe integration coming soon. Use POST /api/v1/auth/subscribe for manual tier upgrades.",
-        checkout_url=None,
-        status="not_implemented",
+        message=f"Redirect to Stripe checkout to complete your {body.billing_period} Pro subscription.",
+        checkout_url=result["checkout_url"],
+        session_id=result["session_id"],
+        status="success",
     )
+
+
+@app.get("/api/v1/auth/billing/portal", response_model=StripePortalResponse, tags=["auth"])
+async def billing_portal(request: Request):
+    """
+    Get a link to the Stripe Billing Portal for managing your subscription.
+
+    From the portal, users can:
+    - View subscription details
+    - Cancel their subscription
+    - Update payment methods
+    - Download invoices
+
+    Pass X-API-Key header to identify yourself.
+    """
+    if not stripe_is_configured():
+        return StripePortalResponse(
+            message="Stripe is not configured.",
+            portal_url=None,
+            status="not_configured",
+        )
+
+    api_key = _extract_api_key(request)
+    if api_key == "anonymous":
+        raise HTTPException(
+            status_code=401,
+            detail={"error": "Authentication required", "message": "Pass X-API-Key header."},
+        )
+
+    user = auth_store.get_user_by_key(api_key)
+    if not user:
+        raise HTTPException(
+            status_code=401,
+            detail={"error": "Invalid API key", "message": "The provided API key is not recognized."},
+        )
+
+    if not user.subscription.stripe_customer_id:
+        raise HTTPException(
+            status_code=400,
+            detail={
+                "error": "No Stripe customer found",
+                "message": "You don't have an active Stripe subscription. Subscribe first via POST /api/v1/auth/subscribe/stripe.",
+            },
+        )
+
+    try:
+        result = create_billing_portal_session(user.subscription.stripe_customer_id)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail={"error": str(e)})
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail={"error": "Stripe error", "message": str(e)},
+        )
+
+    return StripePortalResponse(
+        message="Billing portal session created. Redirect user to portal_url to manage their subscription.",
+        portal_url=result["portal_url"],
+        status="success",
+    )
+
+
+@app.post("/api/v1/webhooks/stripe", tags=["webhooks"])
+async def stripe_webhook(request: Request):
+    """
+    Stripe webhook endpoint.
+
+    Handles the following events:
+    - checkout.session.completed: Activates subscription after payment
+    - customer.subscription.deleted: Cancels subscription
+    - invoice.payment_failed: Grants 7-day grace period
+    - customer.subscription.updated: Updates subscription on renewal
+
+    This endpoint is called by Stripe, not by users.
+    """
+    payload = await request.body()
+    sig_header = request.headers.get("stripe-signature", "")
+
+    if not sig_header:
+        raise HTTPException(status_code=400, detail={"error": "Missing stripe-signature header"})
+
+    # Verify webhook signature
+    try:
+        event = verify_webhook_signature(payload, sig_header)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail={"error": str(e)})
+
+    # Process the event
+    action_result = process_webhook_event(event)
+
+    # Apply the action to auth store
+    try:
+        apply_webhook_action(auth_store, action_result)
+    except Exception as e:
+        logger.error("Failed to apply webhook action: %s", e)
+        # Return 200 anyway to prevent Stripe retries for non-critical errors
+
+    # Sync tier to rate limiter if we have a user
+    if action_result.get("api_key_hash") and action_result.get("action") != "ignore":
+        user = auth_store.get_user_by_hash(action_result["api_key_hash"])
+        if user:
+            # Find the raw key from hash - we need to update rate limiter
+            # The rate limiter uses raw keys, so we store tier update
+            # Rate limiter will pick up the new tier on next request via _sync_auth_tier
+            pass
+
+    return {"received": True, "event_type": action_result["event_type"], "action": action_result["action"]}
+
+
+# --- Products Search (Phase 2.5) ---
+
+class ProductSearchResponse(BaseModel):
+    total: int
+    query: str
+    limit: int
+    offset: int
+    results: list[dict]
+
+
+class ProductStatsResponse(BaseModel):
+    total_products: int
+    total_brands: int
+    verdicts: dict
+    top_brands: list[tuple]
+
+
+@app.get("/api/v1/products/search", response_model=ProductSearchResponse, tags=["products"])
+async def search_products_endpoint(
+    request: Request,
+    q: str = Query(..., min_length=1, max_length=200, description="Search query (product name, brand, or barcode)"),
+    limit: int = Query(50, ge=1, le=100, description="Max results per page"),
+    offset: int = Query(0, ge=0, description="Pagination offset"),
+):
+    """Search the product database by name, brand, or barcode.
+
+    Returns pre-computed halal status for common brand products.
+    Rate limited: costs 1 request per call.
+    """
+    await require_rate_limit(request, cost=1)
+    result = search_products(q, limit=limit, offset=offset)
+    return ProductSearchResponse(
+        total=result["total"],
+        query=result["query"],
+        limit=result["limit"],
+        offset=result["offset"],
+        results=result["results"],
+    )
+
+
+@app.get("/api/v1/products/stats", response_model=ProductStatsResponse, tags=["products"])
+async def products_stats_endpoint(request: Request):
+    """Get statistics about the product database.
+
+    Returns product counts, brand breakdown, and verdict distribution.
+    Rate limited: costs 1 request per call.
+    """
+    await require_rate_limit(request, cost=1)
+    stats = get_brand_stats()
+    return ProductStatsResponse(
+        total_products=stats["total_products"],
+        total_brands=stats["total_brands"],
+        verdicts=stats["verdicts"],
+        top_brands=stats["top_brands"],
+    )
+
+
+@app.get("/api/v1/products/barcode/{barcode}", tags=["products"])
+async def get_product_endpoint(request: Request, barcode: str):
+    """Look up a product by its exact EAN/UPC barcode.
+
+    Returns the full product record with pre-computed halal status.
+    Rate limited: costs 1 request per call.
+    """
+    await require_rate_limit(request, cost=1)
+    product = get_product_by_barcode(barcode)
+    if not product:
+        raise HTTPException(
+            status_code=404,
+            detail={
+                "error": "Product not found",
+                "barcode": barcode,
+                "message": "This barcode is not in our product database. "
+                           "Try the barcode endpoint for real-time Open Food Facts lookup.",
+            },
+        )
+    return product
 
 
 # --- App Entry Point ---

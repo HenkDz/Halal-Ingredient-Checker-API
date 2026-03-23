@@ -219,7 +219,7 @@ add("0016000300019", "Arla", "Arla Mozzarella 250g", "Dairy", "halal", "JAKIM", 
 add("0016000300020", "Arla", "Arla Cream Cheese 200g", "Dairy", "halal", "JAKIM", "Cream cheese")
 
 # ============================================================
-| RED BULL
+# RED BULL
 # ============================================================
 add("9002490100070", "Red Bull", "Red Bull Energy Drink 250ml", "Beverages", "halal", "JAKIM", "Energy drink")
 add("9002490100087", "Red Bull", "Red Bull Sugar Free 250ml", "Beverages", "halal", "JAKIM", "No sugar")
@@ -229,7 +229,7 @@ add("9002490100117", "Red Bull", "Red Bull Coconut Berry 250ml", "Beverages", "h
 add("9002490100124", "Red Bull", "Red Bull Yellow Edition 250ml", "Beverages", "halal", "JAKIM", "Tropical")
 
 # ============================================================
-| STARBUCKS (Bottled / Packaged)
+# STARBUCKS (Bottled / Packaged)
 # ============================================================
 add("0076747708887", "Starbucks", "Starbucks Frappuccino Coffee 281ml", "Beverages", "halal", "JAKIM", "Coffee drink")
 add("0076747708894", "Starbucks", "Starbucks Frappuccino Vanilla 281ml", "Beverages", "halal", "JAKIM", "Vanilla coffee")
@@ -245,7 +245,7 @@ add("0076747708986", "Starbucks", "Starbucks VIA Vanilla 12 sachets", "Beverages
 add("0076747708993", "Starbucks", "Starbucks VIA Mocha 12 sachets", "Beverages", "halal", "MUI", "Instant mocha")
 
 # ============================================================
-| MORE HARAM PRODUCTS
+# MORE HARAM PRODUCTS
 # ============================================================
 add("001600011140", "Unknown", "Pork Ribs 500g", "Meat", "haram", "IFANCA", "Pork product")
 add("001600011141", "Unknown", "Pork Belly Sliced 500g", "Meat", "haram", "IFANCA", "Pork product")
@@ -271,7 +271,7 @@ add("001600011160", "Unknown", "Parma Ham 150g", "Meat", "haram", "IFANCA", "Cur
 add("001600011161", "Unknown", "Pate Pork 150g", "Meat", "haram", "IFANCA", "Pork liver pate")
 
 # ============================================================
-| MORE DOUBTFUL PRODUCTS
+# MORE DOUBTFUL PRODUCTS
 # ============================================================
 add("001600022220", "Unknown", "Fish Sauce Budget 500ml", "Condiments", "doubtful", "IFANCA", "May contain E471")
 add("001600022221", "Unknown", "Hoisin Sauce 300g", "Condiments", "doubtful", "IFANCA", "May contain E471")
@@ -290,7 +290,7 @@ add("001600022233", "Unknown", "Jelly Dessert Cup 120g", "Desserts", "doubtful",
 add("001600022234", "Unknown", "Gummy Vitamins 100g", "Supplements", "doubtful", "IFANCA", "May contain gelatin")
 
 # ============================================================
-| MIDDLE EAST BRANDS (halal by default)
+# MIDDLE EAST BRANDS (halal by default)
 # ============================================================
 add("6281100100001", "Almarai", "Almarai Laban 1.5L", "Dairy", "halal", "JAKIM", "Buttermilk drink")
 add("6281100100002", "Almarai", "Almarai Laban 500ml", "Dairy", "halal", "JAKIM", "Buttermilk drink")

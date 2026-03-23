@@ -144,3 +144,16 @@ def get_brand_stats() -> dict:
         "verdicts": verdicts,
         "top_brands": sorted(brands.items(), key=lambda x: -x[1])[:10],
     }
+
+
+def get_categories() -> list[str]:
+    """Return list of all product categories in the database."""
+    _load_products()
+    cats = sorted(set(p.get("category", "") for p in PRODUCTS if p.get("category")))
+    return cats
+
+
+def get_brands() -> list[str]:
+    """Return list of all brands in the database."""
+    _load_products()
+    return sorted(set(p.get("brand", "") for p in PRODUCTS if p.get("brand")))

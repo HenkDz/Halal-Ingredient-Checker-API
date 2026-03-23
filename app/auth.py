@@ -108,6 +108,13 @@ class AuthStore:
             return user
         return None
 
+    def get_user_by_hash(self, key_hash: str) -> Optional[User]:
+        """Look up a user by their API key hash (used by Stripe webhooks)."""
+        user = self._users.get(key_hash)
+        if user:
+            return user
+        return None
+
     def get_user_by_email(self, email: str) -> Optional[User]:
         """Look up a user by email."""
         user = self._users_by_email.get(email.lower().strip())
@@ -251,12 +258,19 @@ class KeysResponse(BaseModel):
 
 
 class StripeSubscribeRequest(BaseModel):
-    """Placeholder for future Stripe checkout."""
-    tier: str = Field("pro", description="Target tier")
+    """Stripe checkout request."""
+    tier: str = Field("pro", description="Target tier (only 'pro' available via Stripe)")
     billing_period: str = Field("monthly", description="monthly or yearly")
 
 
 class StripeSubscribeResponse(BaseModel):
     message: str
     checkout_url: Optional[str] = None
-    status: str = "not_implemented"
+    session_id: Optional[str] = None
+    status: str = "success"  # "success" | "not_configured" | "error"
+
+
+class StripePortalResponse(BaseModel):
+    message: str
+    portal_url: Optional[str] = None
+    status: str
