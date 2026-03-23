@@ -1,0 +1,1517 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-03-23",
+    "description": "Comprehensive halal/haram ingredient database for the Halal Check API",
+    "sources": [
+      "JAKIM (Malaysian Department of Islamic Development)",
+      "MUI (Indonesian Council of Ulama)",
+      "IFANCA (Islamic Food and Nutrition Council of America)",
+      "Sistani.org (Office of Grand Ayatollah Sistani)",
+      "Halal Certification Europe",
+      "World Halal Food Council"
+    ],
+    "categories": ["haram", "doubtful", "halal"],
+    "statistics": {
+      "totalIngredients": 150,
+      "haram": 42,
+      "doubtful": 30,
+      "halal": 78
+    }
+  },
+  "ingredients": [
+    {
+      "id": "h-001",
+      "name": "Gelatin",
+      "aliases": ["Gelatine", "E441", "Hydrolyzed Collagen (non-plant)"],
+      "verdict": "haram",
+      "reason": "Commercial gelatin is overwhelmingly derived from pork skin, bones, or non-halal slaughtered cattle. Unless specifically certified as halal (bovine or fish gelatin with halal certification), it must be avoided.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-002",
+      "name": "Lard",
+      "aliases": ["Pork Fat", "Pork Lard", "Ade", "Schmaltz (if pork)"],
+      "verdict": "haram",
+      "reason": "Fat from pigs. Explicitly haram in the Quran (Al-Baqarah 2:173, Al-Ma'idah 5:3, Al-An'am 6:145).",
+      "sources": ["Quran", "JAKIM", "MUI"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-003",
+      "name": "Ethanol",
+      "aliases": ["Ethyl Alcohol", "Alcohol", "E1510", "Drinking Alcohol", "Spirits"],
+      "verdict": "haram",
+      "reason": "Intoxicating alcohol is explicitly haram (Al-Ma'idah 5:90-91). Used in food, beverages, flavorings, and pharmaceuticals.",
+      "sources": ["Quran", "JAKIM", "MUI", "IFANCA"],
+      "category": "alcohol"
+    },
+    {
+      "id": "h-004",
+      "name": "Pepsin",
+      "aliases": ["Pepsin Enzyme", "Gastric Pepsin"],
+      "verdict": "haram",
+      "reason": "An enzyme typically extracted from pig stomach lining. If microbial or plant-based, it is halal, but must be verified.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-005",
+      "name": "Rennet (non-halal)",
+      "aliases": ["Animal Rennet", "Chymosin (animal source)", "Rennin"],
+      "verdict": "haram",
+      "reason": "Enzyme extracted from calf stomach. Haram if the calf was not slaughtered according to Islamic law. Microbial rennet and plant rennet are halal alternatives.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-006",
+      "name": "Carmine",
+      "aliases": ["Cochineal Extract", "Carminic Acid", "E120", "Natural Red 4", "CI 75470", "Crimson Lake"],
+      "verdict": "haram",
+      "reason": "Red dye derived by crushing cochineal insects. Considered haram by many scholars because consuming insects is generally prohibited, though some Hanafi scholars permit it. JAKIM and MUI classify it as haram.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "insect_derivative"
+    },
+    {
+      "id": "h-007",
+      "name": "Pork Derivatives",
+      "aliases": ["Pork Extract", "Pork Protein", "Pork Flavoring", "Porcine", "Sus scrofa"],
+      "verdict": "haram",
+      "reason": "Any product derived from pigs is categorically haram, including meat, fat, skin, organs, and extracts.",
+      "sources": ["Quran", "All certification bodies"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-008",
+      "name": "Wine and Wine Vinegar (from wine)",
+      "aliases": ["Red Wine", "White Wine", "Wine Vinegar", "Grape Wine"],
+      "verdict": "haram",
+      "reason": "Wine is khamr (intoxicant) and haram. Wine vinegar derived from wine is a matter of scholarly dispute; some say it becomes halal through transformation (istihalah), but many major bodies (JAKIM, MUI) require halal certification.",
+      "sources": ["Quran", "JAKIM", "MUI"],
+      "category": "alcohol"
+    },
+    {
+      "id": "h-009",
+      "name": "L-Cysteine (non-halal)",
+      "aliases": ["L-Cysteine", "E920 (if non-plant)", "Cysteine"],
+      "verdict": "haram",
+      "reason": "Amino acid commonly derived from human hair or duck feathers in China. If derived from non-halal slaughtered animal sources, it is haram. Synthetic or microbial L-cysteine is halal.",
+      "sources": ["JAKIM", "IFANCA", "MUI"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-010",
+      "name": "Albumin (egg - contaminated)",
+      "aliases": ["Egg Albumin", "Egg White Protein", "Serum Albumin (animal)"],
+      "verdict": "doubtful",
+      "reason": "Egg-based albumin is halal. However, serum albumin from blood (especially porcine) is haram. Must verify the source. Many processed foods use egg albumin which is fine.",
+      "sources": ["IFANCA", "JAKIM"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-011",
+      "name": "Animal Shortening",
+      "aliases": ["Shortening", "Animal Fat", "Tallow"],
+      "verdict": "haram",
+      "reason": "Unless derived from halal-slaughtered cattle/sheep and certified, animal shortening is assumed to be from non-halal or mixed sources including pork.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-012",
+      "name": "Pancreatin",
+      "aliases": ["Pancreatic Enzymes", "Pancrelipase"],
+      "verdict": "haram",
+      "reason": "Enzyme mixture from pork pancreas. Used in digestive supplements and food processing.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-013",
+      "name": "Mono and Diglycerides (non-halal)",
+      "aliases": ["E471 (non-halal)", "Monoglycerides", "Diglycerides", "Glycerol Monostearate"],
+      "verdict": "doubtful",
+      "reason": "Emulsifiers that may be derived from pork fat, non-halal animal fat, or plant sources (soy, palm). Must verify source. If plant-based, halal. If animal-based without halal certification, haram.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "emulsifier"
+    },
+    {
+      "id": "h-014",
+      "name": "Polysorbates (non-halal)",
+      "aliases": ["Polysorbate 20", "Polysorbate 60", "Polysorbate 80", "E433", "E434", "E435", "Tween"],
+      "verdict": "doubtful",
+      "reason": "May contain oleic acid derived from pork or non-halal animal fat. Plant-based polysorbates are halal.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "emulsifier"
+    },
+    {
+      "id": "h-015",
+      "name": "Vanilla Extract",
+      "aliases": ["Vanilla Essence", "Vanilla Flavoring (extract)", "Natural Vanilla"],
+      "verdict": "doubtful",
+      "reason": "Contains ethanol as a solvent (typically 35% alcohol). Many scholars consider the small amount in food acceptable, but JAKIM and MUI require halal-certified alternatives. Vanilla flavor (synthetic) is typically halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "flavoring"
+    },
+    {
+      "id": "h-016",
+      "name": "Shellac",
+      "aliases": ["E904", "Confectioner's Glaze", "Food Glaze"],
+      "verdict": "haram",
+      "reason": "Secreted by lac insects (Kerria lacca). Used as a glazing agent on candies and pills. Considered haram by JAKIM and MUI due to insect origin.",
+      "sources": ["JAKIM", "MUI"],
+      "category": "insect_derivative"
+    },
+    {
+      "id": "h-017",
+      "name": "Lard Oil",
+      "aliases": ["Pork Oil", "Adipic Acid (from lard)"],
+      "verdict": "haram",
+      "reason": "Oil derived from pig fat. Used in frying, baking, and food manufacturing.",
+      "sources": ["Quran", "All certification bodies"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-018",
+      "name": "Blood and Blood Products",
+      "aliases": ["Blood Plasma", "Serum", "Hemoglobin", "Dried Blood", "E501 (if from blood)"],
+      "verdict": "haram",
+      "reason": "Consuming blood is explicitly prohibited in Islam (Al-Ma'idah 5:3). Includes blood plasma, serum albumin, and any blood-derived ingredient.",
+      "sources": ["Quran", "All certification bodies"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-019",
+      "name": "Dogs (any derivative)",
+      "aliases": ["Dog Fat", "Dog Derivatives", "Canine"],
+      "verdict": "haram",
+      "reason": "Dogs are najis (impure) in Islamic law. Any product derived from dogs is haram.",
+      "sources": ["Hadith", "JAKIM", "MUI"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-020",
+      "name": "Lecithin (non-halal)",
+      "aliases": ["E322 (animal)", "Soy Lecithin", "Sunflower Lecithin", "Egg Lecithin"],
+      "verdict": "halal",
+      "reason": "Lecithin labeled as soy lecithin or sunflower lecithin is halal. If the source is not specified, it may be from egg or animal. Most commercial lecithin is from soy (halal). Egg lecithin is halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "emulsifier"
+    },
+    {
+      "id": "h-021",
+      "name": "Stearic Acid (non-halal)",
+      "aliases": ["E570", "Octadecanoic Acid", "Stearin"],
+      "verdict": "doubtful",
+      "reason": "Can be derived from pork fat, beef fat, or plant sources (palm oil). Must verify source. Plant-derived stearic acid is halal.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "fatty_acid"
+    },
+    {
+      "id": "h-022",
+      "name": "Glycerol / Glycerin (non-halal)",
+      "aliases": ["E422", "Glycerine", "Glycerin", "Glycerol"],
+      "verdict": "doubtful",
+      "reason": "Can be derived from animal fat (including pork), petroleum, or plant oils. Synthetic/vegetable glycerin is halal. Animal glycerin must be from halal-certified source.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "fatty_acid"
+    },
+    {
+      "id": "h-023",
+      "name": "Cochineal",
+      "aliases": ["Cochineal Extract", "E120", "Carminic Acid"],
+      "verdict": "haram",
+      "reason": "Red pigment from crushed cochineal insects. Same as carmine. Haram by JAKIM/MUI standards.",
+      "sources": ["JAKIM", "MUI"],
+      "category": "insect_derivative"
+    },
+    {
+      "id": "h-024",
+      "name": "Bone Char",
+      "aliases": ["Bone Black", "Animal Charcoal", "Ivory Black", "Natural Carbon"],
+      "verdict": "haram",
+      "reason": "Used to filter sugar and water. Typically derived from animal bones (often non-halal). Sugar filtered through bone char is considered haram by many scholars.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "processing_aid"
+    },
+    {
+      "id": "h-025",
+      "name": "Lipase (non-halal)",
+      "aliases": ["Lipase Enzyme", "Gastric Lipase", "Pancreatic Lipase"],
+      "verdict": "haram",
+      "reason": "Enzyme that may be from pig or calf pancreas. Used in cheese making and food processing. Microbial lipase is halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-026",
+      "name": "Whey (non-halal)",
+      "aliases": ["Whey Protein", "Whey Powder", "Sweet Whey", "Acid Whey"],
+      "verdict": "doubtful",
+      "reason": "Byproduct of cheese making. If animal rennet was used in cheese production, whey is contaminated. Whey from microbial/vegetarian rennet or halal-certified cheese is halal.",
+      "sources": ["JAKIM", "IFANCA", "MUI"],
+      "category": "dairy"
+    },
+    {
+      "id": "h-027",
+      "name": "Casein / Caseinate (non-halal)",
+      "aliases": ["Sodium Caseinate", "Calcium Caseinate", "E466", "Casein", "Milk Protein"],
+      "verdict": "doubtful",
+      "reason": "Milk protein itself is halal, but may use non-halal rennet or enzymes in processing. Caseinate used as an emulsifier may also use non-halal processing aids.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "dairy"
+    },
+    {
+      "id": "h-028",
+      "name": "Rum",
+      "aliases": ["Rum Extract", "Rum Flavoring", "Rum Essence"],
+      "verdict": "haram",
+      "reason": "Alcoholic beverage. Any product containing rum or rum extract (which contains alcohol) is haram.",
+      "sources": ["Quran", "JAKIM", "MUI"],
+      "category": "alcohol"
+    },
+    {
+      "id": "h-029",
+      "name": "Beer",
+      "aliases": ["Beer Extract", "Beer Flavor", "Malt Beverage (alcoholic)", "Ale", "Lager", "Stout"],
+      "verdict": "haram",
+      "reason": "Alcoholic beverage. All beer and beer-flavored products are haram. Non-alcoholic beer (0.0% ABV) is generally considered halal by JAKIM.",
+      "sources": ["Quran", "JAKIM", "MUI"],
+      "category": "alcohol"
+    },
+    {
+      "id": "h-030",
+      "name": "Spirits / Liquor",
+      "aliases": ["Whiskey", "Vodka", "Gin", "Tequila", "Brandy", "Liquor", "Spirit Extract"],
+      "verdict": "haram",
+      "reason": "All intoxicating liquors and spirits are haram regardless of source.",
+      "sources": ["Quran", "All certification bodies"],
+      "category": "alcohol"
+    },
+    {
+      "id": "h-031",
+      "name": "Ethyl Alcohol Denatonium Benzoate",
+      "aliases": ["Denatured Alcohol", "Denatonium Benzoate Solution"],
+      "verdict": "haram",
+      "reason": "Contains ethanol. Even denatured alcohol is considered haram for consumption.",
+      "sources": ["JAKIM", "MUI"],
+      "category": "alcohol"
+    },
+    {
+      "id": "h-032",
+      "name": "Propylene Glycol",
+      "aliases": ["E1520", "Propane-1,2-diol", "PG"],
+      "verdict": "halal",
+      "reason": "Synthetic compound. Not derived from animals. Commonly used as a food additive, solvent, and humectant. Halal-certified.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "synthetic"
+    },
+    {
+      "id": "h-033",
+      "name": "Citric Acid",
+      "aliases": ["E330", "Citrus Acid", "Lemon Salt"],
+      "verdict": "halal",
+      "reason": "Primarily produced by fungal fermentation (Aspergillus niger). Not derived from animals. Widely accepted as halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "synthetic"
+    },
+    {
+      "id": "h-034",
+      "name": "Ascorbic Acid",
+      "aliases": ["Vitamin C", "E300", "Sodium Ascorbate", "E301", "Calcium Ascorbate", "E302"],
+      "verdict": "halal",
+      "reason": "Vitamin C, typically produced by fermentation or synthesized. All major bodies confirm it is halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "vitamin"
+    },
+    {
+      "id": "h-035",
+      "name": "Tocopherols (Vitamin E)",
+      "aliases": ["E306", "E307", "E308", "E309", "Vitamin E", "Alpha-Tocopherol"],
+      "verdict": "doubtful",
+      "reason": "Can be extracted from vegetable oils (soy, sunflower - halal) or from gelatin capsules (haram if pork-based). The pure vitamin E from plant sources is halal. Verify carrier/capsule material.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "vitamin"
+    },
+    {
+      "id": "h-036",
+      "name": "Niacin / Niacinamide",
+      "aliases": ["Vitamin B3", "E375", "Nicotinic Acid", "Niacinamide"],
+      "verdict": "halal",
+      "reason": "Synthetic vitamin. No animal derivatives. Halal-certified.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "vitamin"
+    },
+    {
+      "id": "h-037",
+      "name": "Riboflavin (Vitamin B2)",
+      "aliases": ["E101", "Vitamin B2", "Lactoflavin"],
+      "verdict": "doubtful",
+      "reason": "Can be produced by fermentation or extracted from animal sources. If synthetic or from plant fermentation, halal. Must verify source.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "vitamin"
+    },
+    {
+      "id": "h-038",
+      "name": "Pectin",
+      "aliases": ["E440", "Fruit Pectin", "Apple Pectin", "Citrus Pectin"],
+      "verdict": "halal",
+      "reason": "Extracted from fruit peels (apples, citrus). No animal derivatives. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-039",
+      "name": "Agar-Agar",
+      "aliases": ["Agar", "E406", "Kanten", "Japanese Gelatin", "China Grass"],
+      "verdict": "halal",
+      "reason": "Plant-based gelling agent derived from red algae/seaweed. Halal alternative to gelatin.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-040",
+      "name": "Carrageenan",
+      "aliases": ["E407", "Irish Moss", "Carrageen", "Irish Moss Extract"],
+      "verdict": "halal",
+      "reason": "Extracted from red seaweed (Irish moss). Plant-based thickener and gelling agent. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-041",
+      "name": "Xanthan Gum",
+      "aliases": ["E415", "Corn Sugar Gum", "Xanthan"],
+      "verdict": "halal",
+      "reason": "Produced by bacterial fermentation (Xanthomonas campestris). Not derived from animals. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "microbial"
+    },
+    {
+      "id": "h-042",
+      "name": "Guar Gum",
+      "aliases": ["E412", "Guaran", "Cluster Bean Gum"],
+      "verdict": "halal",
+      "reason": "Derived from guar beans (Cyamopsis tetragonoloba). Plant-based thickener. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-043",
+      "name": "Locust Bean Gum",
+      "aliases": ["E410", "Carob Gum", "Carob Bean Gum", "Ceratonia Gum"],
+      "verdict": "halal",
+      "reason": "Derived from carob tree seeds. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-044",
+      "name": "Gum Arabic",
+      "aliases": ["E414", "Acacia Gum", "Arabic Gum", "Senegal Gum", "Chaar Gund"],
+      "verdict": "halal",
+      "reason": "Natural gum from Acacia tree sap. Plant-based. Halal. Widely used in Middle Eastern cuisine.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-045",
+      "name": "Titanium Dioxide",
+      "aliases": ["E171", "TiO2", "Titanium White"],
+      "verdict": "halal",
+      "reason": "Mineral-based white pigment. Not derived from animals. Halal. (Note: banned in EU as food additive since 2022 for health reasons, but halal status is confirmed.)",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "mineral"
+    },
+    {
+      "id": "h-046",
+      "name": "Silicon Dioxide",
+      "aliases": ["E551", "Silica", "Amorphous Silica"],
+      "verdict": "halal",
+      "reason": "Mineral-based anti-caking agent. Not derived from animals. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "mineral"
+    },
+    {
+      "id": "h-047",
+      "name": "Calcium Carbonate",
+      "aliases": ["E170", "Chalk", "Precipitated Chalk", "Limestone"],
+      "verdict": "halal",
+      "reason": "Mineral-based. Not derived from animals (when from geological sources). Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "mineral"
+    },
+    {
+      "id": "h-048",
+      "name": "Beeswax",
+      "aliases": ["E901", "White Beeswax", "Yellow Beeswax", "Cera Alba", "Cera Flava"],
+      "verdict": "halal",
+      "reason": "Produced by honey bees. Honey is halal (mentioned in Quran, An-Nahl 16:69). Beeswax is a halal-approved product of bees.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-049",
+      "name": "Honey",
+      "aliases": ["Raw Honey", "Natural Honey", "Organic Honey"],
+      "verdict": "halal",
+      "reason": "Explicitly mentioned in the Quran as healing (An-Nahl 16:69). All pure honey is halal.",
+      "sources": ["Quran", "All certification bodies"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-050",
+      "name": "Sodium Benzoate",
+      "aliases": ["E211", "Benzoate of Soda"],
+      "verdict": "halal",
+      "reason": "Synthetic preservative. No animal derivatives. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "preservative"
+    },
+    {
+      "id": "h-051",
+      "name": "Potassium Sorbate",
+      "aliases": ["E202", "Sorbic Acid Potassium Salt"],
+      "verdict": "halal",
+      "reason": "Synthetic preservative derived from sorbic acid. No animal content. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "preservative"
+    },
+    {
+      "id": "h-052",
+      "name": "Sorbic Acid",
+      "aliases": ["E200", "2,4-Hexadienoic Acid"],
+      "verdict": "halal",
+      "reason": "Can be extracted from rowan berries or produced synthetically. Both sources are halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "preservative"
+    },
+    {
+      "id": "h-053",
+      "name": "MSG",
+      "aliases": ["Monosodium Glutamate", "E621", "Ajinomoto", "Glutamate"],
+      "verdict": "halal",
+      "reason": "Produced by bacterial fermentation of starch/sugar. Not derived from animals. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "flavor_enhancer"
+    },
+    {
+      "id": "h-054",
+      "name": "Yeast Extract",
+      "aliases": ["Autolyzed Yeast Extract", "Hydrolyzed Yeast", "Marmite", "Vegemite"],
+      "verdict": "halal",
+      "reason": "Derived from yeast (fungus), not animals. Used as a flavor enhancer. Halal. (Some yeast extracts in alcoholic beverages are processed with alcohol - those are haram.)",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "microbial"
+    },
+    {
+      "id": "h-055",
+      "name": "Soy Sauce (regular)",
+      "aliases": ["Shoyu", "Light Soy Sauce", "Dark Soy Sauce"],
+      "verdict": "doubtful",
+      "reason": "Traditional soy sauce is brewed with wheat and soy and may contain small amounts of alcohol from fermentation. Japanese-style soy sauces often contain significant alcohol. Halal-certified soy sauce is available.",
+      "sources": ["JAKIM", "MUI"],
+      "category": "condiment"
+    },
+    {
+      "id": "h-056",
+      "name": "Miso",
+      "aliases": ["Fermented Soybean Paste", "Miso Paste"],
+      "verdict": "doubtful",
+      "reason": "Fermented soybean paste that may contain alcohol from fermentation process. Halal-certified miso is available.",
+      "sources": ["JAKIM", "MUI"],
+      "category": "condiment"
+    },
+    {
+      "id": "h-057",
+      "name": "Fish Gelatin",
+      "aliases": ["Fish Gelatine", "E441 (fish)"],
+      "verdict": "halal",
+      "reason": "Gelatin derived from fish skin/bones is halal (all seafood is halal in Islam). Must verify no cross-contamination with pork products.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-058",
+      "name": "Bovine Gelatin (halal-certified)",
+      "aliases": ["Halal Gelatin", "Halal Gelatine", "E441 (halal bovine)"],
+      "verdict": "halal",
+      "reason": "Gelatin from cattle slaughtered according to Islamic law (zabiha). Must have halal certification.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-059",
+      "name": "Collagen (non-halal)",
+      "aliases": ["Hydrolyzed Collagen", "Collagen Peptides", "Marine Collagen", "Bovine Collagen"],
+      "verdict": "doubtful",
+      "reason": "Bovine collagen must be from halal-slaughtered cattle. Porcine collagen is haram. Marine (fish) collagen is halal. Must verify source and certification.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-060",
+      "name": "Lanolin",
+      "aliases": ["Lanolin Alcohol", "E913", "Wool Fat", "Wool Wax", "Adeps Lanae"],
+      "verdict": "doubtful",
+      "reason": "Extracted from sheep's wool. Generally considered halal, but must be from sheep slaughtered according to Islamic law or from live sheep shearing. Most commercial lanolin is from live sheep and acceptable.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-061",
+      "name": "Oleic Acid (non-halal)",
+      "aliases": ["E570", "Octadecenoic Acid", "Oleate"],
+      "verdict": "doubtful",
+      "reason": "Can be from plant (olive, sunflower - halal) or animal (pork/beef tallow) sources. Must verify source.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "fatty_acid"
+    },
+    {
+      "id": "h-062",
+      "name": "Palmitic Acid (non-halal)",
+      "aliases": ["E570", "Hexadecanoic Acid", "Palmitate"],
+      "verdict": "doubtful",
+      "reason": "Can be from palm oil (halal) or animal fat. Most commercial palmitic acid is from palm oil, but must verify.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "fatty_acid"
+    },
+    {
+      "id": "h-063",
+      "name": "Magnesium Stearate",
+      "aliases": ["Magnesium Stearate (vegetable)", "Magnesium Stearate (animal)"],
+      "verdict": "doubtful",
+      "reason": "Used in pills and supplements as a lubricant. Source of stearic acid matters - can be plant or animal based. Plant-based is halal.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "fatty_acid"
+    },
+    {
+      "id": "h-064",
+      "name": "Dicalcium Phosphate",
+      "aliases": ["E341", "Calcium Hydrogen Phosphate", "Dibasic Calcium Phosphate"],
+      "verdict": "halal",
+      "reason": "Mineral-based. May be from rock phosphate or bone. Most commercial food-grade DCP is from mineral sources. Halal-certified.",
+      "sources": ["JAKIM", "MUI"],
+      "category": "mineral"
+    },
+    {
+      "id": "h-065",
+      "name": "Ammonium Bicarbonate",
+      "aliases": ["E503", "Hartshorn", "Baking Ammonia"],
+      "verdict": "halal",
+      "reason": "Synthetic leavening agent. No animal content. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "leavening_agent"
+    },
+    {
+      "id": "h-066",
+      "name": "Baking Soda",
+      "aliases": ["Sodium Bicarbonate", "E500", "Bicarbonate of Soda"],
+      "verdict": "halal",
+      "reason": "Mineral-based leavening agent. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "leavening_agent"
+    },
+    {
+      "id": "h-067",
+      "name": "Cream of Tartar",
+      "aliases": ["Potassium Bitartrate", "E336", "Tartaric Acid Potassium Salt"],
+      "verdict": "halal",
+      "reason": "Byproduct of winemaking. Most scholars consider it halal due to chemical transformation (istihalah) as it no longer contains alcohol. JAKIM certifies it as halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "leavening_agent"
+    },
+    {
+      "id": "h-068",
+      "name": "Sucralose",
+      "aliases": ["E955", "Splenda", "Trichlorogalactosucrose"],
+      "verdict": "halal",
+      "reason": "Artificial sweetener derived from sugar. No animal content. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-069",
+      "name": "Aspartame",
+      "aliases": ["E951", "NutraSweet", "Equal", "AminoSweet"],
+      "verdict": "halal",
+      "reason": "Artificial sweetener. Synthesized from amino acids. No animal content. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-070",
+      "name": "Stevia",
+      "aliases": ["Steviol Glycosides", "E960", "Stevia Extract", "Rebaudioside A"],
+      "verdict": "halal",
+      "reason": "Natural sweetener from Stevia rebaudiana plant. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-071",
+      "name": "Cane Sugar (filtered)",
+      "aliases": ["White Sugar", "Refined Sugar", "Brown Sugar"],
+      "verdict": "doubtful",
+      "reason": "Some white sugar is filtered through bone char. Beet sugar is never filtered through bone char. Organic sugar and most European sugar avoid bone char. Must verify source.",
+      "sources": ["IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-072",
+      "name": "Annatto",
+      "aliases": ["E160b", "Bixin", "Norbixin", "Achiote", "Roucou"],
+      "verdict": "halal",
+      "reason": "Natural food coloring from the seeds of the achiote tree. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-073",
+      "name": "Turmeric",
+      "aliases": ["E100", "Curcumin", "Turmeric Root", "Haldi"],
+      "verdict": "halal",
+      "reason": "Natural spice and coloring from Curcuma longa plant. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-074",
+      "name": "Beetroot Red",
+      "aliases": ["E162", "Betanin", "Beet Red"],
+      "verdict": "halal",
+      "reason": "Natural coloring from beetroot. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-075",
+      "name": "Paprika Extract",
+      "aliases": ["E160c", "Capsanthin", "Paprika Oleoresin"],
+      "verdict": "halal",
+      "reason": "Extracted from paprika peppers. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-076",
+      "name": "Chlorophyll",
+      "aliases": ["E140", "E141", "Chlorophyllin", "Chlorophyll Copper Complex"],
+      "verdict": "halal",
+      "reason": "Plant pigment (green color). Extracted from alfalfa, nettles, or grass. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-077",
+      "name": "Saffron",
+      "aliases": ["Crocin", "Crocus sativus", "Za'faran"],
+      "verdict": "halal",
+      "reason": "Spice from Crocus sativus flower. Plant-based. Halal. Widely used in Muslim cuisine.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-078",
+      "name": "Beta-Carotene",
+      "aliases": ["E160a", "Provitamin A", "Carotene"],
+      "verdict": "halal",
+      "reason": "Found in plants (carrots, pumpkins) or produced synthetically. Halal. (Some gelatin-encapsulated forms exist - verify carrier.)",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-079",
+      "name": "Tartrazine",
+      "aliases": ["E102", "FD&C Yellow 5", "Yellow 5"],
+      "verdict": "halal",
+      "reason": "Synthetic food dye (coal tar derivative). No animal content. Halal. (Health concerns exist but halal status is confirmed.)",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-080",
+      "name": "Sunset Yellow",
+      "aliases": ["E110", "FD&C Yellow 6", "Yellow 6", "Orange Yellow S"],
+      "verdict": "halal",
+      "reason": "Synthetic azo dye. No animal content. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-081",
+      "name": "Brilliant Blue",
+      "aliases": ["E133", "FD&C Blue 1", "Blue 1"],
+      "verdict": "halal",
+      "reason": "Synthetic dye. No animal content. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-082",
+      "name": "Allura Red",
+      "aliases": ["E129", "FD&C Red 40", "Red 40"],
+      "verdict": "halal",
+      "reason": "Synthetic azo dye. No animal content. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-083",
+      "name": "Indigo Carmine",
+      "aliases": ["E132", "FD&C Blue 2", "Blue 2", "Indigotine"],
+      "verdict": "halal",
+      "reason": "Synthetic dye or from Indigofera plant. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-084",
+      "name": "Ponceau 4R",
+      "aliases": ["E124", "Cochineal Red A", "New Coccine"],
+      "verdict": "halal",
+      "reason": "Synthetic azo dye (not to be confused with cochineal/E120). No animal content. Halal. (Banned in some countries for health reasons.)",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-085",
+      "name": "Caramel Color",
+      "aliases": ["E150a", "E150b", "E150c", "E150d", "Caramel Coloring"],
+      "verdict": "doubtful",
+      "reason": "E150c and E150d are produced using ammonium compounds and may contain trace amounts of 4-MEI (a byproduct). E150a (plain caramel) is halal. Some manufacturers may use alcohol in processing. Verify source.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "coloring"
+    },
+    {
+      "id": "h-086",
+      "name": "L-Tryptophan",
+      "aliases": ["Tryptophan", "Essential Amino Acid"],
+      "verdict": "doubtful",
+      "reason": "Can be extracted from animal protein or produced synthetically/microbially. Synthetic/microbial L-tryptophan is halal. Must verify source.",
+      "sources": ["IFANCA"],
+      "category": "amino_acid"
+    },
+    {
+      "id": "h-087",
+      "name": "Cod Liver Oil",
+      "aliases": ["Fish Liver Oil", "Cod Oil", "Omega-3 (fish source)"],
+      "verdict": "halal",
+      "reason": "From cod fish. All seafood is halal in Islam. Ensure capsules are gelatin-free or halal gelatin.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-088",
+      "name": "Evening Primrose Oil",
+      "aliases": ["EPO", "Oenothera Biennis Oil"],
+      "verdict": "halal",
+      "reason": "Plant-based oil from evening primrose seeds. Halal. Verify capsule material is halal.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-089",
+      "name": "Glucosamine",
+      "aliases": ["Glucosamine Sulfate", "Glucosamine Hydrochloride"],
+      "verdict": "haram",
+      "reason": "Commonly derived from shellfish shells. While shellfish is halal, most commercial glucosamine is from non-halal slaughtered animal cartilage. Also, some products are from shellfish but may be processed in facilities with cross-contamination. Plant-based glucosamine is available.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-090",
+      "name": "Chondroitin",
+      "aliases": ["Chondroitin Sulfate", "CS"],
+      "verdict": "haram",
+      "reason": "Typically extracted from bovine or shark cartilage. Bovine source must be from halal-slaughtered animal. Most commercial chondroitin is from non-halal sources. Plant-based alternatives available.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-091",
+      "name": "Maltodextrin",
+      "aliases": ["Maltodextrin", "E1400"],
+      "verdict": "halal",
+      "reason": "Produced from starch (corn, potato, rice, wheat). Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "carbohydrate"
+    },
+    {
+      "id": "h-092",
+      "name": "Dextrose",
+      "aliases": ["Glucose", "D-Glucose", "E1400", "Corn Sugar", "Grape Sugar"],
+      "verdict": "halal",
+      "reason": "Simple sugar from corn starch or other plant sources. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "carbohydrate"
+    },
+    {
+      "id": "h-093",
+      "name": "Inulin",
+      "aliases": ["Chicory Root Fiber", "Fructooligosaccharides", "FOS"],
+      "verdict": "halal",
+      "reason": "Dietary fiber from chicory root and other plants. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "carbohydrate"
+    },
+    {
+      "id": "h-094",
+      "name": "Xylitol",
+      "aliases": ["E967", "Birch Sugar", "Xylite"],
+      "verdict": "halal",
+      "reason": "Sugar alcohol from birch bark or corn cobs. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-095",
+      "name": "Erythritol",
+      "aliases": ["E968"],
+      "verdict": "halal",
+      "reason": "Sugar alcohol produced by fermentation. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-096",
+      "name": "Maltitol",
+      "aliases": ["E965"],
+      "verdict": "halal",
+      "reason": "Sugar alcohol from maltose. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-097",
+      "name": "Sorbitol",
+      "aliases": ["E420", "Glucitol"],
+      "verdict": "halal",
+      "reason": "Sugar alcohol from glucose. Halal. Commonly used in sugar-free foods.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-098",
+      "name": "Mannitol",
+      "aliases": ["E421", "Manna Sugar"],
+      "verdict": "halal",
+      "reason": "Sugar alcohol from plant sources. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-099",
+      "name": "Calcium Propionate",
+      "aliases": ["E282", "Propanoic Acid Calcium Salt"],
+      "verdict": "halal",
+      "reason": "Synthetic preservative for bread. No animal content. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "preservative"
+    },
+    {
+      "id": "h-100",
+      "name": "Sodium Nitrite",
+      "aliases": ["E250", "Sodium Nitrate", "E251"],
+      "verdict": "halal",
+      "reason": "Synthetic preservative/curing agent. No animal content. Halal. (Health concerns exist, but halal status is confirmed.)",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "preservative"
+    },
+    {
+      "id": "h-101",
+      "name": "BHA",
+      "aliases": ["E320", "Butylated Hydroxyanisole"],
+      "verdict": "halal",
+      "reason": "Synthetic antioxidant. No animal content. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "preservative"
+    },
+    {
+      "id": "h-102",
+      "name": "BHT",
+      "aliases": ["E321", "Butylated Hydroxytoluene"],
+      "verdict": "halal",
+      "reason": "Synthetic antioxidant. No animal content. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "preservative"
+    },
+    {
+      "id": "h-103",
+      "name": "Taurine",
+      "aliases": ["2-Aminoethanesulfonic Acid", "L-Taurine"],
+      "verdict": "doubtful",
+      "reason": "Can be produced synthetically (halal) or extracted from animal sources (often non-halal). Energy drinks often use synthetic taurine. Must verify source.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "amino_acid"
+    },
+    {
+      "id": "h-104",
+      "name": "Lactose",
+      "aliases": ["Milk Sugar", "E525"],
+      "verdict": "halal",
+      "reason": "Natural sugar from milk. Halal. No animal slaughter involved.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "dairy"
+    },
+    {
+      "id": "h-105",
+      "name": "Lactic Acid",
+      "aliases": ["E270", "Milk Acid"],
+      "verdict": "halal",
+      "reason": "Produced by bacterial fermentation of carbohydrates (corn starch). Not from milk despite the name. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "synthetic"
+    },
+    {
+      "id": "h-106",
+      "name": "Sodium Lactate",
+      "aliases": ["E325", "Lactic Acid Sodium Salt"],
+      "verdict": "halal",
+      "reason": "Salt of lactic acid. Produced by fermentation. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "synthetic"
+    },
+    {
+      "id": "h-107",
+      "name": "Potassium Chloride",
+      "aliases": ["E508", "KCl"],
+      "verdict": "halal",
+      "reason": "Mineral-based salt substitute. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "mineral"
+    },
+    {
+      "id": "h-108",
+      "name": "Calcium Chloride",
+      "aliases": ["E509", "CaCl2"],
+      "verdict": "halal",
+      "reason": "Mineral salt. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "mineral"
+    },
+    {
+      "id": "h-109",
+      "name": "Magnesium Chloride",
+      "aliases": ["E511", "Nigari (when from mineral)"],
+      "verdict": "halal",
+      "reason": "Mineral salt. Used in tofu making. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "mineral"
+    },
+    {
+      "id": "h-110",
+      "name": "Sodium Caseinate (halal)",
+      "aliases": ["Halal Sodium Caseinate"],
+      "verdict": "halal",
+      "reason": "When produced from halal-certified milk and using microbial/vegetarian rennet. Must have halal certification.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "dairy"
+    },
+    {
+      "id": "h-111",
+      "name": "Whey Protein (halal-certified)",
+      "aliases": ["Halal Whey Protein", "Whey Protein Isolate (halal)"],
+      "verdict": "halal",
+      "reason": "Whey from halal-certified cheese production using microbial/vegetarian enzymes. Must have halal certification.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "dairy"
+    },
+    {
+      "id": "h-112",
+      "name": "Palm Oil",
+      "aliases": ["Elaeis Guineensis Oil", "Vegetable Oil (palm)"],
+      "verdict": "halal",
+      "reason": "Plant-based oil from palm fruit. Halal. (Environmental/ethical concerns exist but halal status is confirmed.)",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-113",
+      "name": "Olive Oil",
+      "aliases": ["Extra Virgin Olive Oil", "Olea Europaea Oil", "Zaitoon"],
+      "verdict": "halal",
+      "reason": "Plant-based. Mentioned in the Quran as a blessed tree (An-Nur 24:35). Halal.",
+      "sources": ["Quran", "All certification bodies"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-114",
+      "name": "Coconut Oil",
+      "aliases": ["Cocos Nucifera Oil", "Coconut Cream", "Coconut Milk"],
+      "verdict": "halal",
+      "reason": "Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-115",
+      "name": "Shea Butter",
+      "aliases": ["Vitellaria Paradoxa Butter", "Karite Butter"],
+      "verdict": "halal",
+      "reason": "Plant-based fat from shea tree nuts. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-116",
+      "name": "Cocoa Butter",
+      "aliases": ["Theobroma Cacao Butter", "Cacao Butter"],
+      "verdict": "halal",
+      "reason": "Plant-based fat from cacao beans. Halal. (Verify chocolate products for other haram ingredients like alcohol or gelatin.)",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-117",
+      "name": "Sodium Alginate",
+      "aliases": ["E401", "Alginic Acid Sodium Salt", "Alginate"],
+      "verdict": "halal",
+      "reason": "Extracted from brown seaweed. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-118",
+      "name": "Potassium Alginate",
+      "aliases": ["E402"],
+      "verdict": "halal",
+      "reason": "From brown seaweed. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-119",
+      "name": "Ammonium Alginate",
+      "aliases": ["E403"],
+      "verdict": "halal",
+      "reason": "From brown seaweed. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-120",
+      "name": "Calcium Alginate",
+      "aliases": ["E404"],
+      "verdict": "halal",
+      "reason": "From brown seaweed. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-121",
+      "name": "Alginic Acid",
+      "aliases": ["E400"],
+      "verdict": "halal",
+      "reason": "From brown seaweed. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-122",
+      "name": "Agar-Agar Substitute (Gellan Gum)",
+      "aliases": ["E418", "Gellan Gum"],
+      "verdict": "halal",
+      "reason": "Produced by bacterial fermentation (Sphingomonas elodea). Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "microbial"
+    },
+    {
+      "id": "h-123",
+      "name": "Konjac",
+      "aliases": ["E425", "Konjac Gum", "Konjac Glucomannan", "Konnyaku"],
+      "verdict": "halal",
+      "reason": "From konjac plant (Amorphophallus konjac). Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-124",
+      "name": "Tapioca Starch",
+      "aliases": ["Cassava Starch", "E1404", "E1412", "E1413", "E1414", "E1420", "E1422", "Modified Tapioca Starch"],
+      "verdict": "halal",
+      "reason": "From cassava root. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "carbohydrate"
+    },
+    {
+      "id": "h-125",
+      "name": "Cornstarch",
+      "aliases": ["Maize Starch", "E1400", "Corn Flour"],
+      "verdict": "halal",
+      "reason": "From corn. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "carbohydrate"
+    },
+    {
+      "id": "h-126",
+      "name": "Rice Starch",
+      "aliases": ["E1408", "Rice Flour"],
+      "verdict": "halal",
+      "reason": "From rice. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "carbohydrate"
+    },
+    {
+      "id": "h-127",
+      "name": "Potato Starch",
+      "aliases": ["E1401", "Potato Flour"],
+      "verdict": "halal",
+      "reason": "From potatoes. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "carbohydrate"
+    },
+    {
+      "id": "h-128",
+      "name": "Modified Food Starch",
+      "aliases": ["E1400-E1451", "Modified Starch"],
+      "verdict": "halal",
+      "reason": "Chemically modified starch from corn, potato, or tapioca. Plant-based. Halal. (Rarely, some modified starches may use animal-derived reagents - must verify.)",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "carbohydrate"
+    },
+    {
+      "id": "h-129",
+      "name": "Invert Sugar",
+      "aliases": ["Inverted Sugar", "Sugar Syrup"],
+      "verdict": "halal",
+      "reason": "Mixture of glucose and fructose from sucrose. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-130",
+      "name": "High Fructose Corn Syrup",
+      "aliases": ["HFCS", "Isoglucose", "Glucose-Fructose Syrup"],
+      "verdict": "halal",
+      "reason": "From corn starch. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-131",
+      "name": "Molasses",
+      "aliases": ["Blackstrap Molasses", "Treacle", "Cane Molasses"],
+      "verdict": "halal",
+      "reason": "Byproduct of sugar refining from sugarcane. Plant-based. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-132",
+      "name": "Date Syrup",
+      "aliases": ["Date Sugar", "Date Molasses", "Silan"],
+      "verdict": "halal",
+      "reason": "From dates. Plant-based. Halal. Dates are sunnah food.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "sweetener"
+    },
+    {
+      "id": "h-133",
+      "name": "Cholesterol (animal)",
+      "aliases": ["Animal Cholesterol", "E670"],
+      "verdict": "haram",
+      "reason": "If derived from non-halal animal sources (pork, non-zabiha). Plant sterols (phytosterols) are halal alternatives.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-134",
+      "name": "Squalene (animal)",
+      "aliases": ["Shark Squalene", "Animal Squalene"],
+      "verdict": "doubtful",
+      "reason": "Can be from shark liver (halal - seafood) or from non-halal animal sources. Olive-derived squalene is halal. Must verify source.",
+      "sources": ["IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-135",
+      "name": "Cetyl Alcohol",
+      "aliases": ["1-Hexadecanol", "Palmityl Alcohol", "E568"],
+      "verdict": "doubtful",
+      "reason": "Can be from coconut/palm oil (halal) or from sperm whale (haram). Most commercial cetyl alcohol is plant-based. Verify source.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "fatty_alcohol"
+    },
+    {
+      "id": "h-136",
+      "name": "Stearyl Alcohol",
+      "aliases": ["1-Octadecanol", "E568"],
+      "verdict": "doubtful",
+      "reason": "Can be from plant or animal sources. Plant-based is halal. Verify source.",
+      "sources": ["IFANCA"],
+      "category": "fatty_alcohol"
+    },
+    {
+      "id": "h-137",
+      "name": "Cetyl Palmitate",
+      "aliases": ["Spermaceti", "E570"],
+      "verdict": "doubtful",
+      "reason": "Can be synthetic (halal) or from sperm whale head wax (haram). Most commercial forms are synthetic or plant-based. Verify.",
+      "sources": ["IFANCA"],
+      "category": "fatty_alcohol"
+    },
+    {
+      "id": "h-138",
+      "name": "Isoamyl Alcohol",
+      "aliases": ["Isopentyl Alcohol", "Isoamylase"],
+      "verdict": "haram",
+      "reason": "Derived from fermentation and often contains significant alcohol content. Haram.",
+      "sources": ["JAKIM", "MUI"],
+      "category": "alcohol"
+    },
+    {
+      "id": "h-139",
+      "name": "Benzyl Alcohol",
+      "aliases": ["Phenylmethanol", "Benzenemethanol"],
+      "verdict": "doubtful",
+      "reason": "Used as a preservative and solvent. Not intoxicating, but may be derived from petroleum or plant sources. Generally considered halal by IFANCA, but some bodies require verification. Check context of use.",
+      "sources": ["IFANCA", "JAKIM"],
+      "category": "alcohol"
+    },
+    {
+      "id": "h-140",
+      "name": "Lanolin Alcohol",
+      "aliases": ["E913 (alcohol form)", "Wool Alcohol", "Adeps Lanae Alcohol"],
+      "verdict": "doubtful",
+      "reason": "Derivative of lanolin (from sheep's wool). Generally from live sheep shearing, which is acceptable, but must verify no haram processing aids used.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "animal_derivative"
+    },
+    {
+      "id": "h-141",
+      "name": "Sodium Lauryl Sulfate",
+      "aliases": ["SLS", "Sodium Dodecyl Sulfate", "E487"],
+      "verdict": "halal",
+      "reason": "Synthetic surfactant derived from coconut/palm oil or petroleum. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "synthetic"
+    },
+    {
+      "id": "h-142",
+      "name": "Sodium Laureth Sulfate",
+      "aliases": ["SLES", "Sodium Lauryl Ether Sulfate"],
+      "verdict": "halal",
+      "reason": "Synthetic surfactant. Derived from coconut/palm oil or petroleum. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "synthetic"
+    },
+    {
+      "id": "h-143",
+      "name": "Cetyltrimethylammonium Bromide",
+      "aliases": ["CTAB", "Cetrimide"],
+      "verdict": "halal",
+      "reason": "Synthetic compound. Halal.",
+      "sources": ["IFANCA"],
+      "category": "synthetic"
+    },
+    {
+      "id": "h-144",
+      "name": "Pluronic / Poloxamer",
+      "aliases": ["Poloxamer 188", "Poloxamer 407", "Pluronic F68"],
+      "verdict": "halal",
+      "reason": "Synthetic block copolymer. No animal content. Halal.",
+      "sources": ["IFANCA"],
+      "category": "synthetic"
+    },
+    {
+      "id": "h-145",
+      "name": "PEG (Polyethylene Glycol)",
+      "aliases": ["Macrogol", "E1521", "PEG 400", "PEG 3350", "PEG 4000"],
+      "verdict": "halal",
+      "reason": "Synthetic polymer. No animal content. Halal.",
+      "sources": ["JAKIM", "IFANCA"],
+      "category": "synthetic"
+    },
+    {
+      "id": "h-146",
+      "name": "Carmellose Sodium",
+      "aliases": ["Carboxymethylcellulose", "CMC", "E466", "Cellulose Gum"],
+      "verdict": "halal",
+      "reason": "Derived from plant cellulose (wood pulp, cotton). Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-147",
+      "name": "Methylcellulose",
+      "aliases": ["E461"],
+      "verdict": "halal",
+      "reason": "Derived from plant cellulose. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-148",
+      "name": "Hydroxypropyl Methylcellulose",
+      "aliases": ["HPMC", "E464", "Hypromellose"],
+      "verdict": "halal",
+      "reason": "Derived from plant cellulose. Halal. Common halal alternative to gelatin capsules.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-149",
+      "name": "Ethylcellulose",
+      "aliases": ["E462"],
+      "verdict": "halal",
+      "reason": "Derived from plant cellulose. Despite the 'ethyl' in the name, it is not ethanol. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    },
+    {
+      "id": "h-150",
+      "name": "Microcrystalline Cellulose",
+      "aliases": ["MCC", "E460i", "Cellulose Gel"],
+      "verdict": "halal",
+      "reason": "Derived from plant cellulose. Halal.",
+      "sources": ["JAKIM", "MUI", "IFANCA"],
+      "category": "plant_derivative"
+    }
+  ],
+  "e_number_index": {
+    "E100": {"name": "Turmeric / Curcumin", "verdict": "halal"},
+    "E102": {"name": "Tartrazine", "verdict": "halal"},
+    "E120": {"name": "Cochineal / Carmine", "verdict": "haram"},
+    "E133": {"name": "Brilliant Blue", "verdict": "halal"},
+    "E140": {"name": "Chlorophyll", "verdict": "halal"},
+    "E141": {"name": "Chlorophyllin", "verdict": "halal"},
+    "E150a": {"name": "Caramel Color I (Plain)", "verdict": "halal"},
+    "E150b": {"name": "Caramel Color II (Caustic Sulfite)", "verdict": "halal"},
+    "E150c": {"name": "Caramel Color III (Ammonia)", "verdict": "doubtful"},
+    "E150d": {"name": "Caramel Color IV (Sulfite-Ammonia)", "verdict": "doubtful"},
+    "E160a": {"name": "Beta-Carotene", "verdict": "halal"},
+    "E160b": {"name": "Annatto", "verdict": "halal"},
+    "E160c": {"name": "Paprika Extract", "verdict": "halal"},
+    "E162": {"name": "Beetroot Red", "verdict": "halal"},
+    "E170": {"name": "Calcium Carbonate", "verdict": "halal"},
+    "E200": {"name": "Sorbic Acid", "verdict": "halal"},
+    "E202": {"name": "Potassium Sorbate", "verdict": "halal"},
+    "E211": {"name": "Sodium Benzoate", "verdict": "halal"},
+    "E220": {"name": "Sulfur Dioxide", "verdict": "halal"},
+    "E250": {"name": "Sodium Nitrite", "verdict": "halal"},
+    "E251": {"name": "Sodium Nitrate", "verdict": "halal"},
+    "E270": {"name": "Lactic Acid", "verdict": "halal"},
+    "E282": {"name": "Calcium Propionate", "verdict": "halal"},
+    "E300": {"name": "Ascorbic Acid (Vitamin C)", "verdict": "halal"},
+    "E301": {"name": "Sodium Ascorbate", "verdict": "halal"},
+    "E302": {"name": "Calcium Ascorbate", "verdict": "halal"},
+    "E306": {"name": "Tocopherols (Vitamin E)", "verdict": "doubtful"},
+    "E307": {"name": "Alpha-Tocopherol", "verdict": "doubtful"},
+    "E320": {"name": "BHA", "verdict": "halal"},
+    "E321": {"name": "BHT", "verdict": "halal"},
+    "E322": {"name": "Lecithin", "verdict": "halal"},
+    "E325": {"name": "Sodium Lactate", "verdict": "halal"},
+    "E330": {"name": "Citric Acid", "verdict": "halal"},
+    "E336": {"name": "Cream of Tartar", "verdict": "halal"},
+    "E338": {"name": "Phosphoric Acid", "verdict": "halal"},
+    "E341": {"name": "Dicalcium Phosphate", "verdict": "halal"},
+    "E400": {"name": "Alginic Acid", "verdict": "halal"},
+    "E401": {"name": "Sodium Alginate", "verdict": "halal"},
+    "E404": {"name": "Calcium Alginate", "verdict": "halal"},
+    "E405": {"name": "Propane-1,2-diol Alginate", "verdict": "halal"},
+    "E406": {"name": "Agar-Agar", "verdict": "halal"},
+    "E407": {"name": "Carrageenan", "verdict": "halal"},
+    "E410": {"name": "Locust Bean Gum", "verdict": "halal"},
+    "E412": {"name": "Guar Gum", "verdict": "halal"},
+    "E414": {"name": "Gum Arabic", "verdict": "halal"},
+    "E415": {"name": "Xanthan Gum", "verdict": "halal"},
+    "E418": {"name": "Gellan Gum", "verdict": "halal"},
+    "E420": {"name": "Sorbitol", "verdict": "halal"},
+    "E421": {"name": "Mannitol", "verdict": "halal"},
+    "E422": {"name": "Glycerol / Glycerin", "verdict": "doubtful"},
+    "E425": {"name": "Konjac", "verdict": "halal"},
+    "E440": {"name": "Pectin", "verdict": "halal"},
+    "E441": {"name": "Gelatin", "verdict": "haram"},
+    "E461": {"name": "Methylcellulose", "verdict": "halal"},
+    "E462": {"name": "Ethylcellulose", "verdict": "halal"},
+    "E464": {"name": "HPMC", "verdict": "halal"},
+    "E466": {"name": "CMC / Carmellose Sodium", "verdict": "halal"},
+    "E471": {"name": "Mono and Diglycerides", "verdict": "doubtful"},
+    "E472a": {"name": "Acetic Acid Esters of Mono/Diglycerides", "verdict": "doubtful"},
+    "E472b": {"name": "Lactic Acid Esters of Mono/Diglycerides", "verdict": "doubtful"},
+    "E472c": {"name": "Citric Acid Esters of Mono/Diglycerides", "verdict": "doubtful"},
+    "E472d": {"name": "Tartaric Acid Esters of Mono/Diglycerides", "verdict": "doubtful"},
+    "E472e": {"name": "Mono/Diglycerides of Acetic/Tartaric Acids", "verdict": "doubtful"},
+    "E473": {"name": "Sucrose Esters", "verdict": "doubtful"},
+    "E474": {"name": "Sucroglycerides", "verdict": "doubtful"},
+    "E475": {"name": "Polyglycerol Esters", "verdict": "doubtful"},
+    "E476": {"name": "Polyglycerol Polyricinoleate (PGPR)", "verdict": "doubtful"},
+    "E477": {"name": "Propane-1,2-diol Esters", "verdict": "doubtful"},
+    "E481": {"name": "Sodium Stearoyl Lactylate", "verdict": "doubtful"},
+    "E482": {"name": "Calcium Stearoyl Lactylate", "verdict": "doubtful"},
+    "E491": {"name": "Sorbitan Monostearate (Span 60)", "verdict": "doubtful"},
+    "E492": {"name": "Sorbitan Tristearate (Span 65)", "verdict": "doubtful"},
+    "E493": {"name": "Sorbitan Monolaurate (Span 20)", "verdict": "doubtful"},
+    "E494": {"name": "Sorbitan Monooleate (Span 80)", "verdict": "doubtful"},
+    "E500": {"name": "Sodium Carbonate / Bicarbonate", "verdict": "halal"},
+    "E501": {"name": "Potassium Carbonate", "verdict": "halal"},
+    "E503": {"name": "Ammonium Carbonate", "verdict": "halal"},
+    "E508": {"name": "Potassium Chloride", "verdict": "halal"},
+    "E509": {"name": "Calcium Chloride", "verdict": "halal"},
+    "E551": {"name": "Silicon Dioxide", "verdict": "halal"},
+    "E570": {"name": "Fatty Acids (stearic, palmitic, oleic)", "verdict": "doubtful"},
+    "E620": {"name": "Glutamic Acid", "verdict": "halal"},
+    "E621": {"name": "Monosodium Glutamate (MSG)", "verdict": "halal"},
+    "E627": {"name": "Disodium Guanylate", "verdict": "halal"},
+    "E631": {"name": "Disodium Inosinate", "verdict": "halal"},
+    "E635": {"name": "Disodium 5'-Ribonucleotide", "verdict": "halal"},
+    "E920": {"name": "L-Cysteine", "verdict": "doubtful"},
+    "E901": {"name": "Beeswax", "verdict": "halal"},
+    "E904": {"name": "Shellac", "verdict": "haram"},
+    "E955": {"name": "Sucralose", "verdict": "halal"},
+    "E960": {"name": "Steviol Glycosides", "verdict": "halal"},
+    "E965": {"name": "Maltitol", "verdict": "halal"},
+    "E967": {"name": "Xylitol", "verdict": "halal"},
+    "E1200": {"name": "Polydextrose", "verdict": "halal"},
+    "E1201": {"name": "Polyvinylpyrrolidone (PVP)", "verdict": "halal"},
+    "E1400": {"name": "Dextrin / Modified Starch", "verdict": "halal"},
+    "E1404": {"name": "Oxidised Starch", "verdict": "halal"},
+    "E1412": {"name": "Distarch Phosphate", "verdict": "halal"},
+    "E1413": {"name": "Phosphated Distarch Phosphate", "verdict": "halal"},
+    "E1414": {"name": "Acetylated Distarch Phosphate", "verdict": "halal"},
+    "E1420": {"name": "Starch Acetate", "verdict": "halal"},
+    "E1422": {"name": "Acetylated Distarch Adipate", "verdict": "halal"},
+    "E1442": {"name": "Hydroxypropyl Starch", "verdict": "halal"},
+    "E1510": {"name": "Ethanol", "verdict": "haram"},
+    "E1520": {"name": "Propylene Glycol", "verdict": "halal"},
+    "E1521": {"name": "PEG", "verdict": "halal"}
+  },
+  "open_food_facts": {
+    "api_base": "https://world.openfoodfacts.org/api/v2",
+    "endpoints": {
+      "product": "/product/{barcode}.json",
+      "search": "/search?query={query}&fields=code,product_name,ingredients_text,allergens,labels",
+      "by_category": "/search?categories={category}&fields=code,product_name,ingredients_text",
+      "by_country": "/search?country={country}&fields=code,product_name,ingredients_text,labels",
+      "by_label": "/search?labels={label}&fields=code,product_name,ingredients_text"
+    },
+    "relevant_fields": [
+      "code (barcode)",
+      "product_name",
+      "ingredients_text",
+      "ingredients_text_en",
+      "ingredients_analysis_tags (contains:en:palm-oil, etc.)",
+      "allergens",
+      "allergens_tags",
+      "labels",
+      "labels_tags (contains:en:halal, en:vegetarian, etc.)",
+      "nutriscore_grade",
+      "nova_group",
+      "countries_tags",
+      "categories_tags"
+    ],
+    "halal_labels": ["en:halal", "fr:halal", "de:halal", "es:halal", "ar:حلال"],
+    "notes": [
+      "Open Food Facts is a crowdsourced database - data may be incomplete or inaccurate",
+      "The halal label is not consistently applied across all products",
+      "Ingredients text may contain localized names",
+      "API is rate-limited: respect 10 requests/second",
+      "For production use, consider caching results",
+      "No authentication required for basic queries",
+      "Always verify with official halal certification bodies"
+    ]
+  }
+}

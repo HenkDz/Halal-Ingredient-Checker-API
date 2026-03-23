@@ -1,0 +1,63 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: [Test]
+    types: [completed]
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run smoke tests
+        run: |
+          python3 -c "from app.main import app; print('App imports OK')"
+
+      # --- Deployment steps ---
+      # Uncomment and configure the section below for your deployment target.
+
+      # Option A: Deploy to a VPS via SSH
+      # - name: Deploy via SSH
+      #   uses: appleboy/ssh-action@v1
+      #   with:
+      #     host: ${{ secrets.DEPLOY_HOST }}
+      #     username: ${{ secrets.DEPLOY_USER }}
+      #     key: ${{ secrets.DEPLOY_SSH_KEY }}
+      #     script: |
+      #       cd /opt/halal-api
+      #       git pull origin main
+      #       pip install -r requirements.txt
+      #       sudo systemctl restart halal-api
+
+      # Option B: Deploy to Docker
+      # - name: Build & push Docker image
+      #   run: |
+      #     docker build -t halal-api:${{ github.sha }} .
+      #     docker tag halal-api:${{ github.sha }} halal-api:latest
+      #     docker push ${{ secrets.DOCKER_REGISTRY }}/halal-api:latest
+
+      # Option C: Deploy to cloud (AWS/GCP/Azure)
+      # - name: Configure AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v4
+      #   with:
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Deployment successful
+        run: echo "Deployment placeholder complete. Configure your deployment target above."

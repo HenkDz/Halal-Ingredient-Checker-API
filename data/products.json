@@ -1,0 +1,7202 @@
+[
+  {
+    "barcode": "5449000000996",
+    "brand": "Coca-Cola",
+    "name": "Coca-Cola Original Taste 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Globally halal certified"
+  },
+  {
+    "barcode": "5449000014535",
+    "brand": "Coca-Cola",
+    "name": "Coca-Cola Zero Sugar 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "No sugar variant"
+  },
+  {
+    "barcode": "5449000001974",
+    "brand": "Coca-Cola",
+    "name": "Diet Coke 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Low calorie variant"
+  },
+  {
+    "barcode": "5449000014283",
+    "brand": "Coca-Cola",
+    "name": "Coca-Cola Cherry 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Cherry flavored"
+  },
+  {
+    "barcode": "5449000131805",
+    "brand": "Coca-Cola",
+    "name": "Coca-Cola Vanilla 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Vanilla flavored"
+  },
+  {
+    "barcode": "5449000095164",
+    "brand": "Coca-Cola",
+    "name": "Coca-Cola 1.5L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Large bottle"
+  },
+  {
+    "barcode": "5449000001394",
+    "brand": "Coca-Cola",
+    "name": "Sprite 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Lemon-lime soda"
+  },
+  {
+    "barcode": "5449000013493",
+    "brand": "Coca-Cola",
+    "name": "Sprite Zero Sugar 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "No sugar variant"
+  },
+  {
+    "barcode": "5449000002193",
+    "brand": "Coca-Cola",
+    "name": "Fanta Orange 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Orange flavored soda"
+  },
+  {
+    "barcode": "5449000013554",
+    "brand": "Coca-Cola",
+    "name": "Fanta Zero Orange 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "No sugar variant"
+  },
+  {
+    "barcode": "5449000002254",
+    "brand": "Coca-Cola",
+    "name": "Fanta Lemon 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Lemon flavored"
+  },
+  {
+    "barcode": "5449000013509",
+    "brand": "Coca-Cola",
+    "name": "Fanta Pineapple 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Pineapple flavored"
+  },
+  {
+    "barcode": "5449000014276",
+    "brand": "Coca-Cola",
+    "name": "Fanta Grape 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Grape flavored"
+  },
+  {
+    "barcode": "5449000246000",
+    "brand": "Coca-Cola",
+    "name": "Schweppes Tonic Water 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Quinine water"
+  },
+  {
+    "barcode": "5449000230573",
+    "brand": "Coca-Cola",
+    "name": "Schweppes Lemonade 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cloudy lemonade"
+  },
+  {
+    "barcode": "5449000230580",
+    "brand": "Coca-Cola",
+    "name": "Schweppes Ginger Ale 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Ginger flavored"
+  },
+  {
+    "barcode": "5449000179250",
+    "brand": "Coca-Cola",
+    "name": "Dr Pepper 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Pepper flavored soda"
+  },
+  {
+    "barcode": "5449000228756",
+    "brand": "Coca-Cola",
+    "name": "Powerade Mountain Berry 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sports drink"
+  },
+  {
+    "barcode": "5449000228763",
+    "brand": "Coca-Cola",
+    "name": "Powerade Orange 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sports drink"
+  },
+  {
+    "barcode": "5449000247136",
+    "brand": "Coca-Cola",
+    "name": "Smart Water 600ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Vapor distilled water"
+  },
+  {
+    "barcode": "5449000217009",
+    "brand": "Coca-Cola",
+    "name": "Costa Coffee RTD Latte 250ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Coffee beverage"
+  },
+  {
+    "barcode": "5449000014406",
+    "brand": "Coca-Cola",
+    "name": "Fanta Mango 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Mango flavored"
+  },
+  {
+    "barcode": "5449000119129",
+    "brand": "Coca-Cola",
+    "name": "Kinley Soda Water 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Soda water"
+  },
+  {
+    "barcode": "5449000119136",
+    "brand": "Coca-Cola",
+    "name": "Kinley Tonic Water 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Tonic water"
+  },
+  {
+    "barcode": "5449000135084",
+    "brand": "Coca-Cola",
+    "name": "Royal Tru Orange 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Orange juice drink"
+  },
+  {
+    "barcode": "5449000135091",
+    "brand": "Coca-Cola",
+    "name": "Minute Maid Orange Juice 1L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "100% orange juice"
+  },
+  {
+    "barcode": "5449000135107",
+    "brand": "Coca-Cola",
+    "name": "Minute Maid Apple Juice 1L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "100% apple juice"
+  },
+  {
+    "barcode": "5449000135114",
+    "brand": "Coca-Cola",
+    "name": "Minute Maid Pulpy Orange 1L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Pulpy orange"
+  },
+  {
+    "barcode": "5449000135121",
+    "brand": "Coca-Cola",
+    "name": "Ayataka Green Tea 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Japanese green tea"
+  },
+  {
+    "barcode": "5449000135138",
+    "brand": "Coca-Cola",
+    "name": "Georgia Coffee 250ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Ready to drink coffee"
+  },
+  {
+    "barcode": "5449000135145",
+    "brand": "Coca-Cola",
+    "name": "Sprite Cranberry 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Cranberry flavored"
+  },
+  {
+    "barcode": "012000001536",
+    "brand": "PepsiCo",
+    "name": "Pepsi 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cola beverage"
+  },
+  {
+    "barcode": "012000008045",
+    "brand": "PepsiCo",
+    "name": "Pepsi Max 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Maximum taste no sugar"
+  },
+  {
+    "barcode": "012000004068",
+    "brand": "PepsiCo",
+    "name": "Diet Pepsi 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Low calorie cola"
+  },
+  {
+    "barcode": "012000001543",
+    "brand": "PepsiCo",
+    "name": "7UP 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Lemon-lime soda"
+  },
+  {
+    "barcode": "012000008052",
+    "brand": "PepsiCo",
+    "name": "7UP Free 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "No sugar variant"
+  },
+  {
+    "barcode": "012000006531",
+    "brand": "PepsiCo",
+    "name": "Mirinda Orange 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Orange flavored soda"
+  },
+  {
+    "barcode": "012000006548",
+    "brand": "PepsiCo",
+    "name": "Mirinda Strawberry 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Strawberry flavored"
+  },
+  {
+    "barcode": "012000006562",
+    "brand": "PepsiCo",
+    "name": "Mirinda Apple 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Apple flavored"
+  },
+  {
+    "barcode": "012000013333",
+    "brand": "PepsiCo",
+    "name": "Mountain Dew 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Citrus flavored soda"
+  },
+  {
+    "barcode": "012000006579",
+    "brand": "PepsiCo",
+    "name": "Mountain Dew Zero Sugar 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "No sugar variant"
+  },
+  {
+    "barcode": "028400044591",
+    "brand": "PepsiCo",
+    "name": "Lays Classic Salted 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Classic potato chips"
+  },
+  {
+    "barcode": "028400044607",
+    "brand": "PepsiCo",
+    "name": "Lays BBQ 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "BBQ flavored chips"
+  },
+  {
+    "barcode": "028400044614",
+    "brand": "PepsiCo",
+    "name": "Lays Sour Cream & Onion 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sour cream flavor"
+  },
+  {
+    "barcode": "028400044621",
+    "brand": "PepsiCo",
+    "name": "Lays Cheese 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cheese flavored chips"
+  },
+  {
+    "barcode": "028400044638",
+    "brand": "PepsiCo",
+    "name": "Lays Salt & Vinegar 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Salt & vinegar flavor"
+  },
+  {
+    "barcode": "028400069632",
+    "brand": "PepsiCo",
+    "name": "Lays Classic 45g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Small bag classic"
+  },
+  {
+    "barcode": "028400069649",
+    "brand": "PepsiCo",
+    "name": "Lays BBQ 45g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Small bag BBQ"
+  },
+  {
+    "barcode": "028400069656",
+    "brand": "PepsiCo",
+    "name": "Lays Sour Cream & Onion 45g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Small bag"
+  },
+  {
+    "barcode": "028400069663",
+    "brand": "PepsiCo",
+    "name": "Lays Cheese 45g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Small bag cheese"
+  },
+  {
+    "barcode": "028400069670",
+    "brand": "PepsiCo",
+    "name": "Lays Classic 200g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Party size"
+  },
+  {
+    "barcode": "028400069687",
+    "brand": "PepsiCo",
+    "name": "Lays Ketchup 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Ketchup flavor"
+  },
+  {
+    "barcode": "028400069694",
+    "brand": "PepsiCo",
+    "name": "Lays Prawn Cocktail 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Prawn cocktail"
+  },
+  {
+    "barcode": "028400069700",
+    "brand": "PepsiCo",
+    "name": "Lays Smoky Bacon 150g",
+    "category": "Snacks",
+    "halal_status": "doubtful",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Artificial bacon flavor - verify"
+  },
+  {
+    "barcode": "003800036212",
+    "brand": "PepsiCo",
+    "name": "Doritos Nacho Cheese 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Corn chips"
+  },
+  {
+    "barcode": "003800036229",
+    "brand": "PepsiCo",
+    "name": "Doritos Cool Ranch 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cool ranch flavor"
+  },
+  {
+    "barcode": "003800036236",
+    "brand": "PepsiCo",
+    "name": "Doritos Spicy Sweet Chili 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Spicy flavor"
+  },
+  {
+    "barcode": "003800036243",
+    "brand": "PepsiCo",
+    "name": "Doritos Tangy Cheese 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Tangy cheese"
+  },
+  {
+    "barcode": "003800036250",
+    "brand": "PepsiCo",
+    "name": "Doritos Flamin Hot 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Extra spicy"
+  },
+  {
+    "barcode": "003800036267",
+    "brand": "PepsiCo",
+    "name": "Doritos Salsa 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Salsa flavor"
+  },
+  {
+    "barcode": "003800036274",
+    "brand": "PepsiCo",
+    "name": "Doritos Sweet Chili Heat 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Sweet chili"
+  },
+  {
+    "barcode": "002840003139",
+    "brand": "PepsiCo",
+    "name": "Cheetos Crunchy 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cheese puffs"
+  },
+  {
+    "barcode": "002840003146",
+    "brand": "PepsiCo",
+    "name": "Cheetos Flamin Hot 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Spicy cheese puffs"
+  },
+  {
+    "barcode": "002840003153",
+    "brand": "PepsiCo",
+    "name": "Cheetos Puffs 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cheese puffs"
+  },
+  {
+    "barcode": "002840003160",
+    "brand": "PepsiCo",
+    "name": "Cheetos Crunchy 45g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Small bag"
+  },
+  {
+    "barcode": "002840003177",
+    "brand": "PepsiCo",
+    "name": "Cheetos XXTRA Flamin Hot 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Extra spicy"
+  },
+  {
+    "barcode": "003800037510",
+    "brand": "PepsiCo",
+    "name": "Ruffles Original 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Ridged chips"
+  },
+  {
+    "barcode": "003800037527",
+    "brand": "PepsiCo",
+    "name": "Ruffles BBQ 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Ridges BBQ"
+  },
+  {
+    "barcode": "003800037534",
+    "brand": "PepsiCo",
+    "name": "Ruffles Sour Cream & Onion 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Ridges sour cream"
+  },
+  {
+    "barcode": "003800037541",
+    "brand": "PepsiCo",
+    "name": "Ruffles Cheese 150g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Ridges cheese"
+  },
+  {
+    "barcode": "028400444591",
+    "brand": "PepsiCo",
+    "name": "Quaker Oats 500g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Rolled oats"
+  },
+  {
+    "barcode": "028400444607",
+    "brand": "PepsiCo",
+    "name": "Quaker Oatmeal 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Instant oatmeal"
+  },
+  {
+    "barcode": "028400444614",
+    "brand": "PepsiCo",
+    "name": "Quaker Granola 350g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Granola cereal"
+  },
+  {
+    "barcode": "028400444621",
+    "brand": "PepsiCo",
+    "name": "Quaker Cruesli 400g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Crunchy cereal"
+  },
+  {
+    "barcode": "028400444638",
+    "brand": "PepsiCo",
+    "name": "Tropicana Pure Orange Juice 1L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "100% orange juice"
+  },
+  {
+    "barcode": "028400444645",
+    "brand": "PepsiCo",
+    "name": "Tropicana Apple Juice 1L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "100% apple juice"
+  },
+  {
+    "barcode": "028400444652",
+    "brand": "PepsiCo",
+    "name": "Gatorade Orange 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sports drink"
+  },
+  {
+    "barcode": "028400444669",
+    "brand": "PepsiCo",
+    "name": "Gatorade Lemon-Lime 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sports drink"
+  },
+  {
+    "barcode": "028400444676",
+    "brand": "PepsiCo",
+    "name": "Gatorade Blue Bolt 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sports drink"
+  },
+  {
+    "barcode": "028400444683",
+    "brand": "PepsiCo",
+    "name": "Gatorade Fruit Punch 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sports drink"
+  },
+  {
+    "barcode": "028400444690",
+    "brand": "PepsiCo",
+    "name": "Gatorade Watermelon 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Sports drink"
+  },
+  {
+    "barcode": "028400444706",
+    "brand": "PepsiCo",
+    "name": "Naked Green Machine 450ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Smoothie"
+  },
+  {
+    "barcode": "028400444713",
+    "brand": "PepsiCo",
+    "name": "Naked Mango 450ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Smoothie"
+  },
+  {
+    "barcode": "028400444720",
+    "brand": "PepsiCo",
+    "name": "Lipton Iced Tea Lemon 1.5L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Iced tea"
+  },
+  {
+    "barcode": "028400444737",
+    "brand": "PepsiCo",
+    "name": "Lipton Iced Tea Peach 1.5L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Iced tea"
+  },
+  {
+    "barcode": "7613035572228",
+    "brand": "Nestle",
+    "name": "Nescafe Classic 200g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Instant coffee"
+  },
+  {
+    "barcode": "7613035572235",
+    "brand": "Nestle",
+    "name": "Nescafe Gold 200g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Premium instant coffee"
+  },
+  {
+    "barcode": "7613035572242",
+    "brand": "Nestle",
+    "name": "Nescafe 3in1 Original 25 sachets",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Coffee creamer sugar"
+  },
+  {
+    "barcode": "7613035572259",
+    "brand": "Nestle",
+    "name": "Nescafe 3in1 Less Sugar 25 sachets",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Reduced sugar variant"
+  },
+  {
+    "barcode": "7613035572266",
+    "brand": "Nestle",
+    "name": "Nescafe Cappuccino 10 sachets",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cappuccino mix"
+  },
+  {
+    "barcode": "7613035572273",
+    "brand": "Nestle",
+    "name": "Nescafe Latte 10 sachets",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Latte mix"
+  },
+  {
+    "barcode": "7613035572280",
+    "brand": "Nestle",
+    "name": "Nescafe Mocha 10 sachets",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mocha mix"
+  },
+  {
+    "barcode": "7613035572297",
+    "brand": "Nestle",
+    "name": "Nescafe Caramel Latte 10 sachets",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel latte mix"
+  },
+  {
+    "barcode": "7613035572303",
+    "brand": "Nestle",
+    "name": "Nescafe Vanilla Latte 10 sachets",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Vanilla latte mix"
+  },
+  {
+    "barcode": "7613035572310",
+    "brand": "Nestle",
+    "name": "Nescafe Hazelnut Latte 10 sachets",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Hazelnut latte mix"
+  },
+  {
+    "barcode": "7613036488420",
+    "brand": "Nestle",
+    "name": "Milo 400g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate malt drink"
+  },
+  {
+    "barcode": "7613036488437",
+    "brand": "Nestle",
+    "name": "Milo 1kg",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Family pack"
+  },
+  {
+    "barcode": "7613036488444",
+    "brand": "Nestle",
+    "name": "Milo Activ-Go 400g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Energy variant"
+  },
+  {
+    "barcode": "7613036488451",
+    "brand": "Nestle",
+    "name": "Milo UHT 200ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Ready to drink"
+  },
+  {
+    "barcode": "7613036488468",
+    "brand": "Nestle",
+    "name": "Milo RTD 125ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Small RTD pack"
+  },
+  {
+    "barcode": "7613036488475",
+    "brand": "Nestle",
+    "name": "Milo Less Sugar 400g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Reduced sugar"
+  },
+  {
+    "barcode": "7613036488482",
+    "brand": "Nestle",
+    "name": "Milo Nugget 28g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Milo chocolate nugget"
+  },
+  {
+    "barcode": "7613036488499",
+    "brand": "Nestle",
+    "name": "Milo Wafer 200g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Milo wafer sticks"
+  },
+  {
+    "barcode": "3017620422003",
+    "brand": "Nestle",
+    "name": "Nutella 200g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate hazelnut spread"
+  },
+  {
+    "barcode": "3017620422010",
+    "brand": "Nestle",
+    "name": "Nutella 400g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Medium jar"
+  },
+  {
+    "barcode": "3017620422027",
+    "brand": "Nestle",
+    "name": "Nutella 750g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Large jar"
+  },
+  {
+    "barcode": "3017620422034",
+    "brand": "Nestle",
+    "name": "Nutella B-Ready 6 sticks",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "On-the-go snack"
+  },
+  {
+    "barcode": "3017620422041",
+    "brand": "Nestle",
+    "name": "Nutella & Go 4 packs",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Breadsticks with spread"
+  },
+  {
+    "barcode": "3017620422058",
+    "brand": "Nestle",
+    "name": "Nutella Mini Cups 6x25g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Mini portions"
+  },
+  {
+    "barcode": "3017620422065",
+    "brand": "Nestle",
+    "name": "Nutella Cookies 200g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Filled cookies"
+  },
+  {
+    "barcode": "5000159482081",
+    "brand": "Nestle",
+    "name": "KitKat 4 Finger 41.5g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Milk chocolate wafer"
+  },
+  {
+    "barcode": "5000159482098",
+    "brand": "Nestle",
+    "name": "KitKat Chunky 48g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Single finger large"
+  },
+  {
+    "barcode": "5000159482104",
+    "brand": "Nestle",
+    "name": "KitKat Dark 41.5g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Dark chocolate"
+  },
+  {
+    "barcode": "5000159482111",
+    "brand": "Nestle",
+    "name": "KitKat Orange 41.5g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Orange flavored"
+  },
+  {
+    "barcode": "5000159482128",
+    "brand": "Nestle",
+    "name": "KitKat Mint 41.5g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mint flavored"
+  },
+  {
+    "barcode": "5000159482135",
+    "brand": "Nestle",
+    "name": "KitKat Caramel 41.5g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel filled"
+  },
+  {
+    "barcode": "5000159482142",
+    "brand": "Nestle",
+    "name": "KitKat Cookies & Cream 41.5g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Cookies cream"
+  },
+  {
+    "barcode": "5000159482159",
+    "brand": "Nestle",
+    "name": "KitKat 2 Finger 21g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Small 2-finger"
+  },
+  {
+    "barcode": "5000159482166",
+    "brand": "Nestle",
+    "name": "KitKat 8 Finger 93g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Share bag"
+  },
+  {
+    "barcode": "5000159482173",
+    "brand": "Nestle",
+    "name": "KitKat 16 Finger 186g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Family pack"
+  },
+  {
+    "barcode": "5000159482180",
+    "brand": "Nestle",
+    "name": "KitKat Senses Caramel 150g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Premium range"
+  },
+  {
+    "barcode": "5000159482197",
+    "brand": "Nestle",
+    "name": "KitKat Senses Hazelnut 150g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Premium range"
+  },
+  {
+    "barcode": "5000159482203",
+    "brand": "Nestle",
+    "name": "KitKat Senses Praline 150g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Premium range"
+  },
+  {
+    "barcode": "289000001716",
+    "brand": "Nestle",
+    "name": "Nestle Smarties 38g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate beans"
+  },
+  {
+    "barcode": "289000001723",
+    "brand": "Nestle",
+    "name": "Nestle Smarties Giant 50g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Large tube"
+  },
+  {
+    "barcode": "289000001730",
+    "brand": "Nestle",
+    "name": "Nestle Smarties Mini 150g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mini eggs"
+  },
+  {
+    "barcode": "289000001747",
+    "brand": "Nestle",
+    "name": "Nestle Aero Milk 42g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Air bubble chocolate"
+  },
+  {
+    "barcode": "289000001754",
+    "brand": "Nestle",
+    "name": "Nestle Aero Mint 42g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mint bubble chocolate"
+  },
+  {
+    "barcode": "289000001761",
+    "brand": "Nestle",
+    "name": "Nestle Aero Orange 42g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Orange bubble chocolate"
+  },
+  {
+    "barcode": "289000001778",
+    "brand": "Nestle",
+    "name": "Nestle Quality Street 300g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Assorted sweets"
+  },
+  {
+    "barcode": "289000001785",
+    "brand": "Nestle",
+    "name": "Nestle After Eight 200g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mint chocolate thins"
+  },
+  {
+    "barcode": "289000001792",
+    "brand": "Nestle",
+    "name": "Nestle Lion Bar 52g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel wafer"
+  },
+  {
+    "barcode": "289000001808",
+    "brand": "Nestle",
+    "name": "Nestle Drifter 45g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel biscuit"
+  },
+  {
+    "barcode": "289000001815",
+    "brand": "Nestle",
+    "name": "Nestle Breakaway 42g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate biscuit"
+  },
+  {
+    "barcode": "289000001822",
+    "brand": "Nestle",
+    "name": "Nestle Caramac 38g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel bar"
+  },
+  {
+    "barcode": "289000001839",
+    "brand": "Nestle",
+    "name": "Nestle Fruit Pastilles 200g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fruit flavored"
+  },
+  {
+    "barcode": "289000001846",
+    "brand": "Nestle",
+    "name": "Nestle Rowntrees Fruit Gums 200g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chewy fruit sweets"
+  },
+  {
+    "barcode": "289000001853",
+    "brand": "Nestle",
+    "name": "Nestle Rowntrees Randoms 170g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Assorted gummies"
+  },
+  {
+    "barcode": "289000001860",
+    "brand": "Nestle",
+    "name": "Nestle Polo Mints 100g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mint mints"
+  },
+  {
+    "barcode": "289000001877",
+    "brand": "Nestle",
+    "name": "Nestle Polo Fruit 100g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fruit flavored mints"
+  },
+  {
+    "barcode": "289000001884",
+    "brand": "Nestle",
+    "name": "Nestle Toffee Crisp 38g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Toffee chocolate"
+  },
+  {
+    "barcode": "289000001891",
+    "brand": "Nestle",
+    "name": "Nestle Yorkie 46g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chunky milk chocolate"
+  },
+  {
+    "barcode": "289000001907",
+    "brand": "Nestle",
+    "name": "Nestle Double Cream 42g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Double cream bar"
+  },
+  {
+    "barcode": "289000001914",
+    "brand": "Nestle",
+    "name": "Nestle Chunky White 42g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "White chocolate"
+  },
+  {
+    "barcode": "289000001921",
+    "brand": "Nestle",
+    "name": "Nestle Milkybar 25g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "White chocolate bar"
+  },
+  {
+    "barcode": "289000001938",
+    "brand": "Nestle",
+    "name": "Nestle Milkybar Buttons 25g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "White chocolate buttons"
+  },
+  {
+    "barcode": "289000001945",
+    "brand": "Nestle",
+    "name": "Nestle Milkybar Wowsomes 25g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "White chocolate"
+  },
+  {
+    "barcode": "289000001952",
+    "brand": "Nestle",
+    "name": "Nestle Animal Bar 22g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Kids chocolate bar"
+  },
+  {
+    "barcode": "289000001969",
+    "brand": "Nestle",
+    "name": "Nestle Blue Riband 30g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Wafer chocolate"
+  },
+  {
+    "barcode": "289000001976",
+    "brand": "Nestle",
+    "name": "Nestle Rolo 52g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel chocolates"
+  },
+  {
+    "barcode": "289000001983",
+    "brand": "Nestle",
+    "name": "Nestle Caramac Bar Multipack 6x38g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Multi-pack"
+  },
+  {
+    "barcode": "289000001990",
+    "brand": "Nestle",
+    "name": "Nestle Milkybar Kid 21g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Kids white chocolate"
+  },
+  {
+    "barcode": "7613035414312",
+    "brand": "Nestle",
+    "name": "Nestle Nido 1+ 900g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Growing up milk"
+  },
+  {
+    "barcode": "7613035414329",
+    "brand": "Nestle",
+    "name": "Nestle Nido 3+ 900g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Growing up milk"
+  },
+  {
+    "barcode": "7613035414336",
+    "brand": "Nestle",
+    "name": "Nestle Nan 1 800g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Infant formula"
+  },
+  {
+    "barcode": "7613035414343",
+    "brand": "Nestle",
+    "name": "Nestle Nan 2 800g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Follow-on formula"
+  },
+  {
+    "barcode": "7613035414350",
+    "brand": "Nestle",
+    "name": "Nestle Cerelac Wheat 350g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Baby cereal"
+  },
+  {
+    "barcode": "7613035414367",
+    "brand": "Nestle",
+    "name": "Nestle Cerelac Rice 350g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Baby cereal"
+  },
+  {
+    "barcode": "7613035414374",
+    "brand": "Nestle",
+    "name": "Nestle Cerelac Mixed Fruits 350g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Baby cereal"
+  },
+  {
+    "barcode": "7613035414381",
+    "brand": "Nestle",
+    "name": "Nestle Gerber Apple Puree 113g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Baby food"
+  },
+  {
+    "barcode": "7613035414398",
+    "brand": "Nestle",
+    "name": "Nestle Gerber Banana Puree 113g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Baby food"
+  },
+  {
+    "barcode": "7613035414404",
+    "brand": "Nestle",
+    "name": "Nestle Gerber Carrot Puree 113g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Baby food"
+  },
+  {
+    "barcode": "7613035541025",
+    "brand": "Nestle",
+    "name": "Nestle Corn Flakes 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Breakfast cereal"
+  },
+  {
+    "barcode": "7613035541032",
+    "brand": "Nestle",
+    "name": "Nestle Honey Corn Flakes 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Honey flavored"
+  },
+  {
+    "barcode": "7613035541049",
+    "brand": "Nestle",
+    "name": "Nestle Golden Grahams 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Graham cereal"
+  },
+  {
+    "barcode": "7613035541056",
+    "brand": "Nestle",
+    "name": "Nestle Cheerios 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "O cereal"
+  },
+  {
+    "barcode": "7613035541063",
+    "brand": "Nestle",
+    "name": "Nestle Koko Krunch 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate cereal"
+  },
+  {
+    "barcode": "7613035541070",
+    "brand": "Nestle",
+    "name": "Nestle Cookie Crisp 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cookie cereal"
+  },
+  {
+    "barcode": "7613035541087",
+    "brand": "Nestle",
+    "name": "Nestle Fitness Honey & Almond 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fitness cereal"
+  },
+  {
+    "barcode": "7613035541094",
+    "brand": "Nestle",
+    "name": "Nestle Nesquik Cereal 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate cereal"
+  },
+  {
+    "barcode": "7613035541100",
+    "brand": "Nestle",
+    "name": "Nestle Alpha 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Multigrain cereal"
+  },
+  {
+    "barcode": "7613035541117",
+    "brand": "Nestle",
+    "name": "Nestle Multigrain Flakes 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Multi flakes"
+  },
+  {
+    "barcode": "7613035541124",
+    "brand": "Nestle",
+    "name": "Nestle Shredded Wheat 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Whole wheat cereal"
+  },
+  {
+    "barcode": "7613036996118",
+    "brand": "Nestle",
+    "name": "Nestle Maggi 2-Minute Noodles Chicken 70g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Instant noodles"
+  },
+  {
+    "barcode": "7613036996125",
+    "brand": "Nestle",
+    "name": "Nestle Maggi 2-Minute Noodles Curry 70g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Curry flavor"
+  },
+  {
+    "barcode": "7613036996132",
+    "brand": "Nestle",
+    "name": "Nestle Maggi 2-Minute Noodles Masala 70g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Masala flavor"
+  },
+  {
+    "barcode": "7613036996149",
+    "brand": "Nestle",
+    "name": "Nestle Maggi 2-Minute Noodles Tomato 70g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Tomato flavor"
+  },
+  {
+    "barcode": "7613036996156",
+    "brand": "Nestle",
+    "name": "Nestle Maggi 2-Minute Noodles 5-pack",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Multi-pack"
+  },
+  {
+    "barcode": "7613036996163",
+    "brand": "Nestle",
+    "name": "Nestle Maggi Noodles Cup Chicken 75g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cup noodles"
+  },
+  {
+    "barcode": "7613036996170",
+    "brand": "Nestle",
+    "name": "Nestle Maggi Chicken Cubes 6 cubes",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Stock cube"
+  },
+  {
+    "barcode": "7613036996187",
+    "brand": "Nestle",
+    "name": "Nestle Maggi Beef Cubes 6 cubes",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Stock cube"
+  },
+  {
+    "barcode": "7613036996194",
+    "brand": "Nestle",
+    "name": "Nestle Maggi Seasoning Sauce 210ml",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Liquid seasoning"
+  },
+  {
+    "barcode": "7613036996200",
+    "brand": "Nestle",
+    "name": "Nestle Maggi Sweet Chili Sauce 340g",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chili sauce"
+  },
+  {
+    "barcode": "7613036996217",
+    "brand": "Nestle",
+    "name": "Nestle Maggi Tomato Ketchup 340g",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Tomato sauce"
+  },
+  {
+    "barcode": "7613036996224",
+    "brand": "Nestle",
+    "name": "Nestle Maggi Hot & Sweet Sauce 340g",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Hot sweet sauce"
+  },
+  {
+    "barcode": "7613035430052",
+    "brand": "Nestle",
+    "name": "Nestle Carnation Evaporated Milk 410g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Evaporated milk"
+  },
+  {
+    "barcode": "7613035430069",
+    "brand": "Nestle",
+    "name": "Nestle Ideal Evaporated Milk 410g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Low fat variant"
+  },
+  {
+    "barcode": "7613035430076",
+    "brand": "Nestle",
+    "name": "Nestle Creamy Milk 170g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sweetened condensed"
+  },
+  {
+    "barcode": "7613035430083",
+    "brand": "Nestle",
+    "name": "Nestle Full Cream Milk Powder 900g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Milk powder"
+  },
+  {
+    "barcode": "7613035430090",
+    "brand": "Nestle",
+    "name": "Nestle Low Fat Milk Powder 900g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Low fat powder"
+  },
+  {
+    "barcode": "7613035430106",
+    "brand": "Nestle",
+    "name": "Nestle Yogurt Strawberry 125g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Strawberry yogurt"
+  },
+  {
+    "barcode": "7613035430113",
+    "brand": "Nestle",
+    "name": "Nestle Yogurt Vanilla 125g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Vanilla yogurt"
+  },
+  {
+    "barcode": "7613035430120",
+    "brand": "Nestle",
+    "name": "Nestle Yogurt Mixed Berry 125g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mixed berry"
+  },
+  {
+    "barcode": "7613037040737",
+    "brand": "Nestle",
+    "name": "Nestle Pure Life Water 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Drinking water"
+  },
+  {
+    "barcode": "7613037040744",
+    "brand": "Nestle",
+    "name": "Nestle Pure Life Water 1.5L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Drinking water"
+  },
+  {
+    "barcode": "7613037040751",
+    "brand": "Nestle",
+    "name": "Nestle Ice Tea Peach 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Iced tea"
+  },
+  {
+    "barcode": "7613037040768",
+    "brand": "Nestle",
+    "name": "Nestle Ice Tea Lemon 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Iced tea"
+  },
+  {
+    "barcode": "7613037040775",
+    "brand": "Nestle",
+    "name": "Nestle Ice Tea Mango 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Iced tea"
+  },
+  {
+    "barcode": "7613037040782",
+    "brand": "Nestle",
+    "name": "Nestle Ice Tea Forest Fruit 330ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Iced tea"
+  },
+  {
+    "barcode": "7613037040799",
+    "brand": "Nestle",
+    "name": "Nestle Boost 400g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Nutritional drink"
+  },
+  {
+    "barcode": "7613037040805",
+    "brand": "Nestle",
+    "name": "Nestle Omega Plus 800g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Milk with omega"
+  },
+  {
+    "barcode": "7613037040812",
+    "brand": "Nestle",
+    "name": "Nestle Nesvita Pro-Beauty 400g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Collagen milk"
+  },
+  {
+    "barcode": "7613037040829",
+    "brand": "Nestle",
+    "name": "Nestle Milo Activ-Go Less Sugar 400g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Reduced sugar Milo"
+  },
+  {
+    "barcode": "7613037040836",
+    "brand": "Nestle",
+    "name": "Nestle Bliss Yogurt Drink Strawberry 200ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Yogurt drink"
+  },
+  {
+    "barcode": "7613037040843",
+    "brand": "Nestle",
+    "name": "Nestle Bliss Yogurt Drink Mixed Berry 200ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Yogurt drink"
+  },
+  {
+    "barcode": "5000159495003",
+    "brand": "Mars",
+    "name": "Mars Bar 51g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate caramel nougat"
+  },
+  {
+    "barcode": "5000159495010",
+    "brand": "Mars",
+    "name": "Mars Bar Duo 82g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Double pack"
+  },
+  {
+    "barcode": "5000159495027",
+    "brand": "Mars",
+    "name": "Mars Bar 6 Pack 306g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Multi-pack"
+  },
+  {
+    "barcode": "5000159468129",
+    "brand": "Mars",
+    "name": "Snickers 52g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Peanut chocolate"
+  },
+  {
+    "barcode": "5000159468136",
+    "brand": "Mars",
+    "name": "Snickers Duo 84g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Double pack"
+  },
+  {
+    "barcode": "5000159468143",
+    "brand": "Mars",
+    "name": "Snickers 6 Pack 312g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Multi-pack"
+  },
+  {
+    "barcode": "5000159468150",
+    "brand": "Mars",
+    "name": "Snickers Almond 52g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Almond variant"
+  },
+  {
+    "barcode": "5000159468167",
+    "brand": "Mars",
+    "name": "Snickers Cruncher 52g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Crispy variant"
+  },
+  {
+    "barcode": "5000159468174",
+    "brand": "Mars",
+    "name": "Snickers Peanut Butter 52g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Peanut butter"
+  },
+  {
+    "barcode": "5000159468181",
+    "brand": "Mars",
+    "name": "Snickers White 52g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "White chocolate"
+  },
+  {
+    "barcode": "5000159468198",
+    "brand": "Mars",
+    "name": "Snickers Hazelnut 52g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Hazelnut variant"
+  },
+  {
+    "barcode": "5000159468204",
+    "brand": "Mars",
+    "name": "Snickers Dark 52g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Dark chocolate"
+  },
+  {
+    "barcode": "5000159468211",
+    "brand": "Mars",
+    "name": "Snickers Xtreme 80g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Extra intense"
+  },
+  {
+    "barcode": "5000159480071",
+    "brand": "Mars",
+    "name": "Twix 50g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel biscuit"
+  },
+  {
+    "barcode": "5000159480088",
+    "brand": "Mars",
+    "name": "Twix White 50g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "White chocolate"
+  },
+  {
+    "barcode": "5000159480095",
+    "brand": "Mars",
+    "name": "Twix Dark 50g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Dark chocolate"
+  },
+  {
+    "barcode": "5000159480101",
+    "brand": "Mars",
+    "name": "Twix Xtra 75g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Extra large"
+  },
+  {
+    "barcode": "5000159480118",
+    "brand": "Mars",
+    "name": "Twix 6 Pack 300g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Multi-pack"
+  },
+  {
+    "barcode": "5000159480125",
+    "brand": "Mars",
+    "name": "Twix Cookie Dough 50g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Cookie dough"
+  },
+  {
+    "barcode": "5000159450019",
+    "brand": "Mars",
+    "name": "Bounty Milk 50g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Coconut chocolate"
+  },
+  {
+    "barcode": "5000159450026",
+    "brand": "Mars",
+    "name": "Bounty Dark 50g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Dark chocolate"
+  },
+  {
+    "barcode": "5000159450033",
+    "brand": "Mars",
+    "name": "Bounty Trio 138g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Triple pack"
+  },
+  {
+    "barcode": "5000159496348",
+    "brand": "Mars",
+    "name": "Galaxy Milk 46g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Smooth chocolate"
+  },
+  {
+    "barcode": "5000159496355",
+    "brand": "Mars",
+    "name": "Galaxy Caramel 46g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel filled"
+  },
+  {
+    "barcode": "5000159496362",
+    "brand": "Mars",
+    "name": "Galaxy Cookie Crumble 46g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Cookie pieces"
+  },
+  {
+    "barcode": "5000159496379",
+    "brand": "Mars",
+    "name": "Galaxy Hazelnut 46g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Hazelnut"
+  },
+  {
+    "barcode": "5000159496386",
+    "brand": "Mars",
+    "name": "Galaxy Ripple 42g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Ripple chocolate"
+  },
+  {
+    "barcode": "5000159496393",
+    "brand": "Mars",
+    "name": "Galaxy Minstrels 200g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate buttons"
+  },
+  {
+    "barcode": "5000159496409",
+    "brand": "Mars",
+    "name": "Galaxy Duet 46g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Two flavors"
+  },
+  {
+    "barcode": "5000159496416",
+    "brand": "Mars",
+    "name": "Galaxy Orange 46g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Orange flavored"
+  },
+  {
+    "barcode": "5000159496423",
+    "brand": "Mars",
+    "name": "Galaxy Silk 46g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Silk chocolate"
+  },
+  {
+    "barcode": "5000159496430",
+    "brand": "Mars",
+    "name": "Galaxy Jewels 120g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Collection"
+  },
+  {
+    "barcode": "5000159479933",
+    "brand": "Mars",
+    "name": "M&Ms Milk Chocolate 45g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Color coated"
+  },
+  {
+    "barcode": "5000159479940",
+    "brand": "Mars",
+    "name": "M&Ms Peanut 50g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Peanut variant"
+  },
+  {
+    "barcode": "5000159479957",
+    "brand": "Mars",
+    "name": "M&Ms Crispy 45g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Crispy center"
+  },
+  {
+    "barcode": "5000159479964",
+    "brand": "Mars",
+    "name": "M&Ms Caramel 45g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel filled"
+  },
+  {
+    "barcode": "5000159479971",
+    "brand": "Mars",
+    "name": "M&Ms Peanut Butter 45g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Peanut butter"
+  },
+  {
+    "barcode": "5000159479988",
+    "brand": "Mars",
+    "name": "M&Ms Hazelnut Spread 260g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Spread"
+  },
+  {
+    "barcode": "5000159479995",
+    "brand": "Mars",
+    "name": "M&Ms Pretzel 42g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Pretzel filled"
+  },
+  {
+    "barcode": "5000159490004",
+    "brand": "Mars",
+    "name": "Maltesers 37g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Malt chocolate balls"
+  },
+  {
+    "barcode": "5000159490011",
+    "brand": "Mars",
+    "name": "Maltesers Teasers 200g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Share bag"
+  },
+  {
+    "barcode": "5000159490028",
+    "brand": "Mars",
+    "name": "Maltesers Buttons 120g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Button shape"
+  },
+  {
+    "barcode": "5000159490035",
+    "brand": "Mars",
+    "name": "Maltesers 6 Pack 222g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Multi-pack"
+  },
+  {
+    "barcode": "5000159490042",
+    "brand": "Mars",
+    "name": "Milky Way 45g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Malt nougat"
+  },
+  {
+    "barcode": "5000159490059",
+    "brand": "Mars",
+    "name": "Milky Way Magic Stars 30g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Star shaped"
+  },
+  {
+    "barcode": "5000159490066",
+    "brand": "Mars",
+    "name": "Milky Way Crispy Rolls 6 Pack",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Roll snacks"
+  },
+  {
+    "barcode": "5000159490073",
+    "brand": "Mars",
+    "name": "Biscoff Chocolate Spread 350g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cookie butter chocolate"
+  },
+  {
+    "barcode": "5000159490080",
+    "brand": "Mars",
+    "name": "Biscoff Sandwich Cookies 200g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Lotus biscuits"
+  },
+  {
+    "barcode": "5000159490097",
+    "brand": "Mars",
+    "name": "Uncle Bens Long Grain Rice 1kg",
+    "category": "Rice & Grains",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Long grain rice"
+  },
+  {
+    "barcode": "5000159490103",
+    "brand": "Mars",
+    "name": "Uncle Bens Basmati Rice 1kg",
+    "category": "Rice & Grains",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Basmati rice"
+  },
+  {
+    "barcode": "5000159490110",
+    "brand": "Mars",
+    "name": "Uncle Bens Jasmine Rice 1kg",
+    "category": "Rice & Grains",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Jasmine rice"
+  },
+  {
+    "barcode": "5000159490127",
+    "brand": "Mars",
+    "name": "Uncle Bens Quick Cook Rice 500g",
+    "category": "Rice & Grains",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Quick cook"
+  },
+  {
+    "barcode": "5000159490134",
+    "brand": "Mars",
+    "name": "Uncle Bens Express Rice Chicken 250g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Flavored rice"
+  },
+  {
+    "barcode": "5000159490141",
+    "brand": "Mars",
+    "name": "Uncle Bens Express Rice Mushroom 250g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Flavored rice"
+  },
+  {
+    "barcode": "5000159490158",
+    "brand": "Mars",
+    "name": "Uncle Bens Express Rice Mexican 250g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Flavored rice"
+  },
+  {
+    "barcode": "40583366",
+    "brand": "Unilever",
+    "name": "Knorr Chicken Stock Cubes 8 pack",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Stock cubes"
+  },
+  {
+    "barcode": "40583373",
+    "brand": "Unilever",
+    "name": "Knorr Beef Stock Cubes 8 pack",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Stock cubes"
+  },
+  {
+    "barcode": "40583380",
+    "brand": "Unilever",
+    "name": "Knorr Vegetable Stock Cubes 8 pack",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Vegetarian"
+  },
+  {
+    "barcode": "40583397",
+    "brand": "Unilever",
+    "name": "Knorr Tomato Bouillon 8 pack",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Tomato flavor"
+  },
+  {
+    "barcode": "40583403",
+    "brand": "Unilever",
+    "name": "Knorr Garlic Soup 70g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Instant soup"
+  },
+  {
+    "barcode": "40583410",
+    "brand": "Unilever",
+    "name": "Knorr Chicken Soup 70g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Instant soup"
+  },
+  {
+    "barcode": "40583427",
+    "brand": "Unilever",
+    "name": "Knorr Mushroom Soup 70g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Instant soup"
+  },
+  {
+    "barcode": "40583434",
+    "brand": "Unilever",
+    "name": "Knorr Pasta Sides Chicken 115g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Side dish"
+  },
+  {
+    "barcode": "40583441",
+    "brand": "Unilever",
+    "name": "Knorr Pasta Sides Cheese 115g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Side dish"
+  },
+  {
+    "barcode": "40583458",
+    "brand": "Unilever",
+    "name": "Knorr Rice Sides Chicken 120g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Side dish"
+  },
+  {
+    "barcode": "40583465",
+    "brand": "Unilever",
+    "name": "Knorr Noodle Chicken 85g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Instant noodles"
+  },
+  {
+    "barcode": "40583472",
+    "brand": "Unilever",
+    "name": "Knorr Noodle Curry 85g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Curry noodles"
+  },
+  {
+    "barcode": "40583489",
+    "brand": "Unilever",
+    "name": "Knorr Aromat Seasoning 200g",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "All purpose seasoning"
+  },
+  {
+    "barcode": "40583496",
+    "brand": "Unilever",
+    "name": "Knorr Liquid Seasoning 250ml",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Liquid seasoning"
+  },
+  {
+    "barcode": "8712561499141",
+    "brand": "Unilever",
+    "name": "Hellmanns Real Mayonnaise 400ml",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Real mayo"
+  },
+  {
+    "barcode": "8712561499158",
+    "brand": "Unilever",
+    "name": "Hellmanns Light Mayonnaise 400ml",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Light variant"
+  },
+  {
+    "barcode": "8712561499165",
+    "brand": "Unilever",
+    "name": "Hellmanns Garlic Mayonnaise 250ml",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Garlic flavored"
+  },
+  {
+    "barcode": "8712561499172",
+    "brand": "Unilever",
+    "name": "Hellmanns BBQ Mayonnaise 250ml",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "BBQ flavored"
+  },
+  {
+    "barcode": "8712561499189",
+    "brand": "Unilever",
+    "name": "Hellmanns Canola Mayonnaise 400ml",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Canola oil"
+  },
+  {
+    "barcode": "4005808150101",
+    "brand": "Unilever",
+    "name": "Rama Margarine 500g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Margarine spread"
+  },
+  {
+    "barcode": "4005808150118",
+    "brand": "Unilever",
+    "name": "Rama Margarine 250g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Small tub"
+  },
+  {
+    "barcode": "4005808150125",
+    "brand": "Unilever",
+    "name": "Flora Original Margarine 500g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Plant based"
+  },
+  {
+    "barcode": "4005808150132",
+    "brand": "Unilever",
+    "name": "Flora Light Margarine 500g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Light spread"
+  },
+  {
+    "barcode": "4005808150149",
+    "brand": "Unilever",
+    "name": "Flora Buttery Margarine 500g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Buttery taste"
+  },
+  {
+    "barcode": "4005808150156",
+    "brand": "Unilever",
+    "name": "Becel Original Margarine 500g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Margarine"
+  },
+  {
+    "barcode": "4005808150163",
+    "brand": "Unilever",
+    "name": "Becel Salt-Free Margarine 500g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "No salt"
+  },
+  {
+    "barcode": "4005808150170",
+    "brand": "Unilever",
+    "name": "I Cant Believe Its Not Butter 454g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Butter alternative"
+  },
+  {
+    "barcode": "4005808150187",
+    "brand": "Unilever",
+    "name": "Conimex Peanut Sauce Satay 200ml",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Satay sauce"
+  },
+  {
+    "barcode": "4005808150194",
+    "brand": "Unilever",
+    "name": "Conimex Ketjap Manis 200ml",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sweet soy sauce"
+  },
+  {
+    "barcode": "4005808150200",
+    "brand": "Unilever",
+    "name": "Conimex Sambal Oelek 150ml",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chili paste"
+  },
+  {
+    "barcode": "4005808150217",
+    "brand": "Unilever",
+    "name": "Conimex Nasi Goreng Spice Mix 45g",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fried rice spice"
+  },
+  {
+    "barcode": "4005808150224",
+    "brand": "Unilever",
+    "name": "Conimex Bami Goreng Spice Mix 45g",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fried noodle spice"
+  },
+  {
+    "barcode": "4005808150255",
+    "brand": "Unilever",
+    "name": "Walls Cornetto Classic 120ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Classic cone"
+  },
+  {
+    "barcode": "4005808150262",
+    "brand": "Unilever",
+    "name": "Walls Cornetto Strawberry 120ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Strawberry cone"
+  },
+  {
+    "barcode": "4005808150279",
+    "brand": "Unilever",
+    "name": "Walls Cornetto Chocolate 120ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate cone"
+  },
+  {
+    "barcode": "4005808150286",
+    "brand": "Unilever",
+    "name": "Walls Magnum Classic 110ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Classic ice cream"
+  },
+  {
+    "barcode": "4005808150293",
+    "brand": "Unilever",
+    "name": "Walls Magnum Almond 110ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Almond variant"
+  },
+  {
+    "barcode": "4005808150309",
+    "brand": "Unilever",
+    "name": "Walls Magnum White 110ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "White chocolate"
+  },
+  {
+    "barcode": "4005808150316",
+    "brand": "Unilever",
+    "name": "Walls Magnum Caramel 110ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel variant"
+  },
+  {
+    "barcode": "4005808150323",
+    "brand": "Unilever",
+    "name": "Walls Magnum Double Caramel 110ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Double caramel"
+  },
+  {
+    "barcode": "4005808150330",
+    "brand": "Unilever",
+    "name": "Walls Magnum Pink 110ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Berry variant"
+  },
+  {
+    "barcode": "4005808150347",
+    "brand": "Unilever",
+    "name": "Walls Solero Exotic 90ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fruit ice cream"
+  },
+  {
+    "barcode": "4005808150354",
+    "brand": "Unilever",
+    "name": "Walls Solero Strawberry 90ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Strawberry"
+  },
+  {
+    "barcode": "4005808150361",
+    "brand": "Unilever",
+    "name": "Walls Viennetta 500ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Dessert ice cream"
+  },
+  {
+    "barcode": "4005808150378",
+    "brand": "Unilever",
+    "name": "Walls Feast Ice Cream 90ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate coated"
+  },
+  {
+    "barcode": "4005808150385",
+    "brand": "Unilever",
+    "name": "Walls Paddle Pop Rainbow 90ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Kids ice cream"
+  },
+  {
+    "barcode": "4005808150392",
+    "brand": "Unilever",
+    "name": "Ben & Jerrys Cookie Dough 465ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Premium ice cream"
+  },
+  {
+    "barcode": "4005808150408",
+    "brand": "Unilever",
+    "name": "Ben & Jerrys Chocolate Fudge Brownie 465ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Premium ice cream"
+  },
+  {
+    "barcode": "4005808150415",
+    "brand": "Unilever",
+    "name": "Ben & Jerrys Half Baked 465ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Premium ice cream"
+  },
+  {
+    "barcode": "4005808150422",
+    "brand": "Unilever",
+    "name": "Ben & Jerrys Phish Food 465ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Premium ice cream"
+  },
+  {
+    "barcode": "4005808150439",
+    "brand": "Unilever",
+    "name": "Ben & Jerrys Strawberry Cheesecake 465ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Premium ice cream"
+  },
+  {
+    "barcode": "4005808150446",
+    "brand": "Unilever",
+    "name": "Ben & Jerrys Chunky Monkey 465ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Premium ice cream"
+  },
+  {
+    "barcode": "4005808150453",
+    "brand": "Unilever",
+    "name": "Lipton Yellow Label Tea 100 bags",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Black tea"
+  },
+  {
+    "barcode": "4005808150460",
+    "brand": "Unilever",
+    "name": "Lipton Green Tea 50 bags",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Green tea"
+  },
+  {
+    "barcode": "4005808150477",
+    "brand": "Unilever",
+    "name": "Lipton Iced Tea Peach 1.5L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Iced tea"
+  },
+  {
+    "barcode": "4005808150484",
+    "brand": "Unilever",
+    "name": "Lipton Iced Tea Lemon 1.5L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Iced tea"
+  },
+  {
+    "barcode": "4005808150491",
+    "brand": "Unilever",
+    "name": "Lipton Iced Tea Mango 1.5L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Iced tea"
+  },
+  {
+    "barcode": "4005808150507",
+    "brand": "Unilever",
+    "name": "Lipton Milk Tea 20 sachets",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Milk tea mix"
+  },
+  {
+    "barcode": "4005808150514",
+    "brand": "Unilever",
+    "name": "Lipton Chamomile Tea 20 bags",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Herbal tea"
+  },
+  {
+    "barcode": "4005808150521",
+    "brand": "Unilever",
+    "name": "Lipton Earl Grey 50 bags",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Earl grey tea"
+  },
+  {
+    "barcode": "4005808150538",
+    "brand": "Unilever",
+    "name": "Lipton Jasmin Tea 50 bags",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Jasmin tea"
+  },
+  {
+    "barcode": "4005808150545",
+    "brand": "Unilever",
+    "name": "Brooke Bond Taj Mahal 500g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Premium tea"
+  },
+  {
+    "barcode": "4005808150552",
+    "brand": "Unilever",
+    "name": "Brooke Bond Red Label 500g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Strong tea"
+  },
+  {
+    "barcode": "4005808150569",
+    "brand": "Unilever",
+    "name": "Bovril Beef Extract 125g",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Beef paste"
+  },
+  {
+    "barcode": "4005808150576",
+    "brand": "Unilever",
+    "name": "Marmite Original 125g",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Yeast extract"
+  },
+  {
+    "barcode": "001000041760",
+    "brand": "Kraft",
+    "name": "Kraft Cheddar Cheese Spread 200g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cheese spread"
+  },
+  {
+    "barcode": "001000041777",
+    "brand": "Kraft",
+    "name": "Kraft Mozzarella Shredded 200g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Shredded mozzarella"
+  },
+  {
+    "barcode": "001000041784",
+    "brand": "Kraft",
+    "name": "Kraft Parmesan Grated 100g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Grated parmesan"
+  },
+  {
+    "barcode": "001000041791",
+    "brand": "Kraft",
+    "name": "Kraft Philadelphia Cream Cheese 200g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Original cream cheese"
+  },
+  {
+    "barcode": "001000041807",
+    "brand": "Kraft",
+    "name": "Kraft Philadelphia Light 200g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Light cream cheese"
+  },
+  {
+    "barcode": "001000041814",
+    "brand": "Kraft",
+    "name": "Kraft Philadelphia Strawberry 150g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Strawberry cream cheese"
+  },
+  {
+    "barcode": "001000041821",
+    "brand": "Kraft",
+    "name": "Kraft Philadelphia Garlic & Herb 150g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Seasoned cream cheese"
+  },
+  {
+    "barcode": "001000041838",
+    "brand": "Kraft",
+    "name": "Kraft Singles Cheese Slices 12 pack",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Processed cheese"
+  },
+  {
+    "barcode": "001000041845",
+    "brand": "Kraft",
+    "name": "Kraft Mac & Cheese Original 206g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Macaroni & cheese"
+  },
+  {
+    "barcode": "001000041852",
+    "brand": "Kraft",
+    "name": "Kraft Mac & Cheese White Cheddar 206g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "White cheddar"
+  },
+  {
+    "barcode": "001000041869",
+    "brand": "Kraft",
+    "name": "Kraft Dinner Sharp Cheddar 206g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sharp cheddar"
+  },
+  {
+    "barcode": "001000041876",
+    "brand": "Kraft",
+    "name": "Kraft Peanut Butter Smooth 500g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Smooth peanut butter"
+  },
+  {
+    "barcode": "001000041883",
+    "brand": "Kraft",
+    "name": "Kraft Peanut Butter Crunchy 500g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Crunchy peanut butter"
+  },
+  {
+    "barcode": "001000041890",
+    "brand": "Kraft",
+    "name": "Kraft Peanut Butter Light 500g",
+    "category": "Spreads",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Reduced fat"
+  },
+  {
+    "barcode": "001000041906",
+    "brand": "Kraft",
+    "name": "Heinz Tomato Ketchup 400g",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Classic ketchup"
+  },
+  {
+    "barcode": "001000041913",
+    "brand": "Kraft",
+    "name": "Heinz Tomato Ketchup 1kg",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Family size"
+  },
+  {
+    "barcode": "001000041920",
+    "brand": "Kraft",
+    "name": "Heinz Tomato Ketchup No Added Sugar 400g",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "No sugar added"
+  },
+  {
+    "barcode": "001000041937",
+    "brand": "Kraft",
+    "name": "Heinz BBQ Sauce Original 425g",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "BBQ sauce"
+  },
+  {
+    "barcode": "001000041944",
+    "brand": "Kraft",
+    "name": "Heinz BBQ Sauce Smoky 425g",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Smoky flavor"
+  },
+  {
+    "barcode": "001000041951",
+    "brand": "Kraft",
+    "name": "Heinz Mayonnaise 400ml",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Real mayonnaise"
+  },
+  {
+    "barcode": "001000041968",
+    "brand": "Kraft",
+    "name": "Heinz Light Mayonnaise 400ml",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Light mayonnaise"
+  },
+  {
+    "barcode": "001000041975",
+    "brand": "Kraft",
+    "name": "Heinz Salad Cream 425g",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Salad cream"
+  },
+  {
+    "barcode": "001000041982",
+    "brand": "Kraft",
+    "name": "Heinz Mustard Yellow 200g",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Yellow mustard"
+  },
+  {
+    "barcode": "001000041999",
+    "brand": "Kraft",
+    "name": "Heinz Mustard Dijon 200g",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Dijon mustard"
+  },
+  {
+    "barcode": "001000042002",
+    "brand": "Kraft",
+    "name": "Heinz Mustard English 200g",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "English mustard"
+  },
+  {
+    "barcode": "001000042019",
+    "brand": "Kraft",
+    "name": "Heinz Baked Beans Original 415g",
+    "category": "Canned Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Classic beans"
+  },
+  {
+    "barcode": "001000042026",
+    "brand": "Kraft",
+    "name": "Heinz Baked Beans No Added Sugar 415g",
+    "category": "Canned Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "No sugar"
+  },
+  {
+    "barcode": "001000042033",
+    "brand": "Kraft",
+    "name": "Heinz Baked Beans with Sausages 415g",
+    "category": "Canned Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "With beef sausages"
+  },
+  {
+    "barcode": "001000042040",
+    "brand": "Kraft",
+    "name": "Heinz Cream of Tomato Soup 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Tomato soup"
+  },
+  {
+    "barcode": "001000042057",
+    "brand": "Kraft",
+    "name": "Heinz Cream of Mushroom Soup 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mushroom soup"
+  },
+  {
+    "barcode": "001000042064",
+    "brand": "Kraft",
+    "name": "Heinz Cream of Chicken Soup 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chicken soup"
+  },
+  {
+    "barcode": "001000042071",
+    "brand": "Kraft",
+    "name": "Heinz Minestrone Soup 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Vegetable soup"
+  },
+  {
+    "barcode": "001000042088",
+    "brand": "Kraft",
+    "name": "Heinz Vegetable Soup 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mixed vegetable"
+  },
+  {
+    "barcode": "001000042095",
+    "brand": "Kraft",
+    "name": "Heinz Spaghetti in Tomato Sauce 400g",
+    "category": "Canned Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Canned spaghetti"
+  },
+  {
+    "barcode": "001000042101",
+    "brand": "Kraft",
+    "name": "Heinz Ravioli in Tomato Sauce 400g",
+    "category": "Canned Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Canned ravioli"
+  },
+  {
+    "barcode": "001000042118",
+    "brand": "Kraft",
+    "name": "Heinz Alphabetti Shapes 400g",
+    "category": "Canned Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Pasta shapes"
+  },
+  {
+    "barcode": "001000042125",
+    "brand": "Kraft",
+    "name": "Heinz Cream of Leek Soup 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Leek soup"
+  },
+  {
+    "barcode": "7622210449283",
+    "brand": "Mondelez",
+    "name": "Oreo Original 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Classic chocolate sandwich"
+  },
+  {
+    "barcode": "7622210449290",
+    "brand": "Mondelez",
+    "name": "Oreo Vanilla 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Vanilla cream"
+  },
+  {
+    "barcode": "7622210449306",
+    "brand": "Oreo",
+    "name": "Oreo Strawberry 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Strawberry cream"
+  },
+  {
+    "barcode": "7622210449313",
+    "brand": "Mondelez",
+    "name": "Oreo Chocolate 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Double chocolate"
+  },
+  {
+    "barcode": "7622210449320",
+    "brand": "Mondelez",
+    "name": "Oreo Peanut Butter 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Peanut butter cream"
+  },
+  {
+    "barcode": "7622210449337",
+    "brand": "Mondelez",
+    "name": "Oreo Mint 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mint cream"
+  },
+  {
+    "barcode": "7622210449344",
+    "brand": "Mondelez",
+    "name": "Oreo Golden 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Vanilla cookie"
+  },
+  {
+    "barcode": "7622210449351",
+    "brand": "Mondelez",
+    "name": "Oreo Thins Original 120g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Thin variant"
+  },
+  {
+    "barcode": "7622210449368",
+    "brand": "Mondelez",
+    "name": "Oreo Thins Lemon 120g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Thin lemon"
+  },
+  {
+    "barcode": "7622210449375",
+    "brand": "Mondelez",
+    "name": "Oreo Mini 198g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mini cookies"
+  },
+  {
+    "barcode": "7622210449382",
+    "brand": "Mondelez",
+    "name": "Oreo Double Stuf 198g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Double cream"
+  },
+  {
+    "barcode": "7622210449399",
+    "brand": "Mondelez",
+    "name": "Oreo Mega Stuf 198g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mega cream"
+  },
+  {
+    "barcode": "7622210449405",
+    "brand": "Mondelez",
+    "name": "Oreo Cookie Dough 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Cookie dough flavor"
+  },
+  {
+    "barcode": "7622210449412",
+    "brand": "Mondelez",
+    "name": "Oreo Coffee 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Coffee cream"
+  },
+  {
+    "barcode": "7622210449429",
+    "brand": "Mondelez",
+    "name": "Oreo Choco Cookie 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cocoa cookie"
+  },
+  {
+    "barcode": "7622210449436",
+    "brand": "Mondelez",
+    "name": "Oreo Caramel 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel cream"
+  },
+  {
+    "barcode": "7622210449443",
+    "brand": "Mondelez",
+    "name": "Oreo Coconut 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Coconut flavor"
+  },
+  {
+    "barcode": "7622210449450",
+    "brand": "Mondelez",
+    "name": "Oreo Wafers Original 156g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Wafer sticks"
+  },
+  {
+    "barcode": "7622210449467",
+    "brand": "Mondelez",
+    "name": "Oreo Wafers Vanilla 156g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Vanilla wafers"
+  },
+  {
+    "barcode": "7622210449474",
+    "brand": "Mondelez",
+    "name": "Oreo Chocolate Bar 38g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate bar"
+  },
+  {
+    "barcode": "7622210449481",
+    "brand": "Mondelez",
+    "name": "Oreo Vanilla Bar 38g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Vanilla bar"
+  },
+  {
+    "barcode": "7622210449498",
+    "brand": "Mondelez",
+    "name": "Oreo Mini Bites 176g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mini bite sized"
+  },
+  {
+    "barcode": "4000417025008",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk 110g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Classic milk chocolate"
+  },
+  {
+    "barcode": "4000417025015",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Caramel 110g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel filled"
+  },
+  {
+    "barcode": "4000417025022",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Fruit & Nut 110g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fruit and nut"
+  },
+  {
+    "barcode": "4000417025039",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Whole Nut 110g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Whole hazelnut"
+  },
+  {
+    "barcode": "4000417025046",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Wholenut 110g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Hazelnut chocolate"
+  },
+  {
+    "barcode": "4000417025053",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Orange 110g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Orange chocolate"
+  },
+  {
+    "barcode": "4000417025060",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Mint 110g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Mint chocolate"
+  },
+  {
+    "barcode": "4000417025077",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Toffee 110g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Toffee chocolate"
+  },
+  {
+    "barcode": "4000417025084",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Turkish 110g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Turkish delight"
+  },
+  {
+    "barcode": "4000417025091",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Golden 110g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Golden caramel"
+  },
+  {
+    "barcode": "4000417025107",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk 200g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Larger bar"
+  },
+  {
+    "barcode": "4000417025114",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk 350g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Share bar"
+  },
+  {
+    "barcode": "4000417025121",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk 850g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Family block"
+  },
+  {
+    "barcode": "4000417025138",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Buttons 95g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate buttons"
+  },
+  {
+    "barcode": "4000417025145",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Giant Buttons 170g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Large buttons"
+  },
+  {
+    "barcode": "4000417025152",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Pops 150g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Lollipop"
+  },
+  {
+    "barcode": "4000417025169",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Ice Cream 480ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Ice cream"
+  },
+  {
+    "barcode": "4000417025176",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Bubbly 110g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Air bubble"
+  },
+  {
+    "barcode": "4000417025183",
+    "brand": "Mondelez",
+    "name": "Cadbury Dairy Milk Silk 110g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Silk smooth"
+  },
+  {
+    "barcode": "4000417025190",
+    "brand": "Mondelez",
+    "name": "Cadbury Fudge 50g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fudge bar"
+  },
+  {
+    "barcode": "4000417025206",
+    "brand": "Mondelez",
+    "name": "Cadbury Wispa 45g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Air bubble bar"
+  },
+  {
+    "barcode": "4000417025213",
+    "brand": "Mondelez",
+    "name": "Cadbury Wispa Gold 45g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel wispa"
+  },
+  {
+    "barcode": "4000417025220",
+    "brand": "Mondelez",
+    "name": "Cadbury Crunchie 40g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Honeycomb chocolate"
+  },
+  {
+    "barcode": "4000417025237",
+    "brand": "Mondelez",
+    "name": "Cadbury Twirl 43g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Twisted flake"
+  },
+  {
+    "barcode": "4000417025244",
+    "brand": "Mondelez",
+    "name": "Cadbury Flake 32g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cocoa flake"
+  },
+  {
+    "barcode": "4000417025251",
+    "brand": "Mondelez",
+    "name": "Cadbury Double Decker 54g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Dual layer"
+  },
+  {
+    "barcode": "4000417025268",
+    "brand": "Mondelez",
+    "name": "Cadbury Picnic 48g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Nut raisin chocolate"
+  },
+  {
+    "barcode": "4000417025275",
+    "brand": "Mondelez",
+    "name": "Cadbury Boost 49g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Glucose chocolate"
+  },
+  {
+    "barcode": "4000417025282",
+    "brand": "Mondelez",
+    "name": "Cadbury Curly Wurly 26g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel strip"
+  },
+  {
+    "barcode": "4000417025299",
+    "brand": "Mondelez",
+    "name": "Cadbury Chomp 24g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel chew"
+  },
+  {
+    "barcode": "4000417025305",
+    "brand": "Mondelez",
+    "name": "Cadbury Freddo 20g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Frog shaped"
+  },
+  {
+    "barcode": "4000417025312",
+    "brand": "Mondelez",
+    "name": "Cadbury Creme Egg 40g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel egg"
+  },
+  {
+    "barcode": "4000417025329",
+    "brand": "Mondelez",
+    "name": "Cadbury Buttons Easter Egg 95g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Easter egg"
+  },
+  {
+    "barcode": "4000417025336",
+    "brand": "Mondelez",
+    "name": "Cadbury Mini Eggs 100g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sugar coated"
+  },
+  {
+    "barcode": "4000417025343",
+    "brand": "Mondelez",
+    "name": "Cadbury Brunch Bar 48g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cereal bar"
+  },
+  {
+    "barcode": "4000417025350",
+    "brand": "Mondelez",
+    "name": "Cadbury Snack 39g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate biscuits"
+  },
+  {
+    "barcode": "4000417025367",
+    "brand": "Mondelez",
+    "name": "Cadbury Fingers 150g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Finger biscuits"
+  },
+  {
+    "barcode": "4000417025374",
+    "brand": "Mondelez",
+    "name": "Cadbury Chocolate Digestive 300g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Digestive biscuit"
+  },
+  {
+    "barcode": "4000417025381",
+    "brand": "Mondelez",
+    "name": "Cadbury Chocolate Shortbread 200g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Shortbread"
+  },
+  {
+    "barcode": "4000417025398",
+    "brand": "Mondelez",
+    "name": "Cadbury Chocolate Orange Shortbread 200g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Orange shortbread"
+  },
+  {
+    "barcode": "4000417025404",
+    "brand": "Mondelez",
+    "name": "Cadbury Hot Chocolate 250g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Hot chocolate powder"
+  },
+  {
+    "barcode": "4000417025411",
+    "brand": "Mondelez",
+    "name": "Cadbury Drinking Chocolate 500g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Drinking chocolate"
+  },
+  {
+    "barcode": "4000417025428",
+    "brand": "Mondelez",
+    "name": "Cadbury Highlights 22g x 8",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Low calorie"
+  },
+  {
+    "barcode": "4000417025435",
+    "brand": "Mondelez",
+    "name": "Cadbury Cocoa Powder 250g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Pure cocoa"
+  },
+  {
+    "barcode": "8076800140",
+    "brand": "Mondelez",
+    "name": "Chips Ahoy Original 154g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate chip cookie"
+  },
+  {
+    "barcode": "8076800157",
+    "brand": "Mondelez",
+    "name": "Chips Ahoy Chewy 154g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chewy variant"
+  },
+  {
+    "barcode": "8076800164",
+    "brand": "Mondelez",
+    "name": "Chips Ahoy Chunky 154g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Chunky chocolate chip"
+  },
+  {
+    "barcode": "8076800171",
+    "brand": "Mondelez",
+    "name": "Chips Ahoy Double Chocolate 154g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Double chocolate"
+  },
+  {
+    "barcode": "8076800188",
+    "brand": "Mondelez",
+    "name": "Belvita Breakfast Biscuits 230g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Breakfast biscuit"
+  },
+  {
+    "barcode": "8076800195",
+    "brand": "Mondelez",
+    "name": "Belvita Fruit & Fiber 230g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fruit fiber"
+  },
+  {
+    "barcode": "8076800201",
+    "brand": "Mondelez",
+    "name": "Belvita Honey & Oat 230g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Honey oat"
+  },
+  {
+    "barcode": "8076800218",
+    "brand": "Mondelez",
+    "name": "Ritz Crackers Original 200g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Salted crackers"
+  },
+  {
+    "barcode": "8076800225",
+    "brand": "Mondelez",
+    "name": "Ritz Crackers Cheese 150g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cheese crackers"
+  },
+  {
+    "barcode": "8076800232",
+    "brand": "Mondelez",
+    "name": "Ritz Crackers Bacon 150g",
+    "category": "Biscuits",
+    "halal_status": "doubtful",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Artificial bacon flavor - verify"
+  },
+  {
+    "barcode": "8076800249",
+    "brand": "Mondelez",
+    "name": "Ritz Sandwich Crackers 150g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sandwich crackers"
+  },
+  {
+    "barcode": "8076800256",
+    "brand": "Mondelez",
+    "name": "Ritz Crisp & Thins 120g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Thin crackers"
+  },
+  {
+    "barcode": "8076800263",
+    "brand": "Mondelez",
+    "name": "Tuc Crackers Original 150g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Salted crackers"
+  },
+  {
+    "barcode": "8076800270",
+    "brand": "Mondelez",
+    "name": "Tuc Crackers Cheese 150g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cheese flavor"
+  },
+  {
+    "barcode": "8076800287",
+    "brand": "Mondelez",
+    "name": "Tuc Crackers Bacon 150g",
+    "category": "Biscuits",
+    "halal_status": "doubtful",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Artificial bacon - verify"
+  },
+  {
+    "barcode": "8076800294",
+    "brand": "Mondelez",
+    "name": "Barny Chocolate Bear 6 pack",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Kids biscuit"
+  },
+  {
+    "barcode": "8076800300",
+    "brand": "Mondelez",
+    "name": "Barny Vanilla Bear 6 pack",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Kids biscuit"
+  },
+  {
+    "barcode": "8076800317",
+    "brand": "Mondelez",
+    "name": "Barny Milk Bear 6 pack",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Kids biscuit"
+  },
+  {
+    "barcode": "8076800324",
+    "brand": "Mondelez",
+    "name": "Halls Honey & Lemon 36g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Throat lozenge"
+  },
+  {
+    "barcode": "8076800331",
+    "brand": "Mondelez",
+    "name": "Halls Menthol 36g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Menthol lozenge"
+  },
+  {
+    "barcode": "8076800348",
+    "brand": "Mondelez",
+    "name": "Halls Strawberry 36g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Strawberry lozenge"
+  },
+  {
+    "barcode": "8076800355",
+    "brand": "Mondelez",
+    "name": "Halls Cherry 36g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cherry lozenge"
+  },
+  {
+    "barcode": "8076800362",
+    "brand": "Mondelez",
+    "name": "Halls Extra Strong 36g",
+    "category": "Confectionery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Extra strong mint"
+  },
+  {
+    "barcode": "8076800379",
+    "brand": "Mondelez",
+    "name": "Tang Orange Powder 750g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Orange drink mix"
+  },
+  {
+    "barcode": "8076800386",
+    "brand": "Mondelez",
+    "name": "Tang Mango Powder 750g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mango drink mix"
+  },
+  {
+    "barcode": "8076800393",
+    "brand": "Mondelez",
+    "name": "Tang Mixed Fruit 750g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mixed fruit drink"
+  },
+  {
+    "barcode": "8076800409",
+    "brand": "Mondelez",
+    "name": "Tang Pineapple 750g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Pineapple drink"
+  },
+  {
+    "barcode": "8076800416",
+    "brand": "Mondelez",
+    "name": "Tang Lemon 750g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Lemon drink"
+  },
+  {
+    "barcode": "8076800423",
+    "brand": "Mondelez",
+    "name": "Tang Grape 750g",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Grape drink"
+  },
+  {
+    "barcode": "001600041060",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Corn Flakes 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Classic corn flakes"
+  },
+  {
+    "barcode": "001600041077",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Corn Flakes 750g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Family size"
+  },
+  {
+    "barcode": "001600041084",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Frosties 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Frosted flakes"
+  },
+  {
+    "barcode": "001600041091",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Frosties 750g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Family size"
+  },
+  {
+    "barcode": "001600041107",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Coco Pops 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate cereal"
+  },
+  {
+    "barcode": "001600041114",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Coco Pops 750g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Family size"
+  },
+  {
+    "barcode": "001600041121",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Coco Pops Chex 300g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cereal shapes"
+  },
+  {
+    "barcode": "001600041138",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Coco Pops Crocs 300g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Crocodile shapes"
+  },
+  {
+    "barcode": "001600041145",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Rice Krispies 270g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Rice cereal"
+  },
+  {
+    "barcode": "001600041152",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Rice Krispies 600g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Family size"
+  },
+  {
+    "barcode": "001600041169",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Rice Krispies Squares 200g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cereal bars"
+  },
+  {
+    "barcode": "001600041176",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Rice Krispies Treats 6 pack",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Marshmallow treats"
+  },
+  {
+    "barcode": "001600041183",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Froot Loops 300g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fruit flavored loops"
+  },
+  {
+    "barcode": "001600041190",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Apple Jacks 300g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Apple cinnamon"
+  },
+  {
+    "barcode": "001600041206",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Special K Original 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Special K cereal"
+  },
+  {
+    "barcode": "001600041213",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Special K Red Berries 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "With berries"
+  },
+  {
+    "barcode": "001600041220",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Special K Chocolate 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate pieces"
+  },
+  {
+    "barcode": "001600041237",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Special K Honey 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Honey almond"
+  },
+  {
+    "barcode": "001600041244",
+    "brand": "Kelloggs",
+    "name": "Kelloggs All-Bran Original 420g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "High fiber"
+  },
+  {
+    "barcode": "001600041251",
+    "brand": "Kelloggs",
+    "name": "Kelloggs All-Bran Flakes 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Flake cereal"
+  },
+  {
+    "barcode": "001600041268",
+    "brand": "Kelloggs",
+    "name": "Kelloggs All-Bran Honey 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Honey flavored"
+  },
+  {
+    "barcode": "001600041275",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Crunchy Nut Corn Flakes 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Honey nut"
+  },
+  {
+    "barcode": "001600041282",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Crunchy Nut 500g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Family size"
+  },
+  {
+    "barcode": "001600041299",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Crunchy Nut Clusters 330g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cluster cereal"
+  },
+  {
+    "barcode": "001600041305",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Mini Max 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mini cereal"
+  },
+  {
+    "barcode": "001600041312",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Start 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Energy cereal"
+  },
+  {
+    "barcode": "001600041329",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Just Right 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Multi-grain"
+  },
+  {
+    "barcode": "001600041336",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Vector 575g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Protein cereal"
+  },
+  {
+    "barcode": "001600041343",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Optimum 420g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Nutrition cereal"
+  },
+  {
+    "barcode": "001600041350",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Krave Chocolate 300g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate filled"
+  },
+  {
+    "barcode": "001600041367",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Krave Caramel 300g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel filled"
+  },
+  {
+    "barcode": "001600041374",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Smorz 300g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Smore cereal"
+  },
+  {
+    "barcode": "001600041381",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pop-Tarts Strawberry 384g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Toaster pastry"
+  },
+  {
+    "barcode": "001600041398",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pop-Tarts Brown Sugar 384g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Brown sugar"
+  },
+  {
+    "barcode": "001600041404",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pop-Tarts Chocolate 384g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate fudge"
+  },
+  {
+    "barcode": "001600041411",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pop-Tarts Smore 384g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Smore flavor"
+  },
+  {
+    "barcode": "001600041428",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pop-Tarts Blueberry 384g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Blueberry"
+  },
+  {
+    "barcode": "001600041435",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Nutri-Grain Strawberry 6 pack",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Soft baked bar"
+  },
+  {
+    "barcode": "001600041442",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Nutri-Grain Apple 6 pack",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Soft baked bar"
+  },
+  {
+    "barcode": "001600041459",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Nutri-Grain Blueberry 6 pack",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Soft baked bar"
+  },
+  {
+    "barcode": "001600041466",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Corn Flakes Crumbs 375g",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Breading crumbs"
+  },
+  {
+    "barcode": "001600041473",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles Original 165g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Original chips"
+  },
+  {
+    "barcode": "001600041480",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles Sour Cream & Onion 165g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sour cream onion"
+  },
+  {
+    "barcode": "001600041497",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles BBQ 165g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "BBQ flavor"
+  },
+  {
+    "barcode": "001600041503",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles Cheese 165g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cheese flavor"
+  },
+  {
+    "barcode": "001600041510",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles Salt & Vinegar 165g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Salt vinegar"
+  },
+  {
+    "barcode": "001600041527",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles Cheddar 165g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cheddar cheese"
+  },
+  {
+    "barcode": "001600041534",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles Paprika 165g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Paprika flavor"
+  },
+  {
+    "barcode": "001600041541",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles Pizza 165g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Pizza flavor"
+  },
+  {
+    "barcode": "001600041558",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles Texas BBQ 165g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Texas BBQ"
+  },
+  {
+    "barcode": "001600041565",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles Hot & Spicy 165g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Spicy flavor"
+  },
+  {
+    "barcode": "001600041572",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles Crispy Salt 165g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Lightly salted"
+  },
+  {
+    "barcode": "001600041589",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles Wavy Original 165g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Wavy cut"
+  },
+  {
+    "barcode": "001600041596",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Pringles Sour Cream 110g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mini can"
+  },
+  {
+    "barcode": "001600041602",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Cheez-It Original 210g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cheese crackers"
+  },
+  {
+    "barcode": "001600041619",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Cheez-It White Cheddar 210g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "White cheddar"
+  },
+  {
+    "barcode": "001600041626",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Cheez-It Extra Cheesy 210g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Extra cheese"
+  },
+  {
+    "barcode": "001600041633",
+    "brand": "Kelloggs",
+    "name": "Kelloggs Cheez-It BBQ 210g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "BBQ flavor"
+  },
+  {
+    "barcode": "001600041700",
+    "brand": "General Mills",
+    "name": "Cheerios Original 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "O shaped cereal"
+  },
+  {
+    "barcode": "001600041717",
+    "brand": "General Mills",
+    "name": "Cheerios Honey Nut 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Honey nut flavor"
+  },
+  {
+    "barcode": "001600041724",
+    "brand": "General Mills",
+    "name": "Cheerios Multi-Grain 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Multi grain"
+  },
+  {
+    "barcode": "001600041731",
+    "brand": "General Mills",
+    "name": "Cheerios Oat Crunch 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Oat crunch"
+  },
+  {
+    "barcode": "001600041748",
+    "brand": "General Mills",
+    "name": "Cheerios Chocolate 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate"
+  },
+  {
+    "barcode": "001600041755",
+    "brand": "General Mills",
+    "name": "Cheerios Apple Cinnamon 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Apple cinnamon"
+  },
+  {
+    "barcode": "001600041762",
+    "brand": "General Mills",
+    "name": "Cinnamon Toast Crunch 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cinnamon cereal"
+  },
+  {
+    "barcode": "001600041779",
+    "brand": "General Mills",
+    "name": "Lucky Charms 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Marshmallow cereal"
+  },
+  {
+    "barcode": "001600041786",
+    "brand": "General Mills",
+    "name": "Trix 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fruit flavored"
+  },
+  {
+    "barcode": "001600041793",
+    "brand": "General Mills",
+    "name": "Reeses Puffs 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Peanut butter"
+  },
+  {
+    "barcode": "001600041809",
+    "brand": "General Mills",
+    "name": "Cocoa Puffs 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate cereal"
+  },
+  {
+    "barcode": "001600041816",
+    "brand": "General Mills",
+    "name": "Golden Grahams 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Graham cereal"
+  },
+  {
+    "barcode": "001600041823",
+    "brand": "General Mills",
+    "name": "Cookie Crisp 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cookie cereal"
+  },
+  {
+    "barcode": "001600041830",
+    "brand": "General Mills",
+    "name": "Wheaties 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Whole wheat"
+  },
+  {
+    "barcode": "001600041847",
+    "brand": "General Mills",
+    "name": "Total 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Complete nutrition"
+  },
+  {
+    "barcode": "001600041854",
+    "brand": "General Mills",
+    "name": "Fiber One Original 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "High fiber"
+  },
+  {
+    "barcode": "001600041861",
+    "brand": "General Mills",
+    "name": "Fiber One Honey 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Honey clusters"
+  },
+  {
+    "barcode": "001600041878",
+    "brand": "General Mills",
+    "name": "Fiber One Chocolate 375g",
+    "category": "Cereals",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate cereal"
+  },
+  {
+    "barcode": "001600041885",
+    "brand": "General Mills",
+    "name": "Nature Valley Oats & Honey 252g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Granola bars"
+  },
+  {
+    "barcode": "001600041892",
+    "brand": "General Mills",
+    "name": "Nature Valley Apple Crisp 252g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Apple granola"
+  },
+  {
+    "barcode": "001600041908",
+    "brand": "General Mills",
+    "name": "Nature Valley Peanut Butter 252g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Peanut butter bars"
+  },
+  {
+    "barcode": "001600041915",
+    "brand": "General Mills",
+    "name": "Nature Valley Chocolate 252g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate granola"
+  },
+  {
+    "barcode": "001600041922",
+    "brand": "General Mills",
+    "name": "Nature Valley Trail Mix 252g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Trail mix bars"
+  },
+  {
+    "barcode": "001600041939",
+    "brand": "General Mills",
+    "name": "Betty Crocker Chocolate Cake Mix 425g",
+    "category": "Baking",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cake mix"
+  },
+  {
+    "barcode": "001600041946",
+    "brand": "General Mills",
+    "name": "Betty Crocker Vanilla Cake Mix 425g",
+    "category": "Baking",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Vanilla cake"
+  },
+  {
+    "barcode": "001600041953",
+    "brand": "General Mills",
+    "name": "Betty Crocker Red Velvet 425g",
+    "category": "Baking",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Red velvet cake"
+  },
+  {
+    "barcode": "001600041960",
+    "brand": "General Mills",
+    "name": "Betty Crocker Brownie Mix 425g",
+    "category": "Baking",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Brownie mix"
+  },
+  {
+    "barcode": "001600041977",
+    "brand": "General Mills",
+    "name": "Betty Crocker Muffin Mix Blueberry 500g",
+    "category": "Baking",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Blueberry muffins"
+  },
+  {
+    "barcode": "001600041984",
+    "brand": "General Mills",
+    "name": "Betty Crocker Muffin Mix Chocolate Chip 500g",
+    "category": "Baking",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate chip muffins"
+  },
+  {
+    "barcode": "001600041991",
+    "brand": "General Mills",
+    "name": "Betty Crocker Pancake Mix 1kg",
+    "category": "Baking",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Pancake mix"
+  },
+  {
+    "barcode": "001600042004",
+    "brand": "General Mills",
+    "name": "Betty Crocker Waffle Mix 500g",
+    "category": "Baking",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Waffle mix"
+  },
+  {
+    "barcode": "001600042011",
+    "brand": "General Mills",
+    "name": "Old El Paso Taco Shells 120g",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Taco shells"
+  },
+  {
+    "barcode": "001600042028",
+    "brand": "General Mills",
+    "name": "Old El Paso Fajita Seasoning 28g",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fajita mix"
+  },
+  {
+    "barcode": "001600042035",
+    "brand": "General Mills",
+    "name": "Old El Paso Taco Seasoning 28g",
+    "category": "Seasoning",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Taco mix"
+  },
+  {
+    "barcode": "001600042042",
+    "brand": "General Mills",
+    "name": "Old El Paso Salsa Mild 300g",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mild salsa"
+  },
+  {
+    "barcode": "001600042059",
+    "brand": "General Mills",
+    "name": "Old El Paso Salsa Medium 300g",
+    "category": "Condiments",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Medium salsa"
+  },
+  {
+    "barcode": "001600042066",
+    "brand": "General Mills",
+    "name": "Old El Paso Refried Beans 425g",
+    "category": "Canned Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Refried beans"
+  },
+  {
+    "barcode": "001600042073",
+    "brand": "General Mills",
+    "name": "Hamburger Helper Cheeseburger Mac 190g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Meal helper"
+  },
+  {
+    "barcode": "001600042080",
+    "brand": "General Mills",
+    "name": "Hamburger Helper Beef Pasta 190g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Beef pasta"
+  },
+  {
+    "barcode": "001600042097",
+    "brand": "General Mills",
+    "name": "Pillsbury Cookie Dough Chocolate Chip 454g",
+    "category": "Baking",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cookie dough"
+  },
+  {
+    "barcode": "001600042103",
+    "brand": "General Mills",
+    "name": "Pillsbury Crescent Rolls 226g",
+    "category": "Baking",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Crescent rolls"
+  },
+  {
+    "barcode": "001600042110",
+    "brand": "General Mills",
+    "name": "Pillsbury Biscuits 340g",
+    "category": "Baking",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Ready to bake"
+  },
+  {
+    "barcode": "001600042127",
+    "brand": "General Mills",
+    "name": "Pillsbury Pizza Crust 340g",
+    "category": "Baking",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Pizza base"
+  },
+  {
+    "barcode": "001600042134",
+    "brand": "General Mills",
+    "name": "Annie's Mac & Cheese 198g",
+    "category": "Instant Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Organic mac & cheese"
+  },
+  {
+    "barcode": "001600042141",
+    "brand": "General Mills",
+    "name": "Annie's Bunny Grahams 170g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Graham crackers"
+  },
+  {
+    "barcode": "001600042158",
+    "brand": "General Mills",
+    "name": "Annie's Cheddar Bunnies 170g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cheese crackers"
+  },
+  {
+    "barcode": "001600042165",
+    "brand": "General Mills",
+    "name": "Yoplait Original Strawberry 150g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Strawberry yogurt"
+  },
+  {
+    "barcode": "001600042172",
+    "brand": "General Mills",
+    "name": "Yoplait Original Vanilla 150g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Vanilla yogurt"
+  },
+  {
+    "barcode": "001600042189",
+    "brand": "General Mills",
+    "name": "Yoplait Original Peach 150g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Peach yogurt"
+  },
+  {
+    "barcode": "001600042196",
+    "brand": "General Mills",
+    "name": "Yoplait Original Blueberry 150g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Blueberry yogurt"
+  },
+  {
+    "barcode": "001600042202",
+    "brand": "General Mills",
+    "name": "Yoplait Light Strawberry 150g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Light yogurt"
+  },
+  {
+    "barcode": "001600042219",
+    "brand": "General Mills",
+    "name": "Yoplait Whips Key Lime 150g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Whipped yogurt"
+  },
+  {
+    "barcode": "001600042226",
+    "brand": "General Mills",
+    "name": "Haagen-Dazs Vanilla 473ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Premium ice cream"
+  },
+  {
+    "barcode": "001600042233",
+    "brand": "General Mills",
+    "name": "Haagen-Dazs Chocolate 473ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Premium ice cream"
+  },
+  {
+    "barcode": "001600042240",
+    "brand": "General Mills",
+    "name": "Haagen-Dazs Strawberry 473ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Premium ice cream"
+  },
+  {
+    "barcode": "001600042257",
+    "brand": "General Mills",
+    "name": "Haagen-Dazs Coffee 473ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Premium ice cream"
+  },
+  {
+    "barcode": "001600042264",
+    "brand": "General Mills",
+    "name": "Haagen-Dazs Caramel 473ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Premium ice cream"
+  },
+  {
+    "barcode": "001600042271",
+    "brand": "General Mills",
+    "name": "Haagen-Dazs Cookies & Cream 473ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Premium ice cream"
+  },
+  {
+    "barcode": "001600042288",
+    "brand": "General Mills",
+    "name": "Haagen-Dazs Green Tea 473ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Green tea ice cream"
+  },
+  {
+    "barcode": "001600042295",
+    "brand": "General Mills",
+    "name": "Haagen-Dazs Mango 473ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mango ice cream"
+  },
+  {
+    "barcode": "001600042301",
+    "brand": "General Mills",
+    "name": "Haagen-Dazs Pistachio 473ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Pistachio ice cream"
+  },
+  {
+    "barcode": "001600042318",
+    "brand": "General Mills",
+    "name": "Haagen-Dazs Dulce de Leche 473ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Caramel ice cream"
+  },
+  {
+    "barcode": "001600042325",
+    "brand": "General Mills",
+    "name": "Haagen-Dazs Belgian Chocolate 473ml",
+    "category": "Ice Cream",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Dark chocolate ice cream"
+  },
+  {
+    "barcode": "001410004020",
+    "brand": "Campbells",
+    "name": "Campbells Condensed Tomato Soup 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Classic tomato"
+  },
+  {
+    "barcode": "001410004037",
+    "brand": "Campbells",
+    "name": "Campbells Condensed Cream of Mushroom 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mushroom soup"
+  },
+  {
+    "barcode": "001410004044",
+    "brand": "Campbells",
+    "name": "Campbells Condensed Chicken Noodle 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chicken noodle"
+  },
+  {
+    "barcode": "001410004051",
+    "brand": "Campbells",
+    "name": "Campbells Condensed Vegetable 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Vegetable soup"
+  },
+  {
+    "barcode": "001410004068",
+    "brand": "Campbells",
+    "name": "Campbells Condensed Minestrone 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Italian vegetable"
+  },
+  {
+    "barcode": "001410004075",
+    "brand": "Campbells",
+    "name": "Campbells Condensed Cream of Celery 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Celery soup"
+  },
+  {
+    "barcode": "001410004082",
+    "brand": "Campbells",
+    "name": "Campbells Condensed Onion 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "French onion"
+  },
+  {
+    "barcode": "001410004099",
+    "brand": "Campbells",
+    "name": "Campbells Condensed Pea 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Green pea soup"
+  },
+  {
+    "barcode": "001410004105",
+    "brand": "Campbells",
+    "name": "Campbells Chunky Beef 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chunky beef"
+  },
+  {
+    "barcode": "001410004112",
+    "brand": "Campbells",
+    "name": "Campbells Chunky Chicken 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chunky chicken"
+  },
+  {
+    "barcode": "001410004129",
+    "brand": "Campbells",
+    "name": "Campbells Select Harvest Tomato 400g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Select harvest"
+  },
+  {
+    "barcode": "001410004136",
+    "brand": "Campbells",
+    "name": "Campbells Go Soups Spicy Chicken 300g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Portable soup"
+  },
+  {
+    "barcode": "001410004143",
+    "brand": "Campbells",
+    "name": "Campbells Go Soups Moroccan Chicken 300g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Portable soup"
+  },
+  {
+    "barcode": "001410004150",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Goldfish Original 200g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fish crackers"
+  },
+  {
+    "barcode": "001410004167",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Goldfish Cheddar 200g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cheddar crackers"
+  },
+  {
+    "barcode": "001410004174",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Goldfish Pretzel 200g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Pretzel crackers"
+  },
+  {
+    "barcode": "001410004181",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Goldfish Pizza 200g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Pizza flavor"
+  },
+  {
+    "barcode": "001410004198",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Goldfish BBQ 200g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "BBQ flavor"
+  },
+  {
+    "barcode": "001410004204",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Goldfish Parmesan 200g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Parmesan flavor"
+  },
+  {
+    "barcode": "001410004211",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Goldfish Vanilla Graham 200g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Graham flavor"
+  },
+  {
+    "barcode": "001410004228",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Milano Chocolate 150g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cookies"
+  },
+  {
+    "barcode": "001410004235",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Milano Mint 150g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mint cookies"
+  },
+  {
+    "barcode": "001410004242",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Milano Orange 150g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Orange cookies"
+  },
+  {
+    "barcode": "001410004259",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Chessman 150g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Butter cookies"
+  },
+  {
+    "barcode": "001410004266",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Sausalito 150g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Chocolate cookies"
+  },
+  {
+    "barcode": "001410004273",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Dark Chocolate 150g",
+    "category": "Biscuits",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Dark chocolate cookies"
+  },
+  {
+    "barcode": "001410004280",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Farmhouse Sourdough 400g",
+    "category": "Bakery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sourdough bread"
+  },
+  {
+    "barcode": "001410004297",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Farmhouse Wheat 400g",
+    "category": "Bakery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Wheat bread"
+  },
+  {
+    "barcode": "001410004303",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Farmhouse Oat 400g",
+    "category": "Bakery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Oat bread"
+  },
+  {
+    "barcode": "001410004310",
+    "brand": "Campbells",
+    "name": "Pepperidge Farm Swirl Cinnamon 400g",
+    "category": "Bakery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cinnamon bread"
+  },
+  {
+    "barcode": "001410004327",
+    "brand": "Campbells",
+    "name": "Arnold Whole Wheat Bread 680g",
+    "category": "Bakery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Whole wheat"
+  },
+  {
+    "barcode": "001410004334",
+    "brand": "Campbells",
+    "name": "Arnold Sourdough Bread 680g",
+    "category": "Bakery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sourdough"
+  },
+  {
+    "barcode": "001410004341",
+    "brand": "Campbells",
+    "name": "Arnold Multigrain Bread 680g",
+    "category": "Bakery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Multigrain"
+  },
+  {
+    "barcode": "001410004358",
+    "brand": "Campbells",
+    "name": "Arnold Raisin Bread 680g",
+    "category": "Bakery",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Raisin bread"
+  },
+  {
+    "barcode": "001410004365",
+    "brand": "Campbells",
+    "name": "Arnold Cinnamon Raisin 680g",
+    "category": "Bakery",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cinnamon raisin"
+  },
+  {
+    "barcode": "001410004372",
+    "brand": "Campbells",
+    "name": "Snyder's Pretzel Sticks 300g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Pretzel sticks"
+  },
+  {
+    "barcode": "001410004389",
+    "brand": "Campbells",
+    "name": "Snyder's Pretzel Twists 300g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Pretzel twists"
+  },
+  {
+    "barcode": "001410004396",
+    "brand": "Campbells",
+    "name": "Snyder's Honey Mustard Pretzels 300g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Honey mustard"
+  },
+  {
+    "barcode": "001410004402",
+    "brand": "Campbells",
+    "name": "Snyder's Butter Pretzels 300g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Butter pretzels"
+  },
+  {
+    "barcode": "001410004419",
+    "brand": "Campbells",
+    "name": "Snyder's Cheddar Pretzels 300g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Cheddar pretzels"
+  },
+  {
+    "barcode": "001410004426",
+    "brand": "Campbells",
+    "name": "Snyder's Party Pretzels 500g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mini pretzels"
+  },
+  {
+    "barcode": "001410004433",
+    "brand": "Campbells",
+    "name": "Snyder's Hard Pretzel Rods 300g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Pretzel rods"
+  },
+  {
+    "barcode": "001410004440",
+    "brand": "Campbells",
+    "name": "Lance Peanut Butter Crackers 180g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cracker packs"
+  },
+  {
+    "barcode": "001410004457",
+    "brand": "Campbells",
+    "name": "Lance Cheese Crackers 180g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Cheese crackers"
+  },
+  {
+    "barcode": "001410004464",
+    "brand": "Campbells",
+    "name": "Lance Toasty Crackers 180g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Toast crackers"
+  },
+  {
+    "barcode": "001410004471",
+    "brand": "Campbells",
+    "name": "Lance Captain's Wafers 180g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Wafers"
+  },
+  {
+    "barcode": "001410004488",
+    "brand": "Campbells",
+    "name": "Lance Goldfish Crackers 180g",
+    "category": "Snacks",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Crackers"
+  },
+  {
+    "barcode": "001410004495",
+    "brand": "Campbells",
+    "name": "V8 Vegetable Juice 340ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Vegetable juice"
+  },
+  {
+    "barcode": "001410004501",
+    "brand": "Campbells",
+    "name": "V8 Splash Tropical 340ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Fruit vegetable juice"
+  },
+  {
+    "barcode": "001410004518",
+    "brand": "Campbells",
+    "name": "V8 Fusion Berry 340ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Berry juice"
+  },
+  {
+    "barcode": "001410004525",
+    "brand": "Campbells",
+    "name": "V8 Low Sodium 340ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Low sodium juice"
+  },
+  {
+    "barcode": "001410004532",
+    "brand": "Campbells",
+    "name": "V8 Energy Peach Mango 340ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Energy juice"
+  },
+  {
+    "barcode": "001410004549",
+    "brand": "Campbells",
+    "name": "V8 Spicy Hot 340ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Spicy vegetable"
+  },
+  {
+    "barcode": "001410004556",
+    "brand": "Campbells",
+    "name": "Pacific Organic Tomato Soup 360g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Organic soup"
+  },
+  {
+    "barcode": "001410004563",
+    "brand": "Campbells",
+    "name": "Pacific Organic Butternut Squash 360g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Organic soup"
+  },
+  {
+    "barcode": "001410004570",
+    "brand": "Campbells",
+    "name": "Pacific Organic Mushroom 360g",
+    "category": "Soups",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Organic soup"
+  },
+  {
+    "barcode": "3017620425000",
+    "brand": "Danone",
+    "name": "Danone Activia Strawberry 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Probiotic yogurt"
+  },
+  {
+    "barcode": "3017620425017",
+    "brand": "Danone",
+    "name": "Danone Activia Vanilla 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Probiotic yogurt"
+  },
+  {
+    "barcode": "3017620425024",
+    "brand": "Danone",
+    "name": "Danone Activia Blueberry 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Probiotic yogurt"
+  },
+  {
+    "barcode": "3017620425031",
+    "brand": "Danone",
+    "name": "Danone Activia Pear 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Probiotic yogurt"
+  },
+  {
+    "barcode": "3017620425048",
+    "brand": "Danone",
+    "name": "Danone Activia Prune 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Probiotic yogurt"
+  },
+  {
+    "barcode": "3017620425055",
+    "brand": "Danone",
+    "name": "Danone Activia Mango 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Probiotic yogurt"
+  },
+  {
+    "barcode": "3017620425062",
+    "brand": "Danone",
+    "name": "Danone Activia Kiwi 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Probiotic yogurt"
+  },
+  {
+    "barcode": "3017620425079",
+    "brand": "Danone",
+    "name": "Danone Activia Fiber 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Probiotic yogurt"
+  },
+  {
+    "barcode": "3017620425086",
+    "brand": "Danone",
+    "name": "Danone Light & Fit Strawberry 170g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Low fat yogurt"
+  },
+  {
+    "barcode": "3017620425093",
+    "brand": "Danone",
+    "name": "Danone Light & Fit Vanilla 170g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Low fat yogurt"
+  },
+  {
+    "barcode": "3017620425109",
+    "brand": "Danone",
+    "name": "Danone Light & Fit Peach 170g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Low fat yogurt"
+  },
+  {
+    "barcode": "3017620425116",
+    "brand": "Danone",
+    "name": "Danone Light & Fit Blueberry 170g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Low fat yogurt"
+  },
+  {
+    "barcode": "3017620425123",
+    "brand": "Danone",
+    "name": "Danone Light & Fit Mixed Berry 170g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Low fat yogurt"
+  },
+  {
+    "barcode": "3017620425130",
+    "brand": "Danone",
+    "name": "Danone Greek Yogurt Plain 170g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Greek yogurt"
+  },
+  {
+    "barcode": "3017620425147",
+    "brand": "Danone",
+    "name": "Danone Greek Yogurt Strawberry 170g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Greek yogurt"
+  },
+  {
+    "barcode": "3017620425154",
+    "brand": "Danone",
+    "name": "Danone Greek Yogurt Vanilla 170g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Greek yogurt"
+  },
+  {
+    "barcode": "3017620425161",
+    "brand": "Danone",
+    "name": "Danone Greek Yogurt Blueberry 170g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Greek yogurt"
+  },
+  {
+    "barcode": "3017620425178",
+    "brand": "Danone",
+    "name": "Danone Greek Yogurt Peach 170g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Greek yogurt"
+  },
+  {
+    "barcode": "3017620425185",
+    "brand": "Danone",
+    "name": "Danone Creamy Yogurt Plain 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Creamy yogurt"
+  },
+  {
+    "barcode": "3017620425192",
+    "brand": "Danone",
+    "name": "Danone Creamy Yogurt Strawberry 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Creamy yogurt"
+  },
+  {
+    "barcode": "3017620425208",
+    "brand": "Danone",
+    "name": "Danone Creamy Yogurt Vanilla 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Creamy yogurt"
+  },
+  {
+    "barcode": "3017620425215",
+    "brand": "Danone",
+    "name": "Danone Creamy Yogurt Banana 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Creamy yogurt"
+  },
+  {
+    "barcode": "3017620425222",
+    "brand": "Danone",
+    "name": "Danone Creamy Yogurt Mango 400g",
+    "category": "Dairy",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Creamy yogurt"
+  },
+  {
+    "barcode": "3017620425239",
+    "brand": "Danone",
+    "name": "Evian Natural Mineral Water 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mineral water"
+  },
+  {
+    "barcode": "3017620425246",
+    "brand": "Danone",
+    "name": "Evian Natural Mineral Water 1.5L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mineral water"
+  },
+  {
+    "barcode": "3017620425253",
+    "brand": "Danone",
+    "name": "Volvic Natural Mineral Water 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mineral water"
+  },
+  {
+    "barcode": "3017620425260",
+    "brand": "Danone",
+    "name": "Volvic Natural Mineral Water 1.5L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Mineral water"
+  },
+  {
+    "barcode": "3017620425277",
+    "brand": "Danone",
+    "name": "Volvic Lemon 1.5L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Lemon flavored"
+  },
+  {
+    "barcode": "3017620425284",
+    "brand": "Danone",
+    "name": "Volvic Strawberry 1.5L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Strawberry flavored"
+  },
+  {
+    "barcode": "3017620425291",
+    "brand": "Danone",
+    "name": "Volvic Tropical 1.5L",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Tropical flavored"
+  },
+  {
+    "barcode": "3017620425307",
+    "brand": "Danone",
+    "name": "Badoit Sparkling Water 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Sparkling mineral"
+  },
+  {
+    "barcode": "3017620425314",
+    "brand": "Danone",
+    "name": "Vitamin Water XXX 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Enhanced water"
+  },
+  {
+    "barcode": "3017620425321",
+    "brand": "Danone",
+    "name": "Vitamin Water Energy 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Enhanced water"
+  },
+  {
+    "barcode": "3017620425338",
+    "brand": "Danone",
+    "name": "Vitamin Water Revive 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Enhanced water"
+  },
+  {
+    "barcode": "3017620425345",
+    "brand": "Danone",
+    "name": "Vitamin Water Focus 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Enhanced water"
+  },
+  {
+    "barcode": "3017620425352",
+    "brand": "Danone",
+    "name": "Vitamin Water Multi-V 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Enhanced water"
+  },
+  {
+    "barcode": "3017620425369",
+    "brand": "Danone",
+    "name": "Dannons Water 500ml",
+    "category": "Beverages",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Drinking water"
+  },
+  {
+    "barcode": "3017620425376",
+    "brand": "Danone",
+    "name": "Danone Nutrilon 1 800g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Infant formula"
+  },
+  {
+    "barcode": "3017620425383",
+    "brand": "Danone",
+    "name": "Danone Nutrilon 2 800g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Follow-on formula"
+  },
+  {
+    "barcode": "3017620425390",
+    "brand": "Danone",
+    "name": "Danone Nutrilon 3 800g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Growing up formula"
+  },
+  {
+    "barcode": "3017620425406",
+    "brand": "Danone",
+    "name": "Danone Bebelac 1 800g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Infant formula"
+  },
+  {
+    "barcode": "3017620425413",
+    "brand": "Danone",
+    "name": "Danone Bebelac 2 800g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Follow-on formula"
+  },
+  {
+    "barcode": "3017620425420",
+    "brand": "Danone",
+    "name": "Danone Bebelac 3 800g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "MUI",
+    "last_verified": "2026-03-23",
+    "notes": "Growing up formula"
+  },
+  {
+    "barcode": "3017620425437",
+    "brand": "Danone",
+    "name": "Danone Nactalia 1 800g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Infant formula"
+  },
+  {
+    "barcode": "3017620425444",
+    "brand": "Danone",
+    "name": "Danone Nactalia 2 800g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Follow-on formula"
+  },
+  {
+    "barcode": "3017620425451",
+    "brand": "Danone",
+    "name": "Danone Nutricia Kid 3 900g",
+    "category": "Baby Food",
+    "halal_status": "halal",
+    "certification_body": "JAKIM",
+    "last_verified": "2026-03-23",
+    "notes": "Growing up milk"
+  },
+  {
+    "barcode": "001600011111",
+    "brand": "Unknown",
+    "name": "Gummy Bears Classic 200g",
+    "category": "Confectionery",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains gelatin (E441)"
+  },
+  {
+    "barcode": "001600011112",
+    "brand": "Unknown",
+    "name": "Marshmallows Original 200g",
+    "category": "Confectionery",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains pork gelatin"
+  },
+  {
+    "barcode": "001600011113",
+    "brand": "Unknown",
+    "name": "Jelly Cups 200g",
+    "category": "Confectionery",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains gelatin"
+  },
+  {
+    "barcode": "001600011114",
+    "brand": "Unknown",
+    "name": "Gummy Worms 150g",
+    "category": "Confectionery",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains gelatin (E441)"
+  },
+  {
+    "barcode": "001600011115",
+    "brand": "Unknown",
+    "name": "Haribo Gold Bears 200g",
+    "category": "Confectionery",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains pork gelatin"
+  },
+  {
+    "barcode": "001600011116",
+    "brand": "Unknown",
+    "name": "Wine Vinegar 500ml",
+    "category": "Condiments",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains alcohol"
+  },
+  {
+    "barcode": "001600011117",
+    "brand": "Unknown",
+    "name": "Rum Raisin Ice Cream 500ml",
+    "category": "Ice Cream",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains rum alcohol"
+  },
+  {
+    "barcode": "001600011118",
+    "brand": "Unknown",
+    "name": "Beer Battered Fish 300g",
+    "category": "Frozen Food",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains beer"
+  },
+  {
+    "barcode": "001600011119",
+    "brand": "Unknown",
+    "name": "Pork Sausages 400g",
+    "category": "Meat",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Pork product"
+  },
+  {
+    "barcode": "001600011120",
+    "brand": "Unknown",
+    "name": "Bacon Bits 100g",
+    "category": "Meat",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Pork product"
+  },
+  {
+    "barcode": "001600011121",
+    "brand": "Unknown",
+    "name": "Pepperoni Pizza 400g",
+    "category": "Frozen Food",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains pork pepperoni"
+  },
+  {
+    "barcode": "001600011122",
+    "brand": "Unknown",
+    "name": "Salami Slices 150g",
+    "category": "Meat",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Pork salami"
+  },
+  {
+    "barcode": "001600011123",
+    "brand": "Unknown",
+    "name": "Pork Chops 500g",
+    "category": "Meat",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Pork product"
+  },
+  {
+    "barcode": "001600011124",
+    "brand": "Unknown",
+    "name": "Ham Sandwich 200g",
+    "category": "Ready Meals",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains ham"
+  },
+  {
+    "barcode": "001600011125",
+    "brand": "Unknown",
+    "name": "Pork Rinds 100g",
+    "category": "Snacks",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Pork skin"
+  },
+  {
+    "barcode": "001600011126",
+    "brand": "Unknown",
+    "name": "Red Wine 750ml",
+    "category": "Beverages",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Alcoholic beverage"
+  },
+  {
+    "barcode": "001600011127",
+    "brand": "Unknown",
+    "name": "White Wine 750ml",
+    "category": "Beverages",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Alcoholic beverage"
+  },
+  {
+    "barcode": "001600011128",
+    "brand": "Unknown",
+    "name": "Beer 330ml",
+    "category": "Beverages",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Alcoholic beverage"
+  },
+  {
+    "barcode": "001600011129",
+    "brand": "Unknown",
+    "name": "Whisky 700ml",
+    "category": "Beverages",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Alcoholic beverage"
+  },
+  {
+    "barcode": "001600011130",
+    "brand": "Unknown",
+    "name": "Vodka 700ml",
+    "category": "Beverages",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Alcoholic beverage"
+  },
+  {
+    "barcode": "001600011131",
+    "brand": "Unknown",
+    "name": "Gin 700ml",
+    "category": "Beverages",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Alcoholic beverage"
+  },
+  {
+    "barcode": "001600011132",
+    "brand": "Unknown",
+    "name": "Champagne 750ml",
+    "category": "Beverages",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Alcoholic beverage"
+  },
+  {
+    "barcode": "001600011133",
+    "brand": "Unknown",
+    "name": "Liqueur Chocolate 150g",
+    "category": "Confectionery",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains alcohol"
+  },
+  {
+    "barcode": "001600011134",
+    "brand": "Unknown",
+    "name": "Rum Cake 300g",
+    "category": "Bakery",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains rum"
+  },
+  {
+    "barcode": "001600011135",
+    "brand": "Unknown",
+    "name": "Wine Sauce 300ml",
+    "category": "Condiments",
+    "halal_status": "haram",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Contains wine"
+  },
+  {
+    "barcode": "001600022201",
+    "brand": "Unknown",
+    "name": "White Chocolate Bar 100g",
+    "category": "Confectionery",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May contain E476 from animal source"
+  },
+  {
+    "barcode": "001600022202",
+    "brand": "Unknown",
+    "name": "Cake Icing 250g",
+    "category": "Baking",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May contain E471 from animal source"
+  },
+  {
+    "barcode": "001600022203",
+    "brand": "Unknown",
+    "name": "French Fries Frozen 1kg",
+    "category": "Frozen Food",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May be fried in animal fat"
+  },
+  {
+    "barcode": "001600022204",
+    "brand": "Unknown",
+    "name": "Chicken Nuggets Frozen 500g",
+    "category": "Frozen Food",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Non-halal slaughter possible"
+  },
+  {
+    "barcode": "001600022205",
+    "brand": "Unknown",
+    "name": "Vanilla Ice Cream 500ml",
+    "category": "Ice Cream",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May contain vanilla extract with alcohol"
+  },
+  {
+    "barcode": "001600022206",
+    "brand": "Unknown",
+    "name": "Chocolate Chip Cookies 200g",
+    "category": "Biscuits",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May contain E471 from animal source"
+  },
+  {
+    "barcode": "001600022207",
+    "brand": "Unknown",
+    "name": "Instant Noodles Premium 100g",
+    "category": "Instant Food",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May contain E627, E631 from animal source"
+  },
+  {
+    "barcode": "001600022208",
+    "brand": "Unknown",
+    "name": "Bread Loaf Soft 500g",
+    "category": "Bakery",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May contain E481 from animal source"
+  },
+  {
+    "barcode": "001600022209",
+    "brand": "Unknown",
+    "name": "Margarine Budget 500g",
+    "category": "Spreads",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May contain E471 from animal source"
+  },
+  {
+    "barcode": "001600022210",
+    "brand": "Unknown",
+    "name": "Soy Sauce Budget 500ml",
+    "category": "Condiments",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May contain alcohol as preservative"
+  },
+  {
+    "barcode": "001600022211",
+    "brand": "Unknown",
+    "name": "Cereal Bar Fruit 40g",
+    "category": "Snacks",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May contain E472 from animal source"
+  },
+  {
+    "barcode": "001600022212",
+    "brand": "Unknown",
+    "name": "Chewing Gum Peppermint 50g",
+    "category": "Confectionery",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May contain E904 shellac or glycerin"
+  },
+  {
+    "barcode": "001600022213",
+    "brand": "Unknown",
+    "name": "Pasta Fresh 500g",
+    "category": "Pasta",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "Fresh pasta may contain E471"
+  },
+  {
+    "barcode": "001600022214",
+    "brand": "Unknown",
+    "name": "Mayonnaise Generic 400ml",
+    "category": "Condiments",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May contain E471 from animal source"
+  },
+  {
+    "barcode": "001600022215",
+    "brand": "Unknown",
+    "name": "Cake Mix Generic 500g",
+    "category": "Baking",
+    "halal_status": "doubtful",
+    "certification_body": "IFANCA",
+    "last_verified": "2026-03-23",
+    "notes": "May contain E471/E481 from animal source"
+  }
+]

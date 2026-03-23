@@ -1,0 +1,16 @@
+# Dev dependencies for CI/CD
+-r requirements.txt
+
+# Linting & formatting
+ruff==0.8.0
+
+# Type checking
+mypy==1.13.0
+types-cachetools==5.5.0
+
+# Security scanning
+bandit==1.8.0
+safety==3.2.0
+
+# Test coverage
+pytest-cov==6.0.0
