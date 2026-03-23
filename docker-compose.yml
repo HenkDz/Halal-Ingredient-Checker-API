@@ -1,0 +1,72 @@
+# ============================================================
+# Docker Compose - Halal Check API
+# ============================================================
+# Usage: docker compose up -d
+#        docker compose logs -f app
+#        docker compose down
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: halal-check-api
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    env_file:
+      - .env
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - WORKERS=${WORKERS:-4}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      # Persist data files (ingredients.json, products.json)
+      - app-data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health')"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '1.0'
+        reservations:
+          memory: 128M
+          cpus: '0.25'
+    networks:
+      - halal-net
+
+  # Optional: nginx reverse proxy for SSL termination and static files
+  # Uncomment this section and the nginx service below for production
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: halal-check-nginx
+  #   restart: unless-stopped
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+  #     - ./ssl:/etc/nginx/ssl:ro
+  #     - nginx-logs:/var/log/nginx
+  #   depends_on:
+  #     app:
+  #       condition: service_healthy
+  #   networks:
+  #     - halal-net
+
+volumes:
+  app-data:
+    driver: local
+
+  # nginx-logs:
+  #   driver: local
+
+networks:
+  halal-net:
+    driver: bridge
