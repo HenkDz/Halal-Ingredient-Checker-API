@@ -106,6 +106,8 @@ body {
 }
 
 .nav-inner {
+  position: relative;
+  z-index: 1001;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -151,14 +153,21 @@ body {
 .nav-cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   background: var(--emerald-800);
   color: var(--white) !important;
   padding: 8px 20px;
   border-radius: 100px;
   font-size: 0.88rem;
   font-weight: 600;
+  white-space: nowrap;
   transition: all 0.3s;
+}
+
+.nav-cta svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .nav-cta:hover {
@@ -169,13 +178,21 @@ body {
 
 .mobile-toggle {
   display: none;
+  position: relative;
+  z-index: 2;
   background: none;
   border: none;
   cursor: pointer;
   padding: 4px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-toggle svg { width: 28px; height: 28px; color: var(--charcoal); }
+
+.nav-backdrop {
+  display: none;
+}
 
 /* ─── Hero ─── */
 .hero {
@@ -1009,7 +1026,66 @@ body {
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
-  .nav-links { display: none; }
+  body.nav-menu-open {
+    overflow: hidden;
+  }
+
+  .nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: 72px;
+    background: rgba(28, 25, 23, 0.4);
+    z-index: 998;
+  }
+
+  .nav.nav-open .nav-backdrop {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    margin: 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.75rem 0 1rem;
+    background: rgba(255, 251, 240, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(6, 78, 59, 0.1);
+    box-shadow: var(--shadow-lg);
+    z-index: 999;
+    max-height: min(75vh, calc(100vh - 72px));
+    overflow-y: auto;
+    list-style: none;
+  }
+
+  .nav-links.open li {
+    width: 100%;
+  }
+
+  .nav-links.open a {
+    display: block;
+    padding: 0.85rem 1.5rem;
+  }
+
+  .nav-links.open a:hover {
+    background: rgba(6, 95, 70, 0.06);
+  }
+
+  .nav-links.open .nav-cta {
+    margin: 0.35rem 1.25rem 0;
+    justify-content: center;
+  }
+
   .mobile-toggle { display: block; }
 
   .hero { padding: 100px 1.5rem 60px; min-height: auto; }
@@ -1062,7 +1138,7 @@ body {
 <!-- ═══════ NAVIGATION ═══════ -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">
+    <a href="/" class="nav-logo">
       <svg viewBox="0 0 36 36" fill="none">
         <circle cx="18" cy="18" r="17" stroke="#065F46" stroke-width="2" fill="#ECFDF5"/>
         <path d="M18 6C14.5 6 11.5 8.5 10.5 12C8 12.5 6 14.8 6 17.5C6 20.8 8.7 23.5 12 23.5H25C27.8 23.5 30 21.3 30 18.5C30 15.8 27.5 13.5 24.8 13.5C24.5 9.4 21.6 6 18 6Z" fill="#065F46" opacity="0.15"/>
@@ -1072,7 +1148,7 @@ body {
       <span class="nav-logo-text">HalalChecker</span>
     </a>
 
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#demo">Live Demo</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#pricing">Pricing</a></li>
@@ -1084,10 +1160,11 @@ body {
       </a></li>
     </ul>
 
-    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <button type="button" class="mobile-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 </nav>
 
 <!-- ═══════ HERO ═══════ -->
@@ -1559,10 +1636,91 @@ curl -X POST \
 const API_BASE = window.location.origin;
 
 // ─── Navigation scroll effect ───
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function () {
+  if (nav) {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }
 }, { passive: true });
+
+// ─── Mobile menu (no optional chaining — unsupported engines skip the whole script) ───
+function setMobileNavOpen(open) {
+  var links = document.getElementById('navLinks');
+  var navEl = document.getElementById('nav');
+  var toggle = document.getElementById('navToggle');
+  if (!links || !navEl) {
+    return;
+  }
+  if (open) {
+    links.classList.add('open');
+    navEl.classList.add('nav-open');
+    document.body.classList.add('nav-menu-open');
+  } else {
+    links.classList.remove('open');
+    navEl.classList.remove('nav-open');
+    document.body.classList.remove('nav-menu-open');
+  }
+  if (toggle) {
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+}
+
+function closeMobileNav() {
+  setMobileNavOpen(false);
+}
+
+function toggleMobileNavFromEvent(ev) {
+  if (ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
+  }
+  var links = document.getElementById('navLinks');
+  if (!links) {
+    return;
+  }
+  setMobileNavOpen(!links.classList.contains('open'));
+}
+
+function initMobileNav() {
+  var links = document.getElementById('navLinks');
+  var toggle = document.getElementById('navToggle');
+  var backdrop = document.getElementById('navBackdrop');
+  if (!links || !toggle) {
+    return;
+  }
+  toggle.addEventListener('click', toggleMobileNavFromEvent);
+  if (backdrop) {
+    backdrop.addEventListener('click', closeMobileNav);
+  }
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      closeMobileNav();
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeMobileNav();
+    }
+  });
+  var mq = window.matchMedia('(min-width: 769px)');
+  function onViewportWiden(e) {
+    if (e && e.matches) {
+      closeMobileNav();
+    }
+  }
+  if (typeof mq.addEventListener === 'function') {
+    mq.addEventListener('change', onViewportWiden);
+  } else if (typeof mq.addListener === 'function') {
+    mq.addListener(onViewportWiden);
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMobileNav);
+} else {
+  initMobileNav();
+}
 
 // ─── Intersection Observer for reveal animations ───
 const revealObserver = new IntersectionObserver((entries) => {
@@ -1573,7 +1731,9 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('.reveal').forEach(el => {
+  revealObserver.observe(el);
+});
 
 // ─── Live Ingredient Checker ───
 async function checkIngredients() {
@@ -1686,8 +1846,12 @@ renderEndpoints();
 
 // ─── Code Tab Switching ───
 function switchTab(btn, lang) {
-  document.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.code-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.code-tab').forEach(t => {
+    t.classList.remove('active');
+  });
+  document.querySelectorAll('.code-pane').forEach(p => {
+    p.classList.remove('active');
+  });
   btn.classList.add('active');
   document.getElementById(`pane-${lang}`).classList.add('active');
 }
@@ -1704,6 +1868,7 @@ function copyCode(btn) {
 
 // ─── Scroll to Register ───
 function scrollToRegister() {
+  closeMobileNav();
   document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
 }
 

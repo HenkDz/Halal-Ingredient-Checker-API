@@ -13,7 +13,7 @@ import os
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Query, Depends, Request, Response
-from fastapi.responses import JSONResponse, FileResponse
+from fastapi.responses import JSONResponse, FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from typing import Optional
@@ -951,18 +951,32 @@ async def get_product_endpoint(request: Request, barcode: str):
     return product
 
 
-# --- Landing Page (served from /) ---
+# --- Landing Page (canonical HTML lives under static/v1/, served at /) ---
 
 _STATIC_DIR = Path(__file__).resolve().parent.parent / "static"
+_LANDING_INDEX = _STATIC_DIR / "v1" / "index.html"
+
+
+def _landing_file_response() -> FileResponse:
+    if not _LANDING_INDEX.exists():
+        raise HTTPException(status_code=404, detail="Landing page not found")
+    return FileResponse(str(_LANDING_INDEX))
+
 
 if _STATIC_DIR.is_dir():
     @app.get("/", include_in_schema=False)
     async def serve_landing():
-        """Serve the landing page at root."""
-        index = _STATIC_DIR / "index.html"
-        if index.exists():
-            return FileResponse(str(index))
-        raise HTTPException(status_code=404, detail="Landing page not found")
+        """Serve the marketing homepage at root (static/v1/index.html)."""
+        return _landing_file_response()
+
+    @app.get("/v1", include_in_schema=False)
+    async def redirect_legacy_v1_no_slash():
+        """Old path; homepage is now canonical at /."""
+        return RedirectResponse(url="/", status_code=308)
+
+    @app.get("/v1/", include_in_schema=False)
+    async def redirect_legacy_v1_slash():
+        return RedirectResponse(url="/", status_code=308)
 
 
 # --- App Entry Point ---

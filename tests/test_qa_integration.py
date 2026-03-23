@@ -649,7 +649,13 @@ class TestAPIEndpointEdgeCases:
 
     def test_root_route(self):
         response = client.get("/")
-        assert response.status_code == 404  # No root route defined
+        assert response.status_code == 200
+        assert "text/html" in response.headers.get("content-type", "")
+
+    def test_v1_redirects_to_canonical_root(self):
+        response = client.get("/v1", follow_redirects=False)
+        assert response.status_code == 308
+        assert response.headers.get("location") == "/"
 
 
 # ============================================================================
