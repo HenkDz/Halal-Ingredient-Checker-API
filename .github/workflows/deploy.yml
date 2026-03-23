@@ -59,7 +59,7 @@ jobs:
       #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       #     aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Reminder — production must include static/v1/
+      - name: Reminder - production must include static/v1/
         run: |
           echo "Homepage is served from static/v1/index.html at GET /."
           echo "After merge: redeploy or rebuild the Docker image so production is not stuck on an old static/index.html layout."
