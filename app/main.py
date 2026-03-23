@@ -9,8 +9,12 @@ import asyncio
 import logging
 import re
 
+import os
+from pathlib import Path
+
 from fastapi import FastAPI, HTTPException, Query, Depends, Request, Response
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from typing import Optional
 
@@ -945,6 +949,20 @@ async def get_product_endpoint(request: Request, barcode: str):
             },
         )
     return product
+
+
+# --- Landing Page (served from /) ---
+
+_STATIC_DIR = Path(__file__).resolve().parent.parent / "static"
+
+if _STATIC_DIR.is_dir():
+    @app.get("/", include_in_schema=False)
+    async def serve_landing():
+        """Serve the landing page at root."""
+        index = _STATIC_DIR / "index.html"
+        if index.exists():
+            return FileResponse(str(index))
+        raise HTTPException(status_code=404, detail="Landing page not found")
 
 
 # --- App Entry Point ---

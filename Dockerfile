@@ -43,6 +43,7 @@ RUN find /usr/local -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null; tru
 COPY app/ ./app/
 COPY data/ ./data/
 COPY monitoring/ ./monitoring/
+COPY static/ ./static/
 COPY gunicorn.conf.py .
 
 # Create data directory and set ownership

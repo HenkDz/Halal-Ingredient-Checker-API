@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halal Ingredient Checker API — Instant Halal Verification</title>
+<meta name="description" content="Instantly verify food ingredients against halal standards. API for apps, food manufacturers, and consumers. Check ingredients, scan barcodes, batch verify.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   HALAL INGREDIENT CHECKER — LANDING PAGE
+   Design: "Certified Trust"
+   Aesthetic: Warm, refined, Islamic-inspired
+   ═══════════════════════════════════════════ */
+
+:root {
+  --emerald-950: #022C22;
+  --emerald-900: #064E3B;
+  --emerald-800: #065F46;
+  --emerald-700: #047857;
+  --emerald-600: #059669;
+  --emerald-500: #10B981;
+  --emerald-100: #D1FAE5;
+  --emerald-50:  #ECFDF5;
+
+  --gold-600: #B45309;
+  --gold-500: #D97706;
+  --gold-400: #F59E0B;
+  --gold-300: #FCD34D;
+  --gold-200: #FDE68A;
+  --gold-100: #FEF3C7;
+
+  --cream:  #FFFBF0;
+  --cream-dark: #FEF7E6;
+  --charcoal: #1C1917;
+  --charcoal-light: #44403C;
+  --stone:   #78716C;
+  --stone-light: #A8A29E;
+  --white:   #FFFFFF;
+
+  --halal:   #047857;
+  --haram:   #B91C1C;
+  --doubtful:#D97706;
+  --unknown: #6B7280;
+
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body:    'Outfit', system-ui, sans-serif;
+
+  --shadow-sm:  0 1px 2px rgba(28,25,23,0.05);
+  --shadow-md:  0 4px 12px rgba(28,25,23,0.08);
+  --shadow-lg:  0 12px 40px rgba(28,25,23,0.12);
+  --shadow-xl:  0 24px 60px rgba(28,25,23,0.15);
+  --shadow-gold: 0 4px 20px rgba(217,119,6,0.25);
+
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--emerald-800); border-radius: 4px; }
+
+/* ─── Islamic Geometric SVG Pattern ─── */
+.geo-pattern {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.04;
+  z-index: 0;
+}
+
+/* ─── Navigation ─── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+.nav.scrolled {
+  background: rgba(255,251,240,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(6,78,59,0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--emerald-900);
+}
+
+.nav-logo svg { width: 36px; height: 36px; }
+
+.nav-logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--charcoal-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--emerald-800); }
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--emerald-800);
+  color: var(--white) !important;
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.nav-cta:hover {
+  background: var(--emerald-700);
+  color: var(--white) !important;
+  box-shadow: var(--shadow-md);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mobile-toggle svg { width: 28px; height: 28px; color: var(--charcoal); }
+
+/* ─── Hero ─── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 2rem 80px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(6,78,59,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(217,119,6,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 20% 80%, rgba(6,95,70,0.04) 0%, transparent 60%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--emerald-50);
+  border: 1px solid var(--emerald-100);
+  color: var(--emerald-800);
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.8s ease-out;
+}
+
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--emerald-500);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 1.08;
+  color: var(--emerald-950);
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s ease-out 0.1s both;
+}
+
+.hero h1 .gold { color: var(--gold-600); }
+
+.hero-sub {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--charcoal-light);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-weight: 400;
+  line-height: 1.7;
+  animation: fadeUp 0.8s ease-out 0.2s both;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s ease-out 0.3s both;
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 4rem;
+  animation: fadeUp 0.8s ease-out 0.5s both;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--emerald-800);
+}
+
+.hero-stat-label {
+  font-size: 0.82rem;
+  color: var(--stone);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+
+.btn-primary {
+  background: var(--emerald-800);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(6,78,59,0.3);
+}
+
+.btn-primary:hover {
+  background: var(--emerald-700);
+  box-shadow: 0 8px 28px rgba(6,78,59,0.35);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--emerald-800);
+  border: 1.5px solid var(--emerald-100);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--emerald-50);
+  border-color: var(--emerald-500);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-gold {
+  background: var(--gold-500);
+  color: var(--white);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-gold:hover {
+  background: var(--gold-600);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(217,119,6,0.35);
+}
+
+.btn svg { width: 18px; height: 18px; }
+
+/* ─── Sections ─── */
+.section {
+  padding: 100px 2rem;
+  position: relative;
+}
+
+.section-alt { background: var(--white); }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 4rem;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-600);
+  margin-bottom: 1rem;
+}
+
+.section-label svg { width: 14px; height: 14px; }
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--emerald-950);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--stone);
+  line-height: 1.7;
+}
+
+/* ─── Live Demo ─── */
+.demo-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  max-width: 720px;
+  margin: 0 auto;
+  border: 1px solid rgba(6,78,59,0.06);
+}
+
+.demo-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  background: var(--emerald-950);
+  color: var(--white);
+}
+
+.demo-dot { width: 10px; height: 10px; border-radius: 50%; }
+.demo-dot.r { background: #EF4444; }
+.demo-dot.y { background: #F59E0B; }
+.demo-dot.g { background: #10B981; }
+
+.demo-header-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  margin-left: 8px;
+  font-family: monospace;
+}
+
+.demo-body { padding: 2rem; }
+
+.demo-input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.demo-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--charcoal-light);
+  margin-bottom: 8px;
+}
+
+.demo-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 14px 16px;
+  border: 2px solid var(--emerald-100);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--charcoal);
+  background: var(--cream);
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  line-height: 1.6;
+}
+
+.demo-textarea:focus {
+  outline: none;
+  border-color: var(--emerald-500);
+  box-shadow: 0 0 0 4px rgba(16,185,129,0.1);
+}
+
+.demo-textarea::placeholder { color: var(--stone-light); }
+
+.demo-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.demo-loading {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  color: var(--emerald-700);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.demo-loading.active { display: flex; }
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid var(--emerald-100);
+  border-top-color: var(--emerald-600);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.demo-results {
+  margin-top: 1.5rem;
+  display: none;
+}
+
+.demo-results.active { display: block; }
+
+.demo-overall {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.demo-overall.halal {
+  background: rgba(4,120,87,0.08);
+  color: var(--halal);
+  border: 1px solid rgba(4,120,87,0.15);
+}
+
+.demo-overall.haram {
+  background: rgba(185,28,28,0.06);
+  color: var(--haram);
+  border: 1px solid rgba(185,28,28,0.12);
+}
+
+.demo-overall.doubtful {
+  background: rgba(217,119,6,0.08);
+  color: var(--doubtful);
+  border: 1px solid rgba(217,119,6,0.15);
+}
+
+.demo-result-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.demo-result-item:last-child { border-bottom: none; }
+
+.demo-verdict {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.demo-verdict.halal { background: rgba(4,120,87,0.1); color: var(--halal); }
+.demo-verdict.haram { background: rgba(185,28,28,0.08); color: var(--haram); }
+.demo-verdict.doubtful { background: rgba(217,119,6,0.1); color: var(--doubtful); }
+.demo-verdict.unknown { background: rgba(107,114,128,0.1); color: var(--unknown); }
+
+.demo-result-info h4 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 3px;
+}
+
+.demo-result-info h4 .e-number {
+  font-weight: 500;
+  color: var(--stone);
+  font-size: 0.82rem;
+  margin-left: 6px;
+}
+
+.demo-result-info p {
+  font-size: 0.82rem;
+  color: var(--stone);
+  line-height: 1.5;
+}
+
+.demo-result-info .source {
+  font-size: 0.75rem;
+  color: var(--stone-light);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ─── How It Works ─── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.step-card {
+  position: relative;
+  text-align: center;
+  padding: 2.5rem 2rem;
+}
+
+.step-number {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 4rem;
+  color: var(--emerald-100);
+  line-height: 1;
+  margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+.step-card:hover .step-number { color: var(--gold-200); }
+
+.step-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--emerald-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  box-shadow: 0 4px 16px rgba(6,78,59,0.2);
+}
+
+.step-icon svg { width: 26px; height: 26px; color: var(--white); }
+
+.step-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--emerald-950);
+  margin-bottom: 0.6rem;
+}
+
+.step-card p {
+  font-size: 0.92rem;
+  color: var(--stone);
+  line-height: 1.65;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.step-connector {
+  position: absolute;
+  top: 50%;
+  left: 33%;
+  right: 33%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--emerald-200) 0px,
+    var(--emerald-200) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  z-index: 0;
+  transform: translateY(-60px);
+}
+
+/* ─── Pricing ─── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.pricing-card {
+  background: var(--white);
+  border: 1.5px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.pricing-card.featured {
+  border-color: var(--gold-400);
+  box-shadow: var(--shadow-gold);
+  background: linear-gradient(135deg, #FFFBF0 0%, #FEF3C7 100%);
+}
+
+.pricing-popular {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-500);
+  color: var(--white);
+  padding: 4px 18px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pricing-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--emerald-950);
+  margin-bottom: 0.5rem;
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 0.3rem;
+}
+
+.pricing-amount {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: var(--emerald-950);
+  line-height: 1;
+}
+
+.pricing-period {
+  font-size: 0.9rem;
+  color: var(--stone);
+  font-weight: 500;
+}
+
+.pricing-subtitle {
+  font-size: 0.82rem;
+  color: var(--stone-light);
+  margin-bottom: 1.8rem;
+}
+
+.pricing-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 0.88rem;
+  color: var(--charcoal-light);
+}
+
+.pricing-features li svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--emerald-600);
+  margin-top: 1px;
+}
+
+.pricing-features li.disabled {
+  color: var(--stone-light);
+  text-decoration: line-through;
+}
+
+.pricing-features li.disabled svg { color: var(--stone-light); }
+
+.pricing-card .btn { width: 100%; justify-content: center; }
+
+/* ─── Code Examples ─── */
+.code-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 1;
+}
+
+.code-tab {
+  padding: 10px 20px;
+  background: var(--emerald-50);
+  border: 1.5px solid var(--emerald-100);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--stone);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.code-tab.active {
+  background: var(--emerald-950);
+  color: var(--white);
+  border-color: var(--emerald-950);
+}
+
+.code-block {
+  background: var(--emerald-950);
+  border-radius: 0 var(--radius) var(--radius) var(--radius);
+  padding: 1.5rem 2rem;
+  overflow-x: auto;
+  position: relative;
+}
+
+.code-block pre {
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.84rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
+}
+
+.code-block .comment { color: rgba(255,255,255,0.3); }
+.code-block .keyword { color: #F9A8D4; }
+.code-block .string { color: #86EFAC; }
+.code-block .method { color: #93C5FD; }
+.code-block .url { color: #FDE68A; }
+.code-block .header { color: #C4B5FD; }
+.code-block .number { color: #FDBA74; }
+
+.code-copy {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all 0.2s;
+}
+
+.code-copy:hover {
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.8);
+}
+
+.code-pane { display: none; }
+.code-pane.active { display: block; }
+
+/* ─── API Endpoints Table ─── */
+.endpoints-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0,0,0,0.04);
+  overflow: hidden;
+}
+
+.endpoints-header {
+  padding: 1.5rem 2rem;
+  background: var(--emerald-50);
+  border-bottom: 1px solid var(--emerald-100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.endpoints-header h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--emerald-950);
+}
+
+.endpoint-row {
+  display: flex;
+  align-items: center;
+  padding: 14px 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  transition: background 0.15s;
+  gap: 16px;
+}
+
+.endpoint-row:last-child { border-bottom: none; }
+.endpoint-row:hover { background: rgba(6,78,59,0.02); }
+
+.endpoint-method {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.endpoint-method.get { background: rgba(4,120,87,0.1); color: var(--halal); }
+.endpoint-method.post { background: rgba(217,119,6,0.1); color: var(--doubtful); }
+
+.endpoint-path {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.84rem;
+  color: var(--charcoal);
+  flex: 1;
+}
+
+.endpoint-desc {
+  font-size: 0.84rem;
+  color: var(--stone);
+  flex-shrink: 0;
+}
+
+/* ─── CTA ─── */
+.cta {
+  background: var(--emerald-950);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-geo {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.cta p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+/* ─── Footer ─── */
+.footer {
+  background: var(--emerald-950);
+  color: rgba(255,255,255,0.5);
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Intersection Observer reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+
+  .hero { padding: 100px 1.5rem 60px; min-height: auto; }
+  .hero-stats { gap: 2rem; margin-top: 2.5rem; }
+  .hero-stat-value { font-size: 1.4rem; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  .section { padding: 60px 1.5rem; }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .step-connector { display: none; }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .demo-textarea { min-height: 80px; }
+
+  .endpoint-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .code-block { padding: 1.2rem; }
+  .code-block pre { font-size: 0.78rem; }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2.2rem; }
+  .section-title { font-size: 1.8rem; }
+  .demo-body { padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ NAVIGATION ═══════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="17" stroke="#065F46" stroke-width="2" fill="#ECFDF5"/>
+        <path d="M18 6C14.5 6 11.5 8.5 10.5 12C8 12.5 6 14.8 6 17.5C6 20.8 8.7 23.5 12 23.5H25C27.8 23.5 30 21.3 30 18.5C30 15.8 27.5 13.5 24.8 13.5C24.5 9.4 21.6 6 18 6Z" fill="#065F46" opacity="0.15"/>
+        <path d="M18 8C15.2 8 12.8 10 12 12.5C9.8 12.8 8 14.7 8 17C8 19.5 10 21.5 12.5 21.5H25C27.2 21.5 29 19.7 29 17.5C29 15.4 27.2 13.5 25 13.5C24.8 10.5 22.7 8 20 8" stroke="#065F46" stroke-width="1.5" fill="none"/>
+        <path d="M13 18L16 21L23 14" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="nav-logo-text">HalalChecker</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#demo">Live Demo</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#api">API Docs</a></li>
+      <li><a href="#code">Code</a></li>
+      <li><a href="javascript:void(0)" class="nav-cta" onclick="scrollToRegister()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Get Free Key
+      </a></li>
+    </ul>
+
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+
+  <!-- Islamic Geometric Pattern (decorative) -->
+  <svg class="geo-pattern" style="top:-100px;right:-100px;width:600px;height:600px" viewBox="0 0 200 200" fill="none">
+    <g stroke="#065F46" stroke-width="0.5">
+      <polygon points="100,10 190,60 190,140 100,190 10,140 10,60"/>
+      <polygon points="100,30 170,70 170,130 100,170 30,130 30,70"/>
+      <polygon points="100,50 150,80 150,120 100,150 50,120 50,80"/>
+      <line x1="100" y1="10" x2="100" y2="190"/>
+      <line x1="10" y1="60" x2="190" y2="140"/>
+      <line x1="10" y1="140" x2="190" y2="60"/>
+      <line x1="30" y1="70" x2="170" y2="130"/>
+      <line x1="30" y1="130" x2="170" y2="70"/>
+    </g>
+  </svg>
+
+  <svg class="geo-pattern" style="bottom:-50px;left:-80px;width:400px;height:400px" viewBox="0 0 200 200" fill="none">
+    <g stroke="#065F46" stroke-width="0.5">
+      <circle cx="100" cy="100" r="90"/>
+      <circle cx="100" cy="100" r="70"/>
+      <circle cx="100" cy="100" r="50"/>
+      <circle cx="100" cy="100" r="30"/>
+      <line x1="100" y1="10" x2="100" y2="190"/>
+      <line x1="10" y1="100" x2="190" y2="100"/>
+      <line x1="36" y1="36" x2="164" y2="164"/>
+      <line x1="164" y1="36" x2="36" y2="164"/>
+      <line x1="100" y1="10" x2="155" y2="145"/>
+      <line x1="100" y1="10" x2="45" y2="145"/>
+      <line x1="100" y1="190" x2="155" y2="55"/>
+      <line x1="100" y1="190" x2="45" y2="55"/>
+    </g>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      API v0.5 — Live & Operational
+    </div>
+
+    <h1>Know What's In<br>Your <span class="gold">Food</span>.</h1>
+
+    <p class="hero-sub">
+      Instantly verify any ingredient against halal standards.
+      Built for developers, food companies, and health apps
+      who take halal compliance seriously.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#demo" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Try Live Demo
+      </a>
+      <a href="#code" class="btn btn-secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        View Code Examples
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value">40+</div>
+        <div class="hero-stat-label">Ingredients in Database</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">4</div>
+        <div class="hero-stat-label">API Endpoints</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">100%</div>
+        <div class="hero-stat-label">Free Tier Available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ LIVE DEMO ═══════ -->
+<section class="section section-alt" id="demo">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Try It Now
+      </div>
+      <h2 class="section-title">Live Ingredient Checker</h2>
+      <p class="section-desc">Paste a list of ingredients from any food label and get instant halal verification — powered by our live API.</p>
+    </div>
+
+    <div class="demo-card reveal">
+      <div class="demo-header">
+        <span class="demo-dot r"></span>
+        <span class="demo-dot y"></span>
+        <span class="demo-dot g"></span>
+        <span class="demo-header-text">POST /api/v1/check</span>
+      </div>
+      <div class="demo-body">
+        <div class="demo-input-group">
+          <label class="demo-label">Enter ingredients (comma-separated)</label>
+          <textarea class="demo-textarea" id="ingredientInput" placeholder="e.g. gelatin, whey, lecithin, carmine, sucrose, citric acid">gelatin, whey, lecithin, carmine, sucrose, citric acid</textarea>
+        </div>
+
+        <div class="demo-actions">
+          <button class="btn btn-primary" id="checkBtn" onclick="checkIngredients()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Check Ingredients
+          </button>
+          <div class="demo-loading" id="demoLoading">
+            <div class="spinner"></div>
+            Verifying ingredients...
+          </div>
+        </div>
+
+        <div class="demo-results" id="demoResults">
+          <!-- Filled dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ HOW IT WORKS ═══════ -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Simple & Powerful
+      </div>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-desc">Three steps to integrate halal verification into your application or workflow.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-connector"></div>
+
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-number">01</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <h3>Register & Get Key</h3>
+        <p>Sign up with your email and receive a free API key instantly. No credit card required, no hidden fees.</p>
+      </div>
+
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-number">02</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>Integrate the API</h3>
+        <p>Call our RESTful endpoints from any language. Check ingredients, scan barcodes, or batch verify — we handle the rest.</p>
+      </div>
+
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-number">03</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Get Instant Results</h3>
+        <p>Each ingredient returns a halal/haram/doubtful verdict with scholarly sources and detailed explanations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PRICING ═══════ -->
+<section class="section section-alt" id="pricing">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Pricing
+      </div>
+      <h2 class="section-title">Start Free, Scale as You Grow</h2>
+      <p class="section-desc">From hobbyist apps to enterprise food platforms — transparent pricing with no surprises.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Free -->
+      <div class="pricing-card reveal reveal-delay-1">
+        <div class="pricing-name">Free</div>
+        <div class="pricing-price">
+          <span class="pricing-amount">$0</span>
+          <span class="pricing-period">/month</span>
+        </div>
+        <div class="pricing-subtitle">Perfect for testing & personal projects</div>
+        <ul class="pricing-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            100 requests/day
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            10 requests/minute
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Single ingredient check
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Barcode scanning
+          </li>
+          <li class="disabled">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Batch checking
+          </li>
+          <li class="disabled">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Detailed results with sources
+          </li>
+        </ul>
+        <a href="javascript:void(0)" class="btn btn-secondary" onclick="scrollToRegister()">Get Free Key</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="pricing-card featured reveal reveal-delay-2">
+        <span class="pricing-popular">Most Popular</span>
+        <div class="pricing-name">Pro</div>
+        <div class="pricing-price">
+          <span class="pricing-amount">$9</span>
+          <span class="pricing-period">/month</span>
+        </div>
+        <div class="pricing-subtitle">For serious apps & small businesses</div>
+        <ul class="pricing-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            10,000 requests/day
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            100 requests/minute
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Single ingredient check
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Barcode scanning
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Batch check (up to 50)
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Detailed results with sources
+          </li>
+        </ul>
+        <a href="javascript:void(0)" class="btn btn-gold" onclick="scrollToRegister()">Start Pro Trial</a>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="pricing-card reveal reveal-delay-3">
+        <div class="pricing-name">Enterprise</div>
+        <div class="pricing-price">
+          <span class="pricing-amount">Custom</span>
+        </div>
+        <div class="pricing-subtitle">For food manufacturers & platforms</div>
+        <ul class="pricing-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            1,000,000 requests/day
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            500 requests/minute
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            All Pro features
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Dedicated support
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Custom SLA & uptime
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Custom ingredient database
+          </li>
+        </ul>
+        <a href="mailto:hello@halalchecker.com" class="btn btn-secondary">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ API ENDPOINTS ═══════ -->
+<section class="section" id="api">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        API Reference
+      </div>
+      <h2 class="section-title">RESTful API Endpoints</h2>
+      <p class="section-desc">Clean, predictable endpoints designed for developer happiness. Full interactive docs available on Swagger.</p>
+    </div>
+
+    <div class="endpoints-card reveal" id="apiEndpoints">
+      <!-- Filled by JS -->
+    </div>
+
+    <div style="text-align:center;margin-top:1.5rem" class="reveal">
+      <a href="/docs" class="btn btn-secondary" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Open Interactive Swagger Docs
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CODE EXAMPLES ═══════ -->
+<section class="section section-alt" id="code">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Developer Friendly
+      </div>
+      <h2 class="section-title">Code Examples</h2>
+      <p class="section-desc">Start integrating in under 5 minutes. Works with any language that can make HTTP requests.</p>
+    </div>
+
+    <div class="reveal" style="max-width:780px;margin:0 auto">
+      <div class="code-tabs">
+        <button class="code-tab active" onclick="switchTab(this, 'python')">Python</button>
+        <button class="code-tab" onclick="switchTab(this, 'javascript')">JavaScript</button>
+        <button class="code-tab" onclick="switchTab(this, 'curl')">cURL</button>
+      </div>
+
+      <div class="code-block">
+        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+
+        <div class="code-pane active" id="pane-python">
+<pre><span class="comment"># Install: pip install requests</span>
+<span class="keyword">import</span> requests
+
+API_BASE = <span class="string">"https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io"</span>
+API_KEY  = <span class="string">"your_api_key_here"</span>
+
+headers = {<span class="string">"X-API-Key"</span>: API_KEY}
+
+<span class="comment"># Check multiple ingredients</span>
+resp = requests.<span class="method">post</span>(
+    <span class="url">f"{API_BASE}/api/v1/check"</span>,
+    headers=headers,
+    json={<span class="string">"ingredients"</span>: [<span class="string">"gelatin"</span>, <span class="string">"sucrose"</span>, <span class="string">"carmine"</span>]}
+)
+<span class="keyword">print</span>(resp.json())
+
+<span class="comment"># Lookup single ingredient</span>
+resp = requests.<span class="method">get</span>(
+    <span class="url">f"{API_BASE}/api/v1/ingredient/gelatin"</span>,
+    headers=headers
+)
+<span class="keyword">print</span>(resp.json())
+
+<span class="comment"># Scan barcode</span>
+resp = requests.<span class="method">get</span>(
+    <span class="url">f"{API_BASE}/api/v1/barcode/3017620422003"</span>,
+    headers=headers
+)
+<span class="keyword">print</span>(resp.json())</pre>
+        </div>
+
+        <div class="code-pane" id="pane-javascript">
+<pre><span class="comment">// Check multiple ingredients</span>
+<span class="keyword">const</span> response = <span class="keyword">await</span> <span class="method">fetch</span>(
+  <span class="url">'https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io/api/v1/check'</span>,
+  {
+    <span class="header">method</span>: <span class="string">'POST'</span>,
+    <span class="header">headers</span>: {
+      <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>,
+      <span class="string">'X-API-Key'</span>: <span class="string">'your_api_key_here'</span>
+    },
+    <span class="header">body</span>: JSON.<span class="method">stringify</span>({
+      <span class="header">ingredients</span>: [<span class="string">'gelatin'</span>, <span class="string">'sucrose'</span>, <span class="string">'carmine'</span>]
+    })
+  }
+);
+
+<span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="method">json</span>();
+console.<span class="method">log</span>(data);
+<span class="comment">// { total: 3, halal: 1, haram: 2, overall_verdict: "haram", results: [...] }</span></pre>
+        </div>
+
+        <div class="code-pane" id="pane-curl">
+<pre><span class="comment"># Check multiple ingredients</span>
+curl -X POST \
+  <span class="url">https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io/api/v1/check</span> \
+  -H <span class="string">"Content-Type: application/json"</span> \
+  -H <span class="string">"X-API-Key: your_api_key_here"</span> \
+  -d <span class="string">'{"ingredients": ["gelatin", "sucrose", "carmine"]}'</span>
+
+<span class="comment"># Lookup single ingredient</span>
+curl -X GET \
+  <span class="url">https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io/api/v1/ingredient/gelatin</span> \
+  -H <span class="string">"X-API-Key: your_api_key_here"</span>
+
+<span class="comment"># Scan barcode</span>
+curl -X GET \
+  <span class="url">https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io/api/v1/barcode/3017620422003</span> \
+  -H <span class="string">"X-API-Key: your_api_key_here"</span>
+
+<span class="comment"># Register for free API key</span>
+curl -X POST \
+  <span class="url">https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io/api/v1/auth/register</span> \
+  -H <span class="string">"Content-Type: application/json"</span> \
+  -d <span class="string">'{"name": "Your Name", "email": "you@example.com"}'</span></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA ═══════ -->
+<section class="section cta" id="register">
+  <svg class="cta-geo" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" fill="none">
+    <g stroke="white" stroke-width="0.3">
+      <polygon points="200,20 380,20 460,120 460,280 380,380 200,380 120,280 120,120"/>
+      <polygon points="400,20 580,20 660,120 660,280 580,380 400,380 320,280 320,120"/>
+      <polygon points="300,50 480,50 540,140 540,260 480,350 300,350 240,260 240,140"/>
+      <polygon points="500,50 620,50 670,120 670,280 620,350 500,350 450,280 450,120"/>
+    </g>
+  </svg>
+
+  <div class="cta-content reveal">
+    <h2>Start Building with<br>Halal Verification Today</h2>
+    <p>Get your free API key in seconds. 100 requests per day, no credit card required. Scale up whenever you're ready.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="/docs" class="btn btn-primary" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Get Free API Key
+      </a>
+      <a href="#demo" class="btn" style="background:rgba(255,255,255,0.08);color:white;border:1px solid rgba(255,255,255,0.15)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Try the Demo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-copy">
+      &copy; 2026 Halal Ingredient Checker API. All rights reserved.
+    </div>
+    <div class="footer-links">
+      <a href="/docs" target="_blank">API Docs</a>
+      <a href="#pricing">Pricing</a>
+      <a href="mailto:hello@halalchecker.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════ JAVASCRIPT ═══════ -->
+<script>
+// ─── Configuration ───
+const API_BASE = window.location.origin;
+
+// ─── Navigation scroll effect ───
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// ─── Intersection Observer for reveal animations ───
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ─── Live Ingredient Checker ───
+async function checkIngredients() {
+  const input = document.getElementById('ingredientInput').value.trim();
+  if (!input) return;
+
+  const btn = document.getElementById('checkBtn');
+  const loading = document.getElementById('demoLoading');
+  const results = document.getElementById('demoResults');
+
+  btn.style.display = 'none';
+  loading.classList.add('active');
+  results.classList.remove('active');
+
+  const ingredients = input.split(',').map(s => s.trim()).filter(Boolean);
+
+  try {
+    const resp = await fetch(`${API_BASE}/api/v1/check`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ingredients })
+    });
+
+    if (!resp.ok) throw new Error(`API returned ${resp.status}`);
+    const data = await resp.json();
+    renderResults(data);
+  } catch (err) {
+    results.innerHTML = `
+      <div class="demo-overall doubtful">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Unable to reach API — ${err.message}
+      </div>
+    `;
+    results.classList.add('active');
+  } finally {
+    btn.style.display = '';
+    loading.classList.remove('active');
+  }
+}
+
+function renderResults(data) {
+  const results = document.getElementById('demoResults');
+
+  const verdictIcons = {
+    halal: '✓', haram: '✕', doubtful: '?', unknown: '—'
+  };
+
+  const summaryLabels = {
+    halal: '✓ All ingredients are Halal',
+    haram: '✕ Contains Haram ingredient(s)',
+    doubtful: '? Contains Doubtful ingredient(s)',
+    unknown: '— Some ingredients are unknown'
+  };
+
+  let html = `
+    <div class="demo-overall ${data.overall_verdict}">
+      <strong>${summaryLabels[data.overall_verdict] || data.overall_verdict}</strong>
+      <span style="margin-left:auto;font-size:0.82rem;opacity:0.7">
+        ${data.halal} halal · ${data.haram} haram · ${data.doubtful} doubtful · ${data.unknown} unknown
+      </span>
+    </div>
+  `;
+
+  data.results.forEach(r => {
+    const eNum = r.e_number ? `<span class="e-number">${r.e_number}</span>` : '';
+    html += `
+      <div class="demo-result-item">
+        <div class="demo-verdict ${r.verdict}">${verdictIcons[r.verdict]}</div>
+        <div class="demo-result-info">
+          <h4>${r.name} ${eNum}</h4>
+          <p>${r.reason}</p>
+          <div class="source">Source: ${r.source || 'N/A'}</div>
+        </div>
+      </div>
+    `;
+  });
+
+  results.innerHTML = html;
+  results.classList.add('active');
+}
+
+// ─── API Endpoints Table ───
+function renderEndpoints() {
+  const endpoints = [
+    { method: 'POST', path: '/api/v1/check', desc: 'Check list of ingredients' },
+    { method: 'GET',  path: '/api/v1/ingredient/{name}', desc: 'Lookup single ingredient' },
+    { method: 'GET',  path: '/api/v1/barcode/{ean}', desc: 'Scan product barcode' },
+    { method: 'POST', path: '/api/v1/batch', desc: 'Batch check up to 50 items' },
+    { method: 'POST', path: '/api/v1/auth/register', desc: 'Register for free API key' },
+    { method: 'GET',  path: '/api/v1/auth/subscription', desc: 'Check subscription status' },
+    { method: 'GET',  path: '/api/v1/health', desc: 'API health check' },
+  ];
+
+  const container = document.getElementById('apiEndpoints');
+  container.innerHTML = `
+    <div class="endpoints-header">
+      <h3>Available Endpoints</h3>
+      <span style="font-size:0.82rem;color:var(--stone)">7 endpoints</span>
+    </div>
+    ${endpoints.map(ep => `
+      <div class="endpoint-row">
+        <span class="endpoint-method ${ep.method.toLowerCase()}">${ep.method}</span>
+        <span class="endpoint-path">${ep.path}</span>
+        <span class="endpoint-desc">${ep.desc}</span>
+      </div>
+    `).join('')}
+  `;
+}
+renderEndpoints();
+
+// ─── Code Tab Switching ───
+function switchTab(btn, lang) {
+  document.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.code-pane').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(`pane-${lang}`).classList.add('active');
+}
+
+// ─── Copy Code ───
+function copyCode(btn) {
+  const pane = btn.parentElement.querySelector('.code-pane.active pre');
+  const text = pane.textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 2000);
+  });
+}
+
+// ─── Scroll to Register ───
+function scrollToRegister() {
+  document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ─── Auto-run demo on load (with pre-filled ingredients) ───
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(checkIngredients, 800);
+});
+</script>
+</body>
+</html>
