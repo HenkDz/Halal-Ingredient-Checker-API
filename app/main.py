@@ -964,6 +964,14 @@ if _STATIC_DIR.is_dir():
             return FileResponse(str(index))
         raise HTTPException(status_code=404, detail="Landing page not found")
 
+    @app.get("/v1", include_in_schema=False)
+    async def serve_landing_v1():
+        """Serve the v1 landing page for comparison."""
+        index_v1 = _STATIC_DIR / "v1" / "index.html"
+        if index_v1.exists():
+            return FileResponse(str(index_v1))
+        raise HTTPException(status_code=404, detail="Landing page v1 not found")
+
 
 # --- App Entry Point ---
 
