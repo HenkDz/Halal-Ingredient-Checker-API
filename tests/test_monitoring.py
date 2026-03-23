@@ -4,26 +4,23 @@ Tests for the monitoring system: health monitor, alerting, and weekly reports.
 These test the monitoring infrastructure without requiring a running API server.
 """
 
-import time
-import pytest
-from datetime import datetime, timedelta, timezone
-from unittest.mock import patch, MagicMock
+from datetime import UTC, datetime, timedelta
+from unittest.mock import MagicMock, patch
 
-from monitoring.health_monitor import HealthMonitor, HealthCheckResult, UptimeStats
+import pytest
 from monitoring.alerting import (
     AlertManager,
     AlertRule,
     ConsoleAlerter,
     WebhookAlerter,
-    EmailAlerter,
 )
+from monitoring.health_monitor import HealthCheckResult, HealthMonitor
 from monitoring.weekly_report import (
-    generate_weekly_report,
-    format_report_text,
-    format_report_json,
     WeeklyReport,
+    format_report_json,
+    format_report_text,
+    generate_weekly_report,
 )
-
 
 # ============================================================================
 # SECTION 1: HEALTH MONITOR UNIT TESTS
@@ -37,7 +34,7 @@ class TestHealthMonitor:
         monitor = HealthMonitor(base_url="http://localhost:9999")
 
         # Manually inject results
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
         for i in range(5):
             result = HealthCheckResult(
                 timestamp=now - timedelta(minutes=i * 2),
@@ -54,7 +51,7 @@ class TestHealthMonitor:
         """Stats are calculated correctly from recorded results."""
         monitor = HealthMonitor(base_url="http://localhost:9999")
 
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
         # 8 successful, 2 failed
         for i in range(8):
             result = HealthCheckResult(
@@ -94,7 +91,7 @@ class TestHealthMonitor:
         """Consecutive failures are counted from the most recent check."""
         monitor = HealthMonitor(base_url="http://localhost:9999")
 
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
         # 3 successful, then 4 failures (most recent first in recording)
         for i in range(4):
             result = HealthCheckResult(
@@ -122,7 +119,7 @@ class TestHealthMonitor:
         """Results older than the window are pruned."""
         monitor = HealthMonitor(base_url="http://localhost:9999", history_window_hours=1)
 
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
         # Old result (outside window)
         old_result = HealthCheckResult(
             timestamp=now - timedelta(hours=2),
@@ -153,7 +150,7 @@ class TestHealthMonitor:
         alerts = []
         monitor.set_alert_callback(lambda atype, details: alerts.append((atype, details)))
 
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
         # Record 3 failures
         for i in range(3):
             result = HealthCheckResult(
@@ -179,7 +176,7 @@ class TestHealthMonitor:
         alerts = []
         monitor.set_alert_callback(lambda atype, details: alerts.append((atype, details)))
 
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
         # First: normal response
         normal = HealthCheckResult(
             timestamp=now - timedelta(seconds=2),
@@ -211,7 +208,7 @@ class TestHealthMonitor:
         alerts = []
         monitor.set_alert_callback(lambda atype, details: alerts.append((atype, details)))
 
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
         # Fire multiple alerts of the same type
         for i in range(5):
             result = HealthCheckResult(
@@ -355,7 +352,7 @@ class TestWeeklyReport:
         """Report can be generated from monitor data."""
         monitor = HealthMonitor(base_url="http://localhost:9999")
 
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
         for i in range(10):
             result = HealthCheckResult(
                 timestamp=now - timedelta(minutes=i * 5),
@@ -462,7 +459,7 @@ class TestMonitorIntegration:
 
     def test_monitor_can_ping_real_api(self):
         """Monitor can perform a health check against the running API.
-        
+
         This test requires the API to be running on localhost:8000.
         Marked as slow since it makes real HTTP calls.
         """

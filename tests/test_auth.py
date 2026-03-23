@@ -1,12 +1,11 @@
 """Tests for the auth and subscription system (HAL-11)."""
 
 import time
-import pytest
+
 from fastapi.testclient import TestClient
 
-from app.main import app
 from app.auth import auth_store
-
+from app.main import app
 
 client = TestClient(app)
 

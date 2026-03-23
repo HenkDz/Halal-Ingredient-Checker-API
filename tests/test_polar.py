@@ -5,25 +5,24 @@ These tests mock the Polar API calls to avoid requiring real API keys.
 They verify the webhook processing logic and checkout session creation.
 """
 
+import base64
 import hashlib
 import time
-import json
-import base64
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
 
 import pytest
 from fastapi.testclient import TestClient
 
+from app.auth import auth_store
 from app.main import app
-from app.auth import auth_store, Subscription
 from app.polar import (
-    process_webhook_event,
-    apply_webhook_action,
-    verify_webhook_signature,
-    create_checkout_session,
-    create_billing_portal_session,
-    is_configured,
     _hash_key,
+    apply_webhook_action,
+    create_billing_portal_session,
+    create_checkout_session,
+    is_configured,
+    process_webhook_event,
+    verify_webhook_signature,
 )
 
 client = TestClient(app)
@@ -158,10 +157,11 @@ def test_verify_webhook_no_secret():
 def test_verify_webhook_bad_signature():
     """Should raise ValueError for invalid signatures."""
     secret = base64.b64encode(b"test_secret").decode()
-    with patch("app.polar.POLAR_WEBHOOK_SECRET", secret):
-        # Create a valid-looking but wrong signature
-        with pytest.raises(ValueError, match="signature"):
-            verify_webhook_signature(b'{"type":"test"}', "t=1234567890,v1=wrong_signature")
+    with (
+        patch("app.polar.POLAR_WEBHOOK_SECRET", secret),
+        pytest.raises(ValueError, match="signature"),
+    ):
+        verify_webhook_signature(b'{"type":"test"}', "t=1234567890,v1=wrong_signature")
 
 
 def test_verify_webhook_valid_signature():
@@ -185,9 +185,11 @@ def test_verify_webhook_stale_timestamp():
     secret_b64 = base64.b64encode(b"test_secret").decode()
     stale_ts = str(int(time.time()) - 600)  # 10 minutes ago
 
-    with patch("app.polar.POLAR_WEBHOOK_SECRET", secret_b64):
-        with pytest.raises(ValueError, match="signature"):
-            verify_webhook_signature(b'{"type":"test"}', f"t={stale_ts},v1=fake")
+    with (
+        patch("app.polar.POLAR_WEBHOOK_SECRET", secret_b64),
+        pytest.raises(ValueError, match="signature"),
+    ):
+        verify_webhook_signature(b'{"type":"test"}', f"t={stale_ts},v1=fake")
 
 
 # --- Webhook Event Processing ---

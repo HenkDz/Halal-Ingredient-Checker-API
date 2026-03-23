@@ -8,24 +8,39 @@ Provides barcode-to-halal-assessment conversion by:
 4. Caching results (TTL 24h)
 """
 
-import re
 import logging
-from typing import Optional
-from dataclasses import dataclass, field
+import re
+from dataclasses import dataclass
+from typing import Any, cast
 
 import httpx
 from cachetools import TTLCache
 
-from data.ingredients import lookup_ingredient
 from app.observability import instrument_cache_get
+from data.ingredients import lookup_ingredient
 
 logger = logging.getLogger(__name__)
+
+
+def _coerce_display_str(value: object) -> str | None:
+    """Normalize OFF product fields to optional string for API responses."""
+    if value is None:
+        return None
+    if isinstance(value, str):
+        s = value.strip()
+        return s or None
+    if isinstance(value, int | float | bool):
+        return str(value)
+    if isinstance(value, dict | list):
+        return None
+    return str(value)
+
 
 # OFF API base URL
 OFF_API_BASE = "https://world.openfoodfacts.org/api/v2"
 
-# Cache: 24h TTL, max 1000 entries
-_cache = TTLCache(maxsize=1000, ttl=86400)
+# Cache: 24h TTL, max 1000 entries (OFF payloads, assessments, and negative cache None)
+_cache: TTLCache[str, Any] = TTLCache(maxsize=1000, ttl=86400)
 
 
 @dataclass
@@ -35,16 +50,16 @@ class ParsedIngredient:
     name: str
     verdict: str  # halal, haram, doubtful, unknown
     reason: str
-    e_number: Optional[str] = None
+    e_number: str | None = None
 
 
 @dataclass
 class BarcodeAssessment:
     """Full assessment of a product by barcode."""
     barcode: str
-    product_name: Optional[str]
-    brand: Optional[str]
-    ingredients_text: Optional[str]
+    product_name: str | None
+    brand: str | None
+    ingredients_text: str | None
     flagged_ingredients: list[dict]
     all_ingredients: list[ParsedIngredient]
     overall_status: str  # halal, haram, doubtful, unknown
@@ -174,8 +189,13 @@ def _detect_halal_certification(product: dict) -> tuple[bool, list[str]]:
     labels = []
     has_cert = False
 
-    # Check labels_tags (handle None)
-    for tag in (product.get("labels_tags") or []):
+    # Check labels_tags (handle None / malformed OFF payloads)
+    raw_label_tags = product.get("labels_tags") or []
+    if isinstance(raw_label_tags, str):
+        raw_label_tags = [raw_label_tags]
+    elif not isinstance(raw_label_tags, list):
+        raw_label_tags = []
+    for tag in raw_label_tags:
         if "halal" in tag.lower():
             has_cert = True
             labels.append(tag.replace("en:", "").replace("fr:", "").replace("-", " ").title())
@@ -187,8 +207,13 @@ def _detect_halal_certification(product: dict) -> tuple[bool, list[str]]:
         if labels_text.strip() and labels_text.strip() not in labels:
             labels.append(labels_text.strip())
 
-    # Check categories_tags for halal-related (handle None)
-    for tag in (product.get("categories_tags") or []):
+    # Check categories_tags for halal-related (handle None / malformed)
+    raw_cats = product.get("categories_tags") or []
+    if isinstance(raw_cats, str):
+        raw_cats = [raw_cats]
+    elif not isinstance(raw_cats, list):
+        raw_cats = []
+    for tag in raw_cats:
         if "halal" in tag.lower():
             has_cert = True
             if tag not in labels:
@@ -240,7 +265,7 @@ def _compute_confidence(
     return round(min(1.0, max(0.0, raw)), 2)
 
 
-async def fetch_product_from_off(barcode: str) -> Optional[dict]:
+async def fetch_product_from_off(barcode: str) -> dict | None:
     """
     Fetch product data from Open Food Facts API.
     Returns the product dict if found, None otherwise.
@@ -251,7 +276,7 @@ async def fetch_product_from_off(barcode: str) -> Optional[dict]:
     if cached is not None:
         logger.info("Cache hit for barcode %s", barcode)
         instrument_cache_get("off_product", hit=True)
-        return cached
+        return cast(dict[str, Any] | None, cached)
     instrument_cache_get("off_product", hit=False)
 
     url = f"{OFF_API_BASE}/product/{barcode}.json"
@@ -259,10 +284,10 @@ async def fetch_product_from_off(barcode: str) -> Optional[dict]:
         async with httpx.AsyncClient(timeout=15.0) as client:
             resp = await client.get(url)
             resp.raise_for_status()
-            data = resp.json()
+            data = cast(dict[str, Any], resp.json())
 
         if data.get("status") == 1 and data.get("product"):
-            product = data["product"]
+            product = cast(dict[str, Any], data["product"])
             _cache[cache_key] = product
             return product
         else:
@@ -270,7 +295,7 @@ async def fetch_product_from_off(barcode: str) -> Optional[dict]:
             _cache[cache_key] = None
             return None
 
-    except httpx.TimeoutException:
+    except (httpx.TimeoutException, TimeoutError):
         logger.warning("Timeout fetching barcode %s from OFF", barcode)
         raise
     except httpx.HTTPError as e:
@@ -292,7 +317,7 @@ async def assess_barcode(barcode: str) -> BarcodeAssessment:
     cached_assessment = _cache.get(assess_cache_key)
     if cached_assessment is not None:
         instrument_cache_get("barcode_assessment", hit=True)
-        return cached_assessment
+        return cast(BarcodeAssessment, cached_assessment)
     instrument_cache_get("barcode_assessment", hit=False)
 
     # Fetch from OFF
@@ -316,9 +341,11 @@ async def assess_barcode(barcode: str) -> BarcodeAssessment:
         _cache[assess_cache_key] = assessment
         return assessment
 
-    # Extract product info
-    product_name = product.get("product_name") or product.get("product_name_en")
-    brand = product.get("brands")
+    # Extract product info (OFF may return non-strings; coerce for stable API output)
+    product_name = _coerce_display_str(
+        product.get("product_name") or product.get("product_name_en"),
+    )
+    brand = _coerce_display_str(product.get("brands"))
 
     # Get ingredients text - prefer English, fall back to any language
     ingredients_text = (
@@ -375,9 +402,7 @@ async def assess_barcode(barcode: str) -> BarcodeAssessment:
         overall = "halal"
     elif haram_count > 0:
         overall = "haram"
-    elif doubtful_count > 0:
-        overall = "doubtful"
-    elif unknown_count > 0 and len(parsed) > 0:
+    elif doubtful_count > 0 or unknown_count > 0 and len(parsed) > 0:
         overall = "doubtful"
     elif len(parsed) == 0:
         overall = "unknown"

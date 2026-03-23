@@ -1,8 +1,9 @@
 """Shared test fixtures for all test modules."""
 
 import pytest
-from app.ratelimit import rate_limiter
+
 from app.auth import auth_store
+from app.ratelimit import rate_limiter
 
 
 @pytest.fixture(autouse=True)
@@ -23,3 +24,13 @@ def reset_auth_store():
     yield
     auth_store._users.clear()
     auth_store._users_by_email.clear()
+
+
+@pytest.fixture(autouse=True)
+def clear_barcode_cache():
+    """Clear OFF/assessment cache so failover tests see mocked HTTP, not stale data."""
+    from app.barcode import _cache
+
+    _cache.clear()
+    yield
+    _cache.clear()

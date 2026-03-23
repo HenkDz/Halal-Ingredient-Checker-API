@@ -6,7 +6,8 @@ ruff==0.8.0
 
 # Type checking
 mypy==1.13.0
-types-cachetools==5.5.0
+# CalVer on PyPI (5.5.0 is not published as a release)
+types-cachetools==5.5.0.20240820
 
 # Security scanning
 bandit==1.8.0

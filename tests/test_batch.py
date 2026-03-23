@@ -1,9 +1,10 @@
 """Tests for batch barcode endpoint."""
 
-import pytest
-from unittest.mock import AsyncMock, patch
+from unittest.mock import patch
 
+import pytest
 from fastapi.testclient import TestClient
+
 from app.main import app
 from app.ratelimit import rate_limiter
 

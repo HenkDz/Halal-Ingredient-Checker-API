@@ -4,15 +4,13 @@ Handles API key registration, tier subscriptions, and subscription expiry.
 Uses in-memory storage. For production, migrate to a database (SQLite/PostgreSQL).
 """
 
+import hashlib
+import math
 import secrets
 import time
-import hashlib
 from dataclasses import dataclass, field
-from typing import Optional
 
 from pydantic import BaseModel, Field, field_validator
-from fastapi import HTTPException
-
 
 # --- Data Models ---
 
@@ -23,8 +21,8 @@ class Subscription:
     period_start: float = 0.0  # Unix timestamp
     period_end: float = 0.0  # Unix timestamp
     auto_renew: bool = False
-    polar_customer_id: Optional[str] = None
-    polar_subscription_id: Optional[str] = None
+    polar_customer_id: str | None = None
+    polar_subscription_id: str | None = None
 
     @property
     def is_active(self) -> bool:
@@ -40,7 +38,7 @@ class Subscription:
             return 999_999
         now = time.time()
         remaining = self.period_end - now
-        return max(0, int(remaining / 86400) + 1)
+        return max(0, math.ceil(remaining / 86400))
 
 
 @dataclass
@@ -99,7 +97,7 @@ class AuthStore:
         self._users_by_email[user.email] = user
         return raw_key
 
-    def get_user_by_key(self, raw_key: str) -> Optional[User]:
+    def get_user_by_key(self, raw_key: str) -> User | None:
         """Look up a user by their raw API key."""
         key_hash = hashlib.sha256(raw_key.encode()).hexdigest()
         user = self._users.get(key_hash)
@@ -108,14 +106,14 @@ class AuthStore:
             return user
         return None
 
-    def get_user_by_hash(self, key_hash: str) -> Optional[User]:
+    def get_user_by_hash(self, key_hash: str) -> User | None:
         """Look up a user by their API key hash (used by Polar webhooks)."""
         user = self._users.get(key_hash)
         if user:
             return user
         return None
 
-    def get_user_by_email(self, email: str) -> Optional[User]:
+    def get_user_by_email(self, email: str) -> User | None:
         """Look up a user by email."""
         user = self._users_by_email.get(email.lower().strip())
         if user and user.active:
@@ -265,12 +263,12 @@ class PolarSubscribeRequest(BaseModel):
 
 class PolarSubscribeResponse(BaseModel):
     message: str
-    checkout_url: Optional[str] = None
-    session_id: Optional[str] = None
+    checkout_url: str | None = None
+    session_id: str | None = None
     status: str = "success"  # "success" | "not_configured" | "error"
 
 
 class PolarPortalResponse(BaseModel):
     message: str
-    portal_url: Optional[str] = None
+    portal_url: str | None = None
     status: str

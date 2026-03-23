@@ -4,9 +4,9 @@ Tests for the observability module: structured logging, Sentry, Prometheus, exce
 These tests verify the observability features without requiring external services.
 """
 
-import pytest
 import os
-from unittest.mock import patch, MagicMock
+
+import pytest
 from starlette.testclient import TestClient
 
 
@@ -159,7 +159,7 @@ class TestExceptionHandlers:
             # Should return JSON, not an HTML/traceback page
             content_type = resp.headers.get("content-type", "")
             assert "json" in content_type or "text" in content_type
-            # Should NOT contain "Traceback" 
+            # Should NOT contain "Traceback"
             if resp.text:
                 assert "Traceback" not in resp.text
 
@@ -180,8 +180,9 @@ class TestLoggingConfig:
     def test_sentry_not_configured_without_dsn(self):
         """Sentry should not initialize when no DSN is set."""
         os.environ.pop("SENTRY_DSN", None)
-        from app.observability import configure_sentry
         from fastapi import FastAPI
+
+        from app.observability import configure_sentry
         app = FastAPI()
         # Should not raise and should log that it's not configured
         configure_sentry(app)
@@ -242,6 +243,7 @@ class TestDependencyChecks:
     def test_check_external_api(self):
         """External API check should return valid dict."""
         import asyncio
+
         from app.observability import check_external_api
         result = asyncio.get_event_loop().run_until_complete(check_external_api())
         assert "status" in result

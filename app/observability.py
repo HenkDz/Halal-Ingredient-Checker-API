@@ -9,17 +9,16 @@ Provides:
 - Global exception handlers (no stack traces in production)
 """
 
+import logging
 import os
 import time
-import logging
 import uuid
-from typing import Optional
 
 import structlog
+from fastapi import FastAPI
 from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
 from starlette.requests import Request
-from starlette.responses import Response, JSONResponse
-from fastapi import FastAPI
+from starlette.responses import JSONResponse, Response
 
 logger = structlog.get_logger()
 
@@ -40,8 +39,11 @@ CACHE_MISS_COUNT = None
 
 try:
     from prometheus_client import (
-        Counter, Histogram, Gauge,
-        generate_latest, CONTENT_TYPE_LATEST, REGISTRY,
+        CONTENT_TYPE_LATEST,
+        Counter,
+        Gauge,
+        Histogram,
+        generate_latest,
     )
 
     REQUEST_COUNT = Counter(
@@ -82,7 +84,7 @@ except ImportError:
 
 # --- Structured Logging Setup ---
 
-def _mask_api_key(api_key: str) -> str:
+def _mask_api_key(api_key: str | None) -> str:
     """Mask API key for safe logging. Shows first 4 and last 4 chars only."""
     if not api_key or api_key == "anonymous":
         return "anonymous"
@@ -99,10 +101,7 @@ def configure_logging() -> None:
     """
     log_level = getattr(logging, LOG_LEVEL, logging.INFO)
 
-    if DEBUG:
-        renderer = structlog.dev.ConsoleRenderer()
-    else:
-        renderer = structlog.processors.JSONRenderer()
+    renderer = structlog.dev.ConsoleRenderer() if DEBUG else structlog.processors.JSONRenderer()
 
     structlog.configure(
         processors=[
@@ -138,8 +137,8 @@ def configure_sentry(app: FastAPI) -> None:
     try:
         import sentry_sdk
         from sentry_sdk.integrations.fastapi import FastApiIntegration
-        from sentry_sdk.integrations.starlette import StarletteIntegration
         from sentry_sdk.integrations.logging import LoggingIntegration
+        from sentry_sdk.integrations.starlette import StarletteIntegration
 
         sentry_sdk.init(
             dsn=SENTRY_DSN,
@@ -203,6 +202,7 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
         )
 
         if PROMETHEUS_AVAILABLE:
+            assert ACTIVE_REQUESTS is not None
             ACTIVE_REQUESTS.inc()
 
         try:
@@ -241,6 +241,7 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
 
             # Prometheus metrics
             if PROMETHEUS_AVAILABLE:
+                assert REQUEST_COUNT is not None and REQUEST_LATENCY is not None and ERROR_COUNT is not None
                 REQUEST_COUNT.labels(
                     method=request.method,
                     endpoint=request.url.path,
@@ -275,6 +276,11 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
             )
 
             if PROMETHEUS_AVAILABLE:
+                assert (
+                    ERROR_COUNT is not None
+                    and REQUEST_COUNT is not None
+                    and REQUEST_LATENCY is not None
+                )
                 ERROR_COUNT.labels(
                     method=request.method,
                     endpoint=request.url.path,
@@ -293,6 +299,7 @@ class RequestLoggingMiddleware(BaseHTTPMiddleware):
             raise
         finally:
             if PROMETHEUS_AVAILABLE:
+                assert ACTIVE_REQUESTS is not None
                 ACTIVE_REQUESTS.dec()
             structlog.contextvars.unbind_contextvars("request_id", "method", "path")
 
@@ -397,7 +404,7 @@ def check_cache() -> dict:
 
 # --- Metrics Endpoint Helper ---
 
-def get_metrics() -> tuple[str, str]:
+def get_metrics() -> tuple[str, bytes | str]:
     """Return Prometheus metrics in text exposition format.
 
     Returns:
@@ -413,6 +420,7 @@ def get_metrics() -> tuple[str, str]:
 def instrument_cache_get(cache_type: str, hit: bool) -> None:
     """Record a cache hit or miss for Prometheus metrics."""
     if PROMETHEUS_AVAILABLE:
+        assert CACHE_HIT_COUNT is not None and CACHE_MISS_COUNT is not None
         if hit:
             CACHE_HIT_COUNT.labels(cache_type=cache_type).inc()
         else:
@@ -431,6 +439,14 @@ def setup_observability(app: FastAPI) -> None:
     configure_logging()
     configure_sentry(app)
     add_exception_handlers(app)
+    app.add_middleware(RequestLoggingMiddleware)
+
+    @app.get("/metrics", include_in_schema=False)
+    async def prometheus_metrics() -> Response:
+        content_type, body = get_metrics()
+        payload = body if isinstance(body, bytes) else body.encode("utf-8")
+        return Response(content=payload, media_type=content_type)
+
     logger.info(
         "observability_configured",
         log_level=LOG_LEVEL,

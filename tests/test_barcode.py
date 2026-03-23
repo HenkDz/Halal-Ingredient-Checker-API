@@ -1,18 +1,18 @@
 """Tests for barcode lookup module."""
 
-import pytest
 from unittest.mock import AsyncMock, patch
 
+import pytest
+
 from app.barcode import (
+    ParsedIngredient,
+    _compute_confidence,
+    _detect_halal_certification,
     _parse_ingredients_string,
     _remove_percentages,
     _remove_qualifiers,
-    _detect_halal_certification,
-    _compute_confidence,
     assess_barcode,
-    ParsedIngredient,
 )
-
 
 # ============ INGREDIENT PARSING TESTS ============
 
@@ -100,10 +100,10 @@ class TestIngredientParsing:
 
 class TestRemovePercentages:
     def test_simple_percentage(self):
-        assert "sugar" == _remove_percentages("sugar 38%")
+        assert _remove_percentages("sugar 38%") == "sugar"
 
     def test_no_percentage(self):
-        assert "sugar" == _remove_percentages("sugar")
+        assert _remove_percentages("sugar") == "sugar"
 
     def test_complex(self):
         result = _remove_percentages("cocoa maigre 7,4%")
@@ -315,6 +315,7 @@ class TestBarcodeEndpoint:
     async def test_barcode_not_found_returns_404(self):
         """Test that unknown barcode returns 404."""
         from fastapi.testclient import TestClient
+
         from app.main import app
 
         client = TestClient(app)
@@ -342,6 +343,7 @@ class TestBarcodeEndpoint:
     async def test_barcode_success(self):
         """Test successful barcode lookup."""
         from fastapi.testclient import TestClient
+
         from app.main import app
 
         client = TestClient(app)
@@ -376,6 +378,7 @@ class TestBarcodeEndpoint:
     def test_invalid_barcode_format_returns_400(self):
         """Test that invalid barcode format returns 400."""
         from fastapi.testclient import TestClient
+
         from app.main import app
 
         client = TestClient(app)

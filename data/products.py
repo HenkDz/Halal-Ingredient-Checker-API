@@ -21,7 +21,6 @@ Last verified: 2026-03-23
 
 import json
 import os
-from datetime import date
 
 PRODUCTS: list[dict] = []
 
@@ -34,7 +33,7 @@ def _load_products():
     """Load products from JSON file."""
     global PRODUCTS
     if os.path.exists(_PRODUCTS_FILE):
-        with open(_PRODUCTS_FILE, "r", encoding="utf-8") as f:
+        with open(_PRODUCTS_FILE, encoding="utf-8") as f:
             PRODUCTS = json.load(f)
     else:
         # Fallback: empty list, data must be generated first
@@ -132,7 +131,7 @@ def get_products_count() -> int:
 def get_brand_stats() -> dict:
     """Return statistics about brands in the database."""
     _load_products()
-    brands = {}
+    brands: dict[str, int] = {}
     verdicts = {"halal": 0, "haram": 0, "doubtful": 0}
     for p in PRODUCTS:
         brand = p.get("brand", "Unknown")

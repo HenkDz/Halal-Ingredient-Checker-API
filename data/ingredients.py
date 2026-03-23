@@ -8,7 +8,9 @@ Sources:
 - Halal Monitoring Authority
 """
 
-INGREDIENTS = {
+from typing import Any
+
+INGREDIENTS: dict[str, dict[str, Any]] = {
     # === HARAM INGREDIENTS ===
     "gelatin": {
         "name": "Gelatin",
@@ -335,7 +337,7 @@ INGREDIENTS = {
 }
 
 
-def lookup_ingredient(query: str) -> dict | None:
+def lookup_ingredient(query: str) -> dict[str, Any] | None:
     """Look up an ingredient by name, E-number, or alternative name.
 
     Returns the ingredient dict if found, None otherwise.
@@ -347,7 +349,7 @@ def lookup_ingredient(query: str) -> dict | None:
         return INGREDIENTS[q]
 
     # Check alternatives and E-numbers
-    for key, ingredient in INGREDIENTS.items():
+    for _key, ingredient in INGREDIENTS.items():
         # Check alternatives
         for alt in ingredient.get("alternatives", []):
             if alt.lower() == q:
@@ -359,7 +361,7 @@ def lookup_ingredient(query: str) -> dict | None:
     return None
 
 
-def check_ingredients(ingredient_list: list[str]) -> list[dict]:
+def check_ingredients(ingredient_list: list[str]) -> list[dict[str, Any]]:
     """Check a list of ingredient names against the database.
 
     Returns a list of results, each containing:

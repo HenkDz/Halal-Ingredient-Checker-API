@@ -13,15 +13,15 @@ Configuration via environment variables:
     POLAR_CANCEL_URL         - URL to redirect if user cancels checkout
 """
 
-import os
+import base64
 import hashlib
 import hmac
-import base64
 import json
 import logging
+import os
 import time
-from datetime import datetime, timezone
-from typing import Optional, Union
+from datetime import datetime
+from typing import Any, cast
 
 import httpx
 
@@ -178,7 +178,7 @@ def create_billing_portal_session(customer_id: str) -> dict:
 
 # --- Webhook Processing ---
 
-def verify_webhook_signature(payload: bytes, sig_header: str) -> dict:
+def verify_webhook_signature(payload: bytes, sig_header: str) -> dict[str, Any]:
     """Verify and parse a Polar webhook event.
 
     Polar uses the Standard Webhooks specification.
@@ -214,8 +214,8 @@ def verify_webhook_signature(payload: bytes, sig_header: str) -> dict:
         # Check timestamp freshness (reject events older than 5 minutes)
         try:
             event_ts = int(timestamp)
-        except ValueError:
-            raise ValueError("Invalid timestamp in webhook header")
+        except ValueError as e:
+            raise ValueError("Invalid timestamp in webhook header") from e
 
         now = int(time.time())
         if abs(now - event_ts) > 300:
@@ -237,7 +237,10 @@ def verify_webhook_signature(payload: bytes, sig_header: str) -> dict:
             raise ValueError("Invalid webhook signature")
 
         # Parse the JSON payload
-        event = json.loads(payload)
+        parsed = json.loads(payload)
+        if not isinstance(parsed, dict):
+            raise ValueError("Invalid webhook payload")
+        event = cast(dict[str, Any], parsed)
 
     except json.JSONDecodeError as e:
         logger.error("Failed to parse webhook payload as JSON: %s", e)
@@ -410,11 +413,11 @@ def _hash_key(api_key: str) -> str:
     return hashlib.sha256(api_key.encode()).hexdigest()
 
 
-def _parse_timestamp(value) -> Optional[float]:
+def _parse_timestamp(value) -> float | None:
     """Parse a timestamp from various formats (ISO string, int, float, None)."""
     if value is None:
         return None
-    if isinstance(value, (int, float)):
+    if isinstance(value, int | float):
         return float(value)
     if isinstance(value, str):
         try:

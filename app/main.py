@@ -8,47 +8,79 @@ Includes tier-based rate limiting (free/pro/enterprise) and auth.
 import asyncio
 import logging
 import re
-
-import os
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Query, Depends, Request, Response
-from fastapi.responses import JSONResponse, FileResponse, RedirectResponse
-from fastapi.staticfiles import StaticFiles
+from fastapi import FastAPI, HTTPException, Query, Request, Response
+from fastapi.responses import FileResponse, RedirectResponse
 from pydantic import BaseModel, Field
-from typing import Optional
 
-from data.ingredients import lookup_ingredient, check_ingredients, INGREDIENTS
-from data.products import search_products, get_product_by_barcode, get_products_count, get_brand_stats
-from app.barcode import assess_barcode, BarcodeAssessment
-from app.ratelimit import rate_limiter, RateLimiter, TIERS
 from app.auth import (
-    auth_store,
-    RegisterRequest,
-    RegisterResponse,
-    SubscribeRequest,
-    SubscribeResponse,
-    RevokeResponse,
-    KeysResponse,
     KeyInfo,
+    KeysResponse,
+    PolarPortalResponse,
     PolarSubscribeRequest,
     PolarSubscribeResponse,
-    PolarPortalResponse,
+    RegisterRequest,
+    RegisterResponse,
+    RevokeResponse,
+    SubscribeRequest,
+    SubscribeResponse,
+    auth_store,
+)
+from app.barcode import BarcodeAssessment, assess_barcode
+from app.observability import check_cache, check_external_api, setup_observability
+from app.polar import (
+    apply_webhook_action,
+    create_billing_portal_session,
+    create_checkout_session,
+    process_webhook_event,
+    verify_webhook_signature,
 )
 from app.polar import (
-    create_checkout_session,
-    create_billing_portal_session,
-    verify_webhook_signature,
-    process_webhook_event,
-    apply_webhook_action,
     is_configured as polar_is_configured,
+)
+from app.ratelimit import rate_limiter
+from data.ingredients import INGREDIENTS, check_ingredients, lookup_ingredient
+from data.products import (
+    get_brand_stats,
+    get_product_by_barcode,
+    search_products,
 )
 
 app = FastAPI(
-    title="Halal Check API",
-    description="Check food ingredients for halal/haram/doubtful status. Supports direct ingredient lookup and barcode-based product scanning via Open Food Facts.",
+    title="Halal Ingredient Checker API",
+    description="""Check food ingredients for halal/haram/doubtful status.
+
+## What It Does
+The Halal Ingredient Checker API verifies whether food ingredients and products are **halal**, **haram**, or **doubtful**. It supports direct ingredient lookup by name or E-number, barcode-based product scanning via Open Food Facts, and batch verification.
+
+## Key Features
+- **Ingredient checking** — look up individual ingredients or check entire lists by name or E-number
+- **Barcode scanning** — scan any EAN/UPC barcode and get a full halal assessment
+- **Batch processing** — check up to 50 barcodes in a single request (Pro+)
+- **Product search** — search a pre-indexed database of common brand products
+- **Freemium model** — free tier for personal use, paid tiers for commercial apps
+- **Scholarly sources** — results include references from IFANCA, JAKIM, MUI, and other halal certification bodies
+
+## Getting Started
+1. Register for a free API key: `POST /api/v1/auth/register`
+2. Check ingredients: `POST /api/v1/check`
+3. Scan a barcode: `GET /api/v1/barcode/{barcode}`
+
+No credit card required for the free tier.""",
     version="0.5.0",
+    contact={
+        "name": "HalalChecker Support",
+        "email": "hello@halalchecker.com",
+        "url": "https://halalchecker.com/",
+    },
+    license_info={
+        "name": "MIT",
+    },
+    terms_of_service="https://halalchecker.com/terms",
 )
+
+setup_observability(app)
 
 logger = logging.getLogger(__name__)
 
@@ -57,8 +89,11 @@ logger = logging.getLogger(__name__)
 
 def _extract_api_key(request: Request) -> str:
     """Extract API key from header or query parameter."""
-    api_key=request.headers.get("X-API-Key") or request.query_params.get("api_key", "anonymous")
-    return api_key
+    return (
+        request.headers.get("X-API-Key")
+        or request.query_params.get("api_key")
+        or "anonymous"
+    )
 
 
 def _sync_auth_tier(api_key: str) -> None:
@@ -150,8 +185,8 @@ class IngredientResult(BaseModel):
     name: str
     verdict: str  # halal, haram, doubtful, unknown
     reason: str
-    source: Optional[str] = None
-    e_number: Optional[str] = None
+    source: str | None = None
+    e_number: str | None = None
 
 
 class CheckResponse(BaseModel):
@@ -168,6 +203,8 @@ class HealthResponse(BaseModel):
     status: str
     version: str
     database_entries: int
+    cache: dict
+    external_api: dict
 
 
 # --- Barcode Response Models ---
@@ -176,21 +213,21 @@ class FlaggedIngredient(BaseModel):
     name: str
     verdict: str
     reason: str
-    e_number: Optional[str] = None
+    e_number: str | None = None
 
 
 class ParsedIngredientResponse(BaseModel):
     name: str
     verdict: str
     reason: str
-    e_number: Optional[str] = None
+    e_number: str | None = None
 
 
 class BarcodeResponse(BaseModel):
     barcode: str
-    product_name: Optional[str]
-    brand: Optional[str]
-    ingredients_text: Optional[str]
+    product_name: str | None
+    brand: str | None
+    ingredients_text: str | None
     overall_status: str
     confidence: float
     flagged_ingredients: list[FlaggedIngredient]
@@ -215,10 +252,20 @@ async def health_check(request: Request):
     _, headers = rate_limiter.check_rate_limit(api_key)
     _sync_auth_tier(api_key)
     request.state.rate_limit_headers = headers
+    cache_info = check_cache()
+    external = await check_external_api()
+    ext_status = external.get("status", "unknown")
+    overall = (
+        "degraded"
+        if ext_status in ("timeout", "down", "degraded")
+        else "ok"
+    )
     return HealthResponse(
-        status="ok",
+        status=overall,
         version="0.5.0",
         database_entries=len(INGREDIENTS),
+        cache=cache_info,
+        external_api=external,
     )
 
 
@@ -263,12 +310,23 @@ async def check_ingredients_endpoint(request: Request, body: CheckRequest):
     Pass X-API-Key header to identify your client for rate limiting.
     """
     await require_rate_limit(request, cost=1)
-    results = check_ingredients(body.ingredients)
+    raw_results = check_ingredients(body.ingredients)
+    results = [
+        IngredientResult(
+            query=r["query"],
+            name=r["name"],
+            verdict=r["verdict"],
+            reason=r["reason"],
+            source=r.get("source"),
+            e_number=r.get("e_number"),
+        )
+        for r in raw_results
+    ]
 
-    halal_count = sum(1 for r in results if r["verdict"] == "halal")
-    haram_count = sum(1 for r in results if r["verdict"] == "haram")
-    doubtful_count = sum(1 for r in results if r["verdict"] == "doubtful")
-    unknown_count = sum(1 for r in results if r["verdict"] == "unknown")
+    halal_count = sum(1 for r in results if r.verdict == "halal")
+    haram_count = sum(1 for r in results if r.verdict == "haram")
+    doubtful_count = sum(1 for r in results if r.verdict == "doubtful")
+    unknown_count = sum(1 for r in results if r.verdict == "unknown")
 
     # Determine overall verdict
     if haram_count > 0:
@@ -319,7 +377,7 @@ async def get_barcode_assessment(barcode: str, request: Request):
     try:
         assessment = await assess_barcode(barcode)
     except ValueError as e:
-        raise HTTPException(status_code=400, detail={"error": str(e)})
+        raise HTTPException(status_code=400, detail={"error": str(e)}) from e
     except Exception as e:
         raise HTTPException(
             status_code=502,
@@ -327,7 +385,7 @@ async def get_barcode_assessment(barcode: str, request: Request):
                 "error": "External API error",
                 "message": f"Failed to fetch product data: {str(e)}",
             },
-        )
+        ) from e
 
     # Check if product was found
     if assessment.product_name is None and assessment.overall_status == "unknown":
@@ -390,10 +448,10 @@ class BatchBarcodeRequest(BaseModel):
 class BatchItemResult(BaseModel):
     barcode: str
     status: str  # "success" or "error"
-    product_name: Optional[str] = None
-    brand: Optional[str] = None
-    overall_status: Optional[str] = None
-    confidence: Optional[float] = None
+    product_name: str | None = None
+    brand: str | None = None
+    overall_status: str | None = None
+    confidence: float | None = None
     flagged_ingredients: list[FlaggedIngredient] = []
     ingredient_count: int = 0
     halal_count: int = 0
@@ -401,7 +459,7 @@ class BatchItemResult(BaseModel):
     doubtful_count: int = 0
     unknown_count: int = 0
     has_halal_certification: bool = False
-    error: Optional[str] = None
+    error: str | None = None
 
 
 class BatchBarcodeResponse(BaseModel):
@@ -587,9 +645,14 @@ async def register(body: RegisterRequest):
     try:
         raw_key = auth_store.create_user(email=body.email, name=body.name)
     except ValueError as e:
-        raise HTTPException(status_code=409, detail={"error": str(e)})
+        raise HTTPException(status_code=409, detail={"error": str(e)}) from e
 
     user = auth_store.get_user_by_key(raw_key)
+    if user is None:
+        raise HTTPException(
+            status_code=500,
+            detail={"error": "Registration failed", "message": "User record missing after create."},
+        )
     return RegisterResponse(
         api_key=raw_key,
         api_key_prefix=user.api_key_prefix,
@@ -695,7 +758,7 @@ async def subscribe(body: SubscribeRequest, request: Request):
     try:
         result = auth_store.subscribe(api_key, body.tier, body.duration_days)
     except ValueError as e:
-        raise HTTPException(status_code=401, detail={"error": str(e)})
+        raise HTTPException(status_code=401, detail={"error": str(e)}) from e
 
     # Sync tier to rate limiter
     rate_limiter.set_tier(api_key, body.tier)
@@ -749,12 +812,12 @@ async def subscribe_polar(body: PolarSubscribeRequest, request: Request):
             billing_period=body.billing_period,
         )
     except ValueError as e:
-        raise HTTPException(status_code=400, detail={"error": str(e)})
+        raise HTTPException(status_code=400, detail={"error": str(e)}) from e
     except Exception as e:
         raise HTTPException(
             status_code=500,
             detail={"error": "Polar error", "message": str(e)},
-        )
+        ) from e
 
     return PolarSubscribeResponse(
         message=f"Redirect to Polar checkout to complete your {body.billing_period} Pro subscription.",
@@ -810,12 +873,12 @@ async def billing_portal(request: Request):
     try:
         result = create_billing_portal_session(user.subscription.polar_customer_id)
     except ValueError as e:
-        raise HTTPException(status_code=400, detail={"error": str(e)})
+        raise HTTPException(status_code=400, detail={"error": str(e)}) from e
     except Exception as e:
         raise HTTPException(
             status_code=500,
             detail={"error": "Polar error", "message": str(e)},
-        )
+        ) from e
 
     return PolarPortalResponse(
         message="Billing portal session created. Redirect user to portal_url to manage their subscription.",
@@ -849,7 +912,7 @@ async def polar_webhook(request: Request):
     try:
         event = verify_webhook_signature(payload, sig_header)
     except ValueError as e:
-        raise HTTPException(status_code=400, detail={"error": str(e)})
+        raise HTTPException(status_code=400, detail={"error": str(e)}) from e
 
     # Process the event
     action_result = process_webhook_event(event)
@@ -977,6 +1040,30 @@ if _STATIC_DIR.is_dir():
     @app.get("/v1/", include_in_schema=False)
     async def redirect_legacy_v1_slash():
         return RedirectResponse(url="/", status_code=308)
+
+    @app.get("/robots.txt", include_in_schema=False)
+    async def serve_robots():
+        """Serve robots.txt for search engine crawlers."""
+        robots_path = _STATIC_DIR / "robots.txt"
+        if robots_path.exists():
+            return FileResponse(str(robots_path), media_type="text/plain")
+        raise HTTPException(status_code=404)
+
+    @app.get("/sitemap.xml", include_in_schema=False)
+    async def serve_sitemap():
+        """Serve XML sitemap for search engine crawlers."""
+        sitemap_path = _STATIC_DIR / "sitemap.xml"
+        if sitemap_path.exists():
+            return FileResponse(str(sitemap_path), media_type="application/xml")
+        raise HTTPException(status_code=404)
+
+    @app.get("/favicon.svg", include_in_schema=False)
+    async def serve_favicon_svg():
+        """Serve the SVG favicon."""
+        favicon_path = _STATIC_DIR / "favicon.svg"
+        if favicon_path.exists():
+            return FileResponse(str(favicon_path), media_type="image/svg+xml")
+        raise HTTPException(status_code=404)
 
 
 # --- App Entry Point ---

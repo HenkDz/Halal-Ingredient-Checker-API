@@ -9,8 +9,9 @@ Tests what happens when:
 5. Network errors mid-request
 """
 
+from unittest.mock import AsyncMock, MagicMock, patch
+
 import pytest
-from unittest.mock import AsyncMock, patch, MagicMock
 from fastapi.testclient import TestClient
 
 from app.main import app
@@ -234,7 +235,7 @@ class TestOFFFailover:
     async def test_concurrent_barcode_requests_with_off_flaky(self):
         """Multiple concurrent requests with flaky OFF should not cause cascading failures."""
         import asyncio
-        from unittest.mock import AsyncMock, patch
+        from unittest.mock import patch
 
         call_count = 0
 

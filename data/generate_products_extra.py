@@ -5,7 +5,7 @@ import os
 data_dir = os.path.dirname(os.path.abspath(__file__))
 existing_path = os.path.join(data_dir, "products.json")
 
-with open(existing_path, "r", encoding="utf-8") as f:
+with open(existing_path, encoding="utf-8") as f:
     products = json.load(f)
 
 base_date = "2026-03-23"

@@ -1,11 +1,9 @@
 """Tests for Halal Check API - Phase 4: Rate Limiting"""
 
-import pytest
 from fastapi.testclient import TestClient
 
 from app.main import app
-from app.ratelimit import rate_limiter, TIERS
-
+from app.ratelimit import rate_limiter
 
 client = TestClient(app)
 
@@ -73,7 +71,7 @@ class TestFreeTierRateLimiting:
     def test_rate_limit_429_includes_limit_info(self):
         """429 response should include tier and limit details."""
         # Exhaust the minute limit
-        for i in range(10):
+        for _i in range(10):
             client.get("/api/v1/ingredient/water", headers={"X-API-Key": "free-info-test"})
 
         response = client.get("/api/v1/ingredient/water", headers={"X-API-Key": "free-info-test"})
@@ -93,7 +91,7 @@ class TestFreeTierRateLimiting:
 
     def test_usage_endpoint_not_rate_limited(self):
         """Usage endpoint should not count against rate limit."""
-        for i in range(15):
+        for _i in range(15):
             response = client.get("/api/v1/auth/usage", headers={"X-API-Key": "usage-test"})
             assert response.status_code == 200
 
@@ -280,17 +278,17 @@ class TestBatchCost:
         rate_limiter.set_tier("batch-cost-key", "pro")
         # Free tier has 10/min, pro has 100/min
         # Send a batch of 5 barcodes
-        response = client.post(
+        client.post(
             "/api/v1/barcode/batch",
             json={"barcodes": ["invalid1", "invalid2", "invalid3", "invalid4", "invalid5"]},
             headers={"X-API-Key": "batch-cost-key"},
         )
-        # Check usage after - should have used 3 (only 3 are not valid 8-14 digit format... 
+        # Check usage after - should have used 3 (only 3 are not valid 8-14 digit format...
         # actually "invalid1" etc. don't match \d{8,14} so cost=0)
         # Let me use valid format barcodes
         rate_limiter.reset_usage("batch-cost-key2")
         rate_limiter.set_tier("batch-cost-key2", "pro")
-        response = client.post(
+        client.post(
             "/api/v1/barcode/batch",
             json={"barcodes": ["12345678", "12345679", "12345670"]},
             headers={"X-API-Key": "batch-cost-key2"},

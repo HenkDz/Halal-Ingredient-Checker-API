@@ -1,11 +1,11 @@
 """Tests for Halal Check API - Phase 1"""
 
-import pytest
 from fastapi.testclient import TestClient
 
-# Import the ingredient data functions
-from data.ingredients import lookup_ingredient, check_ingredients, INGREDIENTS
 from app.main import app
+
+# Import the ingredient data functions
+from data.ingredients import INGREDIENTS, check_ingredients, lookup_ingredient
 
 client = TestClient(app)
 

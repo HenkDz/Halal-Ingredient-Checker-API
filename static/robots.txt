@@ -1,0 +1,16 @@
+# Halal Ingredient Checker API — robots.txt
+User-agent: *
+Allow: /
+Disallow: /api/v1/auth/
+Disallow: /docs
+Disallow: /redoc
+Disallow: /openapi.json
+
+Sitemap: https://halalchecker.com/sitemap.xml
+
+# Allow all crawlers to access the landing page and API documentation
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

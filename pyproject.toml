@@ -45,7 +45,12 @@ skips = ["B101", "B608"]
 
 [tool.coverage.run]
 source = ["app", "data"]
-omit = ["tests/*"]
+omit = [
+    "tests/*",
+    "data/generate_products.py",
+    "data/generate_products_extra.py",
+    "data/generate_products_final.py",
+]
 
 [tool.coverage.report]
 fail_under = 70

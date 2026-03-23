@@ -7,7 +7,6 @@ deployment. For multi-instance, replace with Redis-backed slowapi.
 import time
 from collections import defaultdict
 from dataclasses import dataclass, field
-from typing import Optional
 
 
 @dataclass

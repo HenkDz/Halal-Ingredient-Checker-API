@@ -11,25 +11,22 @@ Comprehensive tests covering:
 7. Error handling and robustness
 """
 
-import pytest
 import asyncio
-from unittest.mock import AsyncMock, patch, MagicMock
+from unittest.mock import AsyncMock, patch
+
+import pytest
 from fastapi.testclient import TestClient
 
-from app.main import app
 from app.barcode import (
-    _parse_ingredients_string,
-    _remove_percentages,
-    _remove_qualifiers,
-    _detect_halal_certification,
-    _compute_confidence,
-    assess_barcode,
-    fetch_product_from_off,
     ParsedIngredient,
-    BarcodeAssessment,
     _cache,
+    _compute_confidence,
+    _detect_halal_certification,
+    _parse_ingredients_string,
+    assess_barcode,
 )
-from data.ingredients import lookup_ingredient, check_ingredients, INGREDIENTS
+from app.main import app
+from data.ingredients import INGREDIENTS, check_ingredients, lookup_ingredient
 
 client = TestClient(app)
 
@@ -559,7 +556,7 @@ class TestConfidenceEdgeCases:
             ings = []
             for _ in range(n):
                 v = random.choice(verdicts)
-                ings.append(ParsedIngredient(f"ing", f"ing", v, "test", None))
+                ings.append(ParsedIngredient("ing", "ing", v, "test", None))
             score = _compute_confidence(ings, has_certification=random.choice([True, False]))
             assert 0.0 <= score <= 1.0, f"Confidence {score} out of range for {ings}"
 
