@@ -27,17 +27,17 @@ from app.auth import (
     RevokeResponse,
     KeysResponse,
     KeyInfo,
-    StripeSubscribeRequest,
-    StripeSubscribeResponse,
-    StripePortalResponse,
+    PolarSubscribeRequest,
+    PolarSubscribeResponse,
+    PolarPortalResponse,
 )
-from app.stripe import (
+from app.polar import (
     create_checkout_session,
     create_billing_portal_session,
     verify_webhook_signature,
     process_webhook_event,
     apply_webhook_action,
-    is_configured as stripe_is_configured,
+    is_configured as polar_is_configured,
 )
 
 app = FastAPI(
@@ -53,12 +53,11 @@ logger = logging.getLogger(__name__)
 
 def _extract_api_key(request: Request) -> str:
     """Extract API key from header or query parameter."""
-    api_key = request.headers.get("X-API-Key") or request.query_params.get("api_key", "anonymous")
+    api_key=request.headers.get("X-API-Key") or request.query_params.get("api_key", "anonymous")
     return api_key
 
 
 def _sync_auth_tier(api_key: str) -> None:
-    """Sync the user's subscription tier from auth store to rate limiter."""
     if api_key == "anonymous":
         return
     user = auth_store.get_user_by_key(api_key)
@@ -667,7 +666,7 @@ async def subscribe(body: SubscribeRequest, request: Request):
     Manually upgrade your subscription tier.
 
     This is a manual subscription endpoint for testing/demo purposes.
-    For production payments, use /api/v1/auth/subscribe/stripe.
+    For production payments, use /api/v1/auth/subscribe/polar.
 
     Tier options:
     - free: Basic access (single barcode, basic results)
@@ -703,23 +702,23 @@ async def subscribe(body: SubscribeRequest, request: Request):
     )
 
 
-@app.post("/api/v1/auth/subscribe/stripe", response_model=StripeSubscribeResponse, tags=["auth"])
-async def subscribe_stripe(body: StripeSubscribeRequest, request: Request):
+@app.post("/api/v1/auth/subscribe/polar", response_model=PolarSubscribeResponse, tags=["auth"])
+async def subscribe_polar(body: PolarSubscribeRequest, request: Request):
     """
-    Create a Stripe Checkout Session for Pro tier subscription.
+    Create a Polar Checkout Session for Pro tier subscription.
 
     Pricing:
     - Pro Monthly: $9/month
     - Pro Yearly: $79/year (save ~27%)
 
-    After successful payment, Stripe will send a webhook that automatically
+    After successful payment, Polar will send a webhook that automatically
     activates your subscription. You'll need to authenticate with X-API-Key.
 
     Pass X-API-Key header to identify yourself.
     """
-    if not stripe_is_configured():
-        return StripeSubscribeResponse(
-            message="Stripe is not configured. Set the required environment variables. Use POST /api/v1/auth/subscribe for manual tier upgrades.",
+    if not polar_is_configured():
+        return PolarSubscribeResponse(
+            message="Polar is not configured. Set the required environment variables. Use POST /api/v1/auth/subscribe for manual tier upgrades.",
             checkout_url=None,
             status="not_configured",
         )
@@ -750,21 +749,21 @@ async def subscribe_stripe(body: StripeSubscribeRequest, request: Request):
     except Exception as e:
         raise HTTPException(
             status_code=500,
-            detail={"error": "Stripe error", "message": str(e)},
+            detail={"error": "Polar error", "message": str(e)},
         )
 
-    return StripeSubscribeResponse(
-        message=f"Redirect to Stripe checkout to complete your {body.billing_period} Pro subscription.",
+    return PolarSubscribeResponse(
+        message=f"Redirect to Polar checkout to complete your {body.billing_period} Pro subscription.",
         checkout_url=result["checkout_url"],
         session_id=result["session_id"],
         status="success",
     )
 
 
-@app.get("/api/v1/auth/billing/portal", response_model=StripePortalResponse, tags=["auth"])
+@app.get("/api/v1/auth/billing/portal", response_model=PolarPortalResponse, tags=["auth"])
 async def billing_portal(request: Request):
     """
-    Get a link to the Stripe Billing Portal for managing your subscription.
+    Get a link to the Polar Customer Portal for managing your subscription.
 
     From the portal, users can:
     - View subscription details
@@ -774,9 +773,9 @@ async def billing_portal(request: Request):
 
     Pass X-API-Key header to identify yourself.
     """
-    if not stripe_is_configured():
-        return StripePortalResponse(
-            message="Stripe is not configured.",
+    if not polar_is_configured():
+        return PolarPortalResponse(
+            message="Polar is not configured.",
             portal_url=None,
             status="not_configured",
         )
@@ -795,50 +794,52 @@ async def billing_portal(request: Request):
             detail={"error": "Invalid API key", "message": "The provided API key is not recognized."},
         )
 
-    if not user.subscription.stripe_customer_id:
+    if not user.subscription.polar_customer_id:
         raise HTTPException(
             status_code=400,
             detail={
-                "error": "No Stripe customer found",
-                "message": "You don't have an active Stripe subscription. Subscribe first via POST /api/v1/auth/subscribe/stripe.",
+                "error": "No Polar customer found",
+                "message": "You don't have an active Polar subscription. Subscribe first via POST /api/v1/auth/subscribe/polar.",
             },
         )
 
     try:
-        result = create_billing_portal_session(user.subscription.stripe_customer_id)
+        result = create_billing_portal_session(user.subscription.polar_customer_id)
     except ValueError as e:
         raise HTTPException(status_code=400, detail={"error": str(e)})
     except Exception as e:
         raise HTTPException(
             status_code=500,
-            detail={"error": "Stripe error", "message": str(e)},
+            detail={"error": "Polar error", "message": str(e)},
         )
 
-    return StripePortalResponse(
+    return PolarPortalResponse(
         message="Billing portal session created. Redirect user to portal_url to manage their subscription.",
         portal_url=result["portal_url"],
         status="success",
     )
 
 
-@app.post("/api/v1/webhooks/stripe", tags=["webhooks"])
-async def stripe_webhook(request: Request):
+@app.post("/api/v1/webhooks/polar", tags=["webhooks"])
+async def polar_webhook(request: Request):
     """
-    Stripe webhook endpoint.
+    Polar webhook endpoint.
 
     Handles the following events:
-    - checkout.session.completed: Activates subscription after payment
-    - customer.subscription.deleted: Cancels subscription
-    - invoice.payment_failed: Grants 7-day grace period
-    - customer.subscription.updated: Updates subscription on renewal
+    - subscription.created: Activates subscription after checkout
+    - subscription.active: Activates subscription on renewal
+    - subscription.canceled: Cancels subscription
+    - subscription.revoked: Terminates subscription immediately
+    - subscription.past_due: Grants 7-day grace period for failed payment
+    - subscription.updated: Updates subscription on changes
 
-    This endpoint is called by Stripe, not by users.
+    This endpoint is called by Polar, not by users.
     """
     payload = await request.body()
-    sig_header = request.headers.get("stripe-signature", "")
+    sig_header = request.headers.get("polar-webhook-signature", "")
 
     if not sig_header:
-        raise HTTPException(status_code=400, detail={"error": "Missing stripe-signature header"})
+        raise HTTPException(status_code=400, detail={"error": "Missing polar-webhook-signature header"})
 
     # Verify webhook signature
     try:
@@ -854,13 +855,12 @@ async def stripe_webhook(request: Request):
         apply_webhook_action(auth_store, action_result)
     except Exception as e:
         logger.error("Failed to apply webhook action: %s", e)
-        # Return 200 anyway to prevent Stripe retries for non-critical errors
+        # Return 200 anyway to prevent Polar retries for non-critical errors
 
     # Sync tier to rate limiter if we have a user
     if action_result.get("api_key_hash") and action_result.get("action") != "ignore":
         user = auth_store.get_user_by_hash(action_result["api_key_hash"])
         if user:
-            # Find the raw key from hash - we need to update rate limiter
             # The rate limiter uses raw keys, so we store tier update
             # Rate limiter will pick up the new tier on next request via _sync_auth_tier
             pass

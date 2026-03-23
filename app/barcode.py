@@ -17,6 +17,7 @@ import httpx
 from cachetools import TTLCache
 
 from data.ingredients import lookup_ingredient
+from app.observability import instrument_cache_get
 
 logger = logging.getLogger(__name__)
 
@@ -249,7 +250,9 @@ async def fetch_product_from_off(barcode: str) -> Optional[dict]:
     cached = _cache.get(cache_key)
     if cached is not None:
         logger.info("Cache hit for barcode %s", barcode)
+        instrument_cache_get("off_product", hit=True)
         return cached
+    instrument_cache_get("off_product", hit=False)
 
     url = f"{OFF_API_BASE}/product/{barcode}.json"
     try:
@@ -288,7 +291,9 @@ async def assess_barcode(barcode: str) -> BarcodeAssessment:
     assess_cache_key = f"assess:{barcode}"
     cached_assessment = _cache.get(assess_cache_key)
     if cached_assessment is not None:
+        instrument_cache_get("barcode_assessment", hit=True)
         return cached_assessment
+    instrument_cache_get("barcode_assessment", hit=False)
 
     # Fetch from OFF
     product = await fetch_product_from_off(barcode)

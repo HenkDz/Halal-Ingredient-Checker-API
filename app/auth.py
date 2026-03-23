@@ -23,8 +23,8 @@ class Subscription:
     period_start: float = 0.0  # Unix timestamp
     period_end: float = 0.0  # Unix timestamp
     auto_renew: bool = False
-    stripe_customer_id: Optional[str] = None
-    stripe_subscription_id: Optional[str] = None
+    polar_customer_id: Optional[str] = None
+    polar_subscription_id: Optional[str] = None
 
     @property
     def is_active(self) -> bool:
@@ -109,7 +109,7 @@ class AuthStore:
         return None
 
     def get_user_by_hash(self, key_hash: str) -> Optional[User]:
-        """Look up a user by their API key hash (used by Stripe webhooks)."""
+        """Look up a user by their API key hash (used by Polar webhooks)."""
         user = self._users.get(key_hash)
         if user:
             return user
@@ -257,20 +257,20 @@ class KeysResponse(BaseModel):
     count: int
 
 
-class StripeSubscribeRequest(BaseModel):
-    """Stripe checkout request."""
-    tier: str = Field("pro", description="Target tier (only 'pro' available via Stripe)")
+class PolarSubscribeRequest(BaseModel):
+    """Polar checkout request."""
+    tier: str = Field("pro", description="Target tier (only 'pro' available via Polar)")
     billing_period: str = Field("monthly", description="monthly or yearly")
 
 
-class StripeSubscribeResponse(BaseModel):
+class PolarSubscribeResponse(BaseModel):
     message: str
     checkout_url: Optional[str] = None
     session_id: Optional[str] = None
     status: str = "success"  # "success" | "not_configured" | "error"
 
 
-class StripePortalResponse(BaseModel):
+class PolarPortalResponse(BaseModel):
     message: str
     portal_url: Optional[str] = None
     status: str

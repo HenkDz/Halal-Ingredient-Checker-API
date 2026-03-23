@@ -41,6 +41,38 @@ services:
     networks:
       - halal-net
 
+  # Monitoring daemon — pings health endpoint every 60s, fires alerts, generates weekly reports
+  monitor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: halal-check-monitor
+    restart: unless-stopped
+    entrypoint: ["python", "-m", "monitoring.run"]
+    environment:
+      - API_BASE_URL=http://app:8000
+      - CHECK_INTERVAL=60
+      - WEBHOOK_URL=${WEBHOOK_URL:-}
+      - SMTP_HOST=${SMTP_HOST:-}
+      - SMTP_PORT=${SMTP_PORT:-587}
+      - SMTP_USER=${SMTP_USER:-}
+      - SMTP_PASSWORD=${SMTP_PASSWORD:-}
+      - SMTP_FROM=${SMTP_FROM:-}
+      - SMTP_TO=${SMTP_TO:-}
+      - REPORT_OUTPUT_DIR=/app/reports
+    volumes:
+      - monitor-reports:/app/reports
+    depends_on:
+      app:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: '0.25'
+    networks:
+      - halal-net
+
   # Optional: nginx reverse proxy for SSL termination and static files
   # Uncomment this section and the nginx service below for production
   # nginx:
@@ -62,6 +94,8 @@ services:
 
 volumes:
   app-data:
+    driver: local
+  monitor-reports:
     driver: local
 
   # nginx-logs:

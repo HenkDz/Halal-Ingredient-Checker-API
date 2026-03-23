@@ -162,11 +162,11 @@ def test_subscribe_no_auth():
     assert resp.status_code == 401
 
 
-# --- Stripe Integration (unconfigured mode) ---
+# --- Polar Integration (unconfigured mode) ---
 
-def test_stripe_subscribe_not_configured():
-    """Should return not_configured when Stripe env vars are not set."""
-    resp = client.post("/api/v1/auth/subscribe/stripe", json={
+def test_polar_subscribe_not_configured():
+    """Should return not_configured when Polar env vars are not set."""
+    resp = client.post("/api/v1/auth/subscribe/polar", json={
         "tier": "pro",
         "billing_period": "monthly",
     })
@@ -176,11 +176,11 @@ def test_stripe_subscribe_not_configured():
     assert data["checkout_url"] is None
 
 
-def test_stripe_subscribe_requires_auth():
+def test_polar_subscribe_requires_auth():
     """Should require authentication even when not configured."""
     # When not configured, it returns 200 with not_configured status
     # But when configured, it should require auth. Test without auth key:
-    resp = client.post("/api/v1/auth/subscribe/stripe", json={
+    resp = client.post("/api/v1/auth/subscribe/polar", json={
         "tier": "pro",
         "billing_period": "monthly",
     })
@@ -190,7 +190,7 @@ def test_stripe_subscribe_requires_auth():
 
 
 def test_billing_portal_not_configured():
-    """Should return not_configured when Stripe is not set up."""
+    """Should return not_configured when Polar is not set up."""
     resp = client.get("/api/v1/auth/billing/portal")
     assert resp.status_code == 200
     data = resp.json()
@@ -199,8 +199,8 @@ def test_billing_portal_not_configured():
 
 
 def test_webhook_missing_signature():
-    """Should reject webhooks without stripe-signature header."""
-    resp = client.post("/api/v1/webhooks/stripe", content=b"{}")
+    """Should reject webhooks without polar-webhook-signature header."""
+    resp = client.post("/api/v1/webhooks/polar", content=b"{}")
     assert resp.status_code == 400
 
 
