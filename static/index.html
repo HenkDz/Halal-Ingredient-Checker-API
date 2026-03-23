@@ -3,826 +3,1721 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HalalCheck — Instant Halal Ingredient Verification API</title>
-<meta name="description" content="Verify any food ingredient's halal status instantly via API. Trusted by developers, food manufacturers, and health apps worldwide.">
+<title>Halal Ingredient Checker API — Instant Halal Verification</title>
+<meta name="description" content="Instantly verify food ingredients against halal standards. API for apps, food manufacturers, and consumers. Check ingredients, scan barcodes, batch verify.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --emerald:#0D5C3F;
-  --emerald-light:#1A7D56;
-  --emerald-dark:#093D29;
-  --gold:#C8A951;
-  --gold-light:#E0CA7A;
-  --gold-dark:#A68B3A;
-  --cream:#F7F5F0;
-  --cream-warm:#EFE9DD;
-  --ink:#1A1A1A;
-  --ink-light:#4A4A4A;
-  --ink-muted:#7A7A7A;
-  --white:#FFFFFF;
-  --halal:#0D5C3F;
-  --haram:#C0392B;
-  --doubtful:#E67E22;
-  --radius:12px;
-  --radius-lg:20px;
-  --shadow-sm:0 2px 8px rgba(0,0,0,0.06);
-  --shadow-md:0 8px 30px rgba(0,0,0,0.08);
-  --shadow-lg:0 20px 60px rgba(0,0,0,0.12);
-  --font-display:'Playfair Display',Georgia,serif;
-  --font-body:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+/* ═══════════════════════════════════════════
+   HALAL INGREDIENT CHECKER — LANDING PAGE
+   Design: "Certified Trust"
+   Aesthetic: Warm, refined, Islamic-inspired
+   ═══════════════════════════════════════════ */
+
+:root {
+  --emerald-950: #022C22;
+  --emerald-900: #064E3B;
+  --emerald-800: #065F46;
+  --emerald-700: #047857;
+  --emerald-600: #059669;
+  --emerald-500: #10B981;
+  --emerald-100: #D1FAE5;
+  --emerald-50:  #ECFDF5;
+
+  --gold-600: #B45309;
+  --gold-500: #D97706;
+  --gold-400: #F59E0B;
+  --gold-300: #FCD34D;
+  --gold-200: #FDE68A;
+  --gold-100: #FEF3C7;
+
+  --cream:  #FFFBF0;
+  --cream-dark: #FEF7E6;
+  --charcoal: #1C1917;
+  --charcoal-light: #44403C;
+  --stone:   #78716C;
+  --stone-light: #A8A29E;
+  --white:   #FFFFFF;
+
+  --halal:   #047857;
+  --haram:   #B91C1C;
+  --doubtful:#D97706;
+  --unknown: #6B7280;
+
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body:    'Outfit', system-ui, sans-serif;
+
+  --shadow-sm:  0 1px 2px rgba(28,25,23,0.05);
+  --shadow-md:  0 4px 12px rgba(28,25,23,0.08);
+  --shadow-lg:  0 12px 40px rgba(28,25,23,0.12);
+  --shadow-xl:  0 24px 60px rgba(28,25,23,0.15);
+  --shadow-gold: 0 4px 20px rgba(217,119,6,0.25);
+
+  --radius: 12px;
+  --radius-lg: 20px;
 }
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* ── Geometric Pattern ── */
-.geo-pattern{position:absolute;inset:0;opacity:0.04;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z' fill='none' stroke='%230D5C3F' stroke-width='0.8'/%3E%3Cpath d='M40 10L70 40L40 70L10 40Z' fill='none' stroke='%230D5C3F' stroke-width='0.5'/%3E%3Ccircle cx='40' cy='40' r='15' fill='none' stroke='%230D5C3F' stroke-width='0.5'/%3E%3Cpath d='M40 0L45 5L40 10L35 5Z' fill='%230D5C3F' opacity='0.3'/%3E%3Cpath d='M80 40L75 45L70 40L75 35Z' fill='%230D5C3F' opacity='0.3'/%3E%3Cpath d='M40 80L35 75L40 70L45 75Z' fill='%230D5C3F' opacity='0.3'/%3E%3Cpath d='M0 40L5 35L10 40L5 45Z' fill='%230D5C3F' opacity='0.3'/%3E%3C/svg%3E");background-size:80px 80px}
-.geo-pattern-gold{opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z' fill='none' stroke='%23C8A951' stroke-width='0.8'/%3E%3Cpath d='M40 10L70 40L40 70L10 40Z' fill='none' stroke='%23C8A951' stroke-width='0.5'/%3E%3Ccircle cx='40' cy='40' r='15' fill='none' stroke='%23C8A951' stroke-width='0.5'/%3E%3C/svg%3E")}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Navigation ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:all 0.4s ease;backdrop-filter:blur(0px)}
-nav.scrolled{background:rgba(247,245,240,0.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,0.06)}
-.nav-brand{display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:var(--emerald)}
-.nav-logo{width:40px;height:40px;background:var(--emerald);border-radius:10px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.nav-logo::after{content:'';position:absolute;width:20px;height:20px;border:2px solid var(--gold);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
-.nav-logo svg{width:20px;height:20px;fill:none;stroke:var(--white);stroke-width:2;position:relative;z-index:1}
-.nav-name{font-family:var(--font-display);font-weight:700;font-size:1.35rem;letter-spacing:-0.02em}
-.nav-name span{color:var(--gold)}
-.nav-links{display:flex;gap:2rem;align-items:center}
-.nav-links a{color:var(--ink-light);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s}
-.nav-links a:hover{color:var(--emerald)}
-.nav-cta{background:var(--emerald)!important;color:var(--white)!important;padding:0.6rem 1.4rem;border-radius:100px;font-weight:600;font-size:0.85rem;transition:all 0.3s ease}
-.nav-cta:hover{background:var(--emerald-dark)!important;transform:translateY(-1px);box-shadow:0 4px 15px rgba(13,92,63,0.3)}
-.nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem}
-.nav-mobile-toggle span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:all 0.3s}
-
-/* ── Hero ── */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:8rem 2rem 4rem}
-.hero-bg{position:absolute;top:-20%;right:-10%;width:70%;height:140%;background:radial-gradient(ellipse at 30% 50%,rgba(13,92,63,0.06) 0%,transparent 70%);pointer-events:none}
-.hero-content{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative}
-.hero-text{position:relative;z-index:2}
-.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(13,92,63,0.08);border:1px solid rgba(13,92,63,0.15);padding:0.4rem 1rem;border-radius:100px;font-size:0.8rem;font-weight:600;color:var(--emerald);margin-bottom:1.5rem;letter-spacing:0.03em;text-transform:uppercase}
-.hero-badge svg{width:14px;height:14px}
-.hero-title{font-family:var(--font-display);font-size:clamp(2.8rem,5.5vw,4.2rem);font-weight:900;line-height:1.08;letter-spacing:-0.03em;color:var(--ink);margin-bottom:1.5rem}
-.hero-title .line{display:block}
-.hero-title .accent{color:var(--emerald);position:relative}
-.hero-title .accent::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:8px;background:rgba(200,169,81,0.3);border-radius:4px;z-index:-1}
-.hero-subtitle{font-size:1.15rem;color:var(--ink-light);line-height:1.7;max-width:480px;margin-bottom:2rem;font-weight:300}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
-.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border-radius:100px;font-family:var(--font-body);font-size:0.95rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:all 0.3s ease}
-.btn-primary{background:var(--emerald);color:var(--white)}
-.btn-primary:hover{background:var(--emerald-dark);transform:translateY(-2px);box-shadow:0 8px 25px rgba(13,92,63,0.35)}
-.btn-secondary{background:transparent;color:var(--emerald);border:2px solid var(--emerald)}
-.btn-secondary:hover{background:var(--emerald);color:var(--white);transform:translateY(-2px)}
-.btn svg{width:18px;height:18px}
-.hero-stats{display:flex;gap:2.5rem}
-.hero-stat{text-align:left}
-.hero-stat-value{font-family:var(--font-display);font-size:1.8rem;font-weight:800;color:var(--emerald);line-height:1}
-.hero-stat-label{font-size:0.78rem;color:var(--ink-muted);margin-top:0.3rem;font-weight:500;text-transform:uppercase;letter-spacing:0.05em}
-
-/* ── Live Demo ── */
-.hero-demo{position:relative;z-index:2}
-.demo-card{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);overflow:hidden;border:1px solid rgba(0,0,0,0.04)}
-.demo-header{padding:1rem 1.5rem;border-bottom:1px solid var(--cream-warm);display:flex;align-items:center;justify-content:space-between}
-.demo-dots{display:flex;gap:6px}
-.demo-dots span{width:10px;height:10px;border-radius:50%}
-.demo-dots span:nth-child(1){background:#FF5F56}
-.demo-dots span:nth-child(2){background:#FFBD2E}
-.demo-dots span:nth-child(3){background:#27C93F}
-.demo-header-title{font-size:0.8rem;color:var(--ink-muted);font-weight:500}
-.demo-body{padding:1.5rem}
-.demo-input-group{position:relative;margin-bottom:1rem}
-.demo-label{display:block;font-size:0.75rem;font-weight:600;color:var(--ink-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem}
-.demo-input{width:100%;padding:0.9rem 1.2rem;border:2px solid var(--cream-warm);border-radius:var(--radius);font-family:var(--font-body);font-size:0.95rem;color:var(--ink);transition:all 0.2s;resize:vertical;min-height:80px;background:var(--cream)}
-.demo-input:focus{outline:none;border-color:var(--emerald);background:var(--white);box-shadow:0 0 0 4px rgba(13,92,63,0.08)}
-.demo-input::placeholder{color:var(--ink-muted);font-weight:300}
-.demo-btn{width:100%;padding:0.9rem;background:var(--emerald);color:var(--white);border:none;border-radius:var(--radius);font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:0.5rem}
-.demo-btn:hover{background:var(--emerald-dark);transform:translateY(-1px);box-shadow:0 4px 15px rgba(13,92,63,0.3)}
-.demo-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
-.demo-btn svg{width:16px;height:16px}
-.demo-results{margin-top:1rem}
-.demo-result-item{display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;border-radius:10px;margin-bottom:0.5rem;animation:fadeInUp 0.3s ease both;border:1px solid transparent}
-.demo-result-item.halal{background:rgba(13,92,63,0.06);border-color:rgba(13,92,63,0.1)}
-.demo-result-item.haram{background:rgba(192,57,43,0.06);border-color:rgba(192,57,43,0.1)}
-.demo-result-item.doubtful{background:rgba(230,126,34,0.06);border-color:rgba(230,126,34,0.1)}
-.demo-result-item.unknown{background:rgba(122,122,122,0.06);border-color:rgba(122,122,122,0.1)}
-.result-status{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.result-status.halal{background:var(--halal)}
-.result-status.haram{background:var(--haram)}
-.result-status.doubtful{background:var(--doubtful)}
-.result-status.unknown{background:var(--ink-muted)}
-.result-name{font-weight:600;font-size:0.9rem;flex:1}
-.result-tag{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.2rem 0.6rem;border-radius:100px}
-.result-tag.halal{background:rgba(13,92,63,0.12);color:var(--halal)}
-.result-tag.haram{background:rgba(192,57,43,0.12);color:var(--haram)}
-.result-tag.doubtful{background:rgba(230,126,34,0.12);color:var(--doubtful)}
-.result-tag.unknown{background:rgba(122,122,122,0.12);color:var(--ink-muted)}
-.result-source{font-size:0.75rem;color:var(--ink-muted);margin-top:0.15rem;grid-column:2}
-.demo-error{padding:1rem;background:rgba(192,57,43,0.06);border:1px solid rgba(192,57,43,0.1);border-radius:10px;color:var(--haram);font-size:0.85rem;margin-top:0.75rem}
-.demo-loading{text-align:center;padding:2rem;color:var(--ink-muted)}
-.demo-loading::after{content:'';display:inline-block;width:20px;height:20px;border:2px solid var(--cream-warm);border-top-color:var(--emerald);border-radius:50%;animation:spin 0.6s linear infinite;margin-left:0.5rem;vertical-align:middle}
-
-/* ── Sections ── */
-section{padding:6rem 2rem;position:relative}
-.container{max-width:1200px;margin:0 auto}
-.section-label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold-dark);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}
-.section-label::before{content:'';width:24px;height:2px;background:var(--gold)}
-.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:1rem;color:var(--ink)}
-.section-subtitle{font-size:1.1rem;color:var(--ink-light);max-width:600px;font-weight:300;line-height:1.7}
-
-/* ── How It Works ── */
-.how-it-works{background:var(--white);overflow:hidden}
-.how-it-works .geo-pattern{opacity:0.02}
-.how-it-works .container{position:relative;z-index:1}
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
-.step-card{text-align:center;padding:2.5rem 2rem;border-radius:var(--radius-lg);position:relative;background:var(--cream);transition:all 0.4s ease}
-.step-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.step-number{width:56px;height:56px;background:var(--emerald);color:var(--white);border-radius:16px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.4rem;font-weight:800;margin:0 auto 1.5rem;position:relative}
-.step-number::after{content:'';position:absolute;inset:-4px;border:2px solid rgba(13,92,63,0.15);border-radius:20px}
-.step-icon{margin:0 auto 1.5rem;width:48px;height:48px;color:var(--emerald)}
-.step-title{font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:0.75rem;color:var(--ink)}
-.step-desc{font-size:0.9rem;color:var(--ink-light);line-height:1.6;font-weight:300}
-.step-connector{position:absolute;top:50%;right:-2rem;width:4rem;height:2px;background:linear-gradient(to right,var(--emerald),transparent);opacity:0.2}
-.step-card:last-child .step-connector{display:none}
-
-/* ── Pricing ── */
-.pricing{background:var(--cream);position:relative;overflow:hidden}
-.pricing .geo-pattern-gold{position:absolute;inset:0}
-.pricing .container{position:relative;z-index:1}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;align-items:start}
-.pricing-card{background:var(--white);border-radius:var(--radius-lg);padding:2.5rem 2rem;border:2px solid transparent;transition:all 0.4s ease;position:relative;overflow:hidden}
-.pricing-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.pricing-card.featured{border-color:var(--emerald);box-shadow:var(--shadow-md)}
-.pricing-card.featured::before{content:'Most Popular';position:absolute;top:1rem;right:-2.5rem;background:var(--emerald);color:var(--white);font-size:0.7rem;font-weight:700;padding:0.3rem 3rem;transform:rotate(45deg);letter-spacing:0.05em;text-transform:uppercase}
-.pricing-name{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-muted);margin-bottom:0.75rem}
-.pricing-price{font-family:var(--font-display);font-size:2.8rem;font-weight:800;color:var(--ink);line-height:1;margin-bottom:0.5rem}
-.pricing-price span{font-size:1rem;font-weight:400;color:var(--ink-muted);font-family:var(--font-body)}
-.pricing-desc{font-size:0.85rem;color:var(--ink-light);margin-bottom:2rem;font-weight:300}
-.pricing-features{list-style:none;margin-bottom:2rem}
-.pricing-features li{display:flex;align-items:center;gap:0.75rem;padding:0.5rem 0;font-size:0.9rem;color:var(--ink-light);border-bottom:1px solid var(--cream)}
-.pricing-features li:last-child{border-bottom:none}
-.pricing-features li svg{width:16px;height:16px;color:var(--emerald);flex-shrink:0}
-.pricing-features li.disabled{color:var(--ink-muted);text-decoration:line-through;opacity:0.5}
-.pricing-features li.disabled svg{color:var(--ink-muted)}
-.pricing-btn{width:100%;padding:0.85rem;border-radius:100px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s;display:block;text-align:center;text-decoration:none;border:2px solid var(--emerald);background:transparent;color:var(--emerald)}
-.pricing-btn:hover{background:var(--emerald);color:var(--white);transform:translateY(-1px)}
-.pricing-card.featured .pricing-btn{background:var(--emerald);color:var(--white);border-color:var(--emerald)}
-.pricing-card.featured .pricing-btn:hover{background:var(--emerald-dark);border-color:var(--emerald-dark)}
-
-/* ── Code Examples ── */
-.code-section{background:var(--ink);color:var(--white);position:relative;overflow:hidden}
-.code-section .geo-pattern-gold{position:absolute;inset:0;opacity:0.03}
-.code-section .container{position:relative;z-index:1}
-.code-section .section-label{color:var(--gold)}
-.code-section .section-title{color:var(--white)}
-.code-section .section-subtitle{color:rgba(255,255,255,0.6)}
-.code-tabs{display:flex;gap:0;margin-bottom:0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(255,255,255,0.1);margin-top:3rem}
-.code-tab{padding:0.8rem 1.5rem;background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.5);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;border:none;transition:all 0.2s;display:flex;align-items:center;gap:0.5rem}
-.code-tab.active{background:rgba(255,255,255,0.08);color:var(--gold)}
-.code-tab:hover{color:rgba(255,255,255,0.8)}
-.code-block{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-top:none;border-radius:0 0 var(--radius-lg) var(--radius-lg);padding:1.5rem 2rem;overflow-x:auto;position:relative}
-.code-block pre{font-family:'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:0.85rem;line-height:1.8;color:rgba(255,255,255,0.75);margin:0;white-space:pre}
-.code-block .kw{color:#C8A951}
-.code-block .str{color:#7EC699}
-.code-block .cm{color:rgba(255,255,255,0.3)}
-.code-block .fn{color:#61AFEF}
-.code-block .var{color:#E06C75}
-.code-block .num{color:#D19A66}
-.copy-btn{position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);padding:0.4rem 0.8rem;border-radius:8px;font-size:0.75rem;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:var(--font-body)}
-.copy-btn:hover{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.8)}
-
-/* ── API Endpoints ── */
-.endpoints-section{background:var(--white)}
-.endpoints-list{margin-top:2rem;display:flex;flex-direction:column;gap:0.75rem}
-.endpoint-item{display:flex;align-items:center;gap:1rem;padding:1rem 1.5rem;background:var(--cream);border-radius:var(--radius);transition:all 0.2s;border:1px solid transparent}
-.endpoint-item:hover{border-color:var(--cream-warm);box-shadow:var(--shadow-sm)}
-.endpoint-method{font-size:0.7rem;font-weight:700;padding:0.3rem 0.7rem;border-radius:6px;text-transform:uppercase;letter-spacing:0.05em;min-width:50px;text-align:center}
-.endpoint-method.get{background:rgba(13,92,63,0.1);color:var(--emerald)}
-.endpoint-method.post{background:rgba(200,169,81,0.15);color:var(--gold-dark)}
-.endpoint-path{font-family:'SF Mono',SFMono-Regular,Consolas,monospace;font-size:0.85rem;color:var(--ink);flex:1}
-.endpoint-desc{font-size:0.8rem;color:var(--ink-muted);font-weight:400}
-
-/* ── CTA ── */
-.cta-section{background:var(--emerald);position:relative;overflow:hidden;text-align:center}
-.cta-section .geo-pattern{opacity:0.04}
-.cta-section .geo-pattern-gold{position:absolute;inset:0;opacity:0.03}
-.cta-section .container{position:relative;z-index:1}
-.cta-section .section-label{color:var(--gold-light);justify-content:center}
-.cta-section .section-label::before{background:var(--gold-light)}
-.cta-section .section-title{color:var(--white)}
-.cta-section .section-subtitle{color:rgba(255,255,255,0.7);margin:0 auto 2.5rem;text-align:center}
-.cta-form{display:flex;gap:0.75rem;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
-.cta-form input{flex:1;min-width:240px;padding:1rem 1.5rem;border:2px solid rgba(255,255,255,0.2);border-radius:100px;background:rgba(255,255,255,0.08);color:var(--white);font-family:var(--font-body);font-size:0.95rem;transition:all 0.2s}
-.cta-form input::placeholder{color:rgba(255,255,255,0.4)}
-.cta-form input:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,0.12)}
-.cta-form .btn{background:var(--gold);color:var(--emerald-dark);font-weight:700}
-.cta-form .btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(200,169,81,0.4)}
-.cta-trust{margin-top:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.4);font-weight:300}
-
-/* ── Footer ── */
-footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;text-align:center}
-footer a{color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s}
-footer a:hover{color:var(--gold)}
-.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.footer-links a{font-size:0.85rem;font-weight:500}
-.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.3)}
-
-/* ── Animations ── */
-@keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.animate-in{opacity:0;transform:translateY(20px);transition:all 0.6s cubic-bezier(0.22,1,0.36,1)}
-.animate-in.visible{opacity:1;transform:translateY(0)}
-
-/* ── Responsive ── */
-@media(max-width:1024px){
-  .hero-content{grid-template-columns:1fr;gap:3rem}
-  .hero-demo{max-width:520px}
-  .steps-grid{grid-template-columns:repeat(3,1fr)}
-  .step-connector{display:none}
-  .pricing-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-@media(max-width:768px){
-  nav{padding:0.75rem 1.25rem}
-  .nav-links{display:none}
-  .nav-mobile-toggle{display:block}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(247,245,240,0.98);backdrop-filter:blur(20px);padding:1.5rem;gap:1rem;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
-  .hero{padding:7rem 1.25rem 3rem}
-  .hero-title{font-size:2.4rem}
-  .hero-stats{gap:1.5rem;flex-wrap:wrap}
-  section{padding:4rem 1.25rem}
-  .steps-grid{grid-template-columns:1fr;max-width:360px;margin:3rem auto 0}
-  .code-tabs{flex-wrap:wrap}
-  .code-tab{flex:1;min-width:auto;text-align:center;justify-content:center;padding:0.6rem 1rem;font-size:0.78rem}
-  .code-block{padding:1rem 1.25rem}
-  .code-block pre{font-size:0.78rem}
-  .cta-form{flex-direction:column;align-items:center}
-  .cta-form input{width:100%;max-width:360px}
-  .endpoint-item{flex-wrap:wrap}
-  .endpoint-desc{width:100%;margin-left:calc(50px + 1rem)}
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
-@media(max-width:480px){
-  .hero-title{font-size:2rem}
-  .hero-stat-value{font-size:1.4rem}
-  .hero-actions{flex-direction:column}
-  .hero-actions .btn{width:100%;justify-content:center}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--emerald-800); border-radius: 4px; }
+
+/* ─── Islamic Geometric SVG Pattern ─── */
+.geo-pattern {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.04;
+  z-index: 0;
+}
+
+/* ─── Navigation ─── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+.nav.scrolled {
+  background: rgba(255,251,240,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(6,78,59,0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--emerald-900);
+}
+
+.nav-logo svg { width: 36px; height: 36px; }
+
+.nav-logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--charcoal-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--emerald-800); }
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--emerald-800);
+  color: var(--white) !important;
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+
+.nav-cta svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.nav-cta:hover {
+  background: var(--emerald-700);
+  color: var(--white) !important;
+  box-shadow: var(--shadow-md);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mobile-toggle svg { width: 28px; height: 28px; color: var(--charcoal); }
+
+/* ─── Hero ─── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 2rem 80px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(6,78,59,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(217,119,6,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 20% 80%, rgba(6,95,70,0.04) 0%, transparent 60%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--emerald-50);
+  border: 1px solid var(--emerald-100);
+  color: var(--emerald-800);
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.8s ease-out;
+}
+
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--emerald-500);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 1.08;
+  color: var(--emerald-950);
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s ease-out 0.1s both;
+}
+
+.hero h1 .gold { color: var(--gold-600); }
+
+.hero-sub {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--charcoal-light);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-weight: 400;
+  line-height: 1.7;
+  animation: fadeUp 0.8s ease-out 0.2s both;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s ease-out 0.3s both;
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 4rem;
+  animation: fadeUp 0.8s ease-out 0.5s both;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--emerald-800);
+}
+
+.hero-stat-label {
+  font-size: 0.82rem;
+  color: var(--stone);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+
+.btn-primary {
+  background: var(--emerald-800);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(6,78,59,0.3);
+}
+
+.btn-primary:hover {
+  background: var(--emerald-700);
+  box-shadow: 0 8px 28px rgba(6,78,59,0.35);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--emerald-800);
+  border: 1.5px solid var(--emerald-100);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--emerald-50);
+  border-color: var(--emerald-500);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-gold {
+  background: var(--gold-500);
+  color: var(--white);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-gold:hover {
+  background: var(--gold-600);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(217,119,6,0.35);
+}
+
+.btn svg { width: 18px; height: 18px; }
+
+/* ─── Sections ─── */
+.section {
+  padding: 100px 2rem;
+  position: relative;
+}
+
+.section-alt { background: var(--white); }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 4rem;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-600);
+  margin-bottom: 1rem;
+}
+
+.section-label svg { width: 14px; height: 14px; }
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--emerald-950);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--stone);
+  line-height: 1.7;
+}
+
+/* ─── Live Demo ─── */
+.demo-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  max-width: 720px;
+  margin: 0 auto;
+  border: 1px solid rgba(6,78,59,0.06);
+}
+
+.demo-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  background: var(--emerald-950);
+  color: var(--white);
+}
+
+.demo-dot { width: 10px; height: 10px; border-radius: 50%; }
+.demo-dot.r { background: #EF4444; }
+.demo-dot.y { background: #F59E0B; }
+.demo-dot.g { background: #10B981; }
+
+.demo-header-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  margin-left: 8px;
+  font-family: monospace;
+}
+
+.demo-body { padding: 2rem; }
+
+.demo-input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.demo-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--charcoal-light);
+  margin-bottom: 8px;
+}
+
+.demo-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 14px 16px;
+  border: 2px solid var(--emerald-100);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--charcoal);
+  background: var(--cream);
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  line-height: 1.6;
+}
+
+.demo-textarea:focus {
+  outline: none;
+  border-color: var(--emerald-500);
+  box-shadow: 0 0 0 4px rgba(16,185,129,0.1);
+}
+
+.demo-textarea::placeholder { color: var(--stone-light); }
+
+.demo-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.demo-loading {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  color: var(--emerald-700);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.demo-loading.active { display: flex; }
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid var(--emerald-100);
+  border-top-color: var(--emerald-600);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.demo-results {
+  margin-top: 1.5rem;
+  display: none;
+}
+
+.demo-results.active { display: block; }
+
+.demo-overall {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.demo-overall.halal {
+  background: rgba(4,120,87,0.08);
+  color: var(--halal);
+  border: 1px solid rgba(4,120,87,0.15);
+}
+
+.demo-overall.haram {
+  background: rgba(185,28,28,0.06);
+  color: var(--haram);
+  border: 1px solid rgba(185,28,28,0.12);
+}
+
+.demo-overall.doubtful {
+  background: rgba(217,119,6,0.08);
+  color: var(--doubtful);
+  border: 1px solid rgba(217,119,6,0.15);
+}
+
+.demo-result-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.demo-result-item:last-child { border-bottom: none; }
+
+.demo-verdict {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.demo-verdict.halal { background: rgba(4,120,87,0.1); color: var(--halal); }
+.demo-verdict.haram { background: rgba(185,28,28,0.08); color: var(--haram); }
+.demo-verdict.doubtful { background: rgba(217,119,6,0.1); color: var(--doubtful); }
+.demo-verdict.unknown { background: rgba(107,114,128,0.1); color: var(--unknown); }
+
+.demo-result-info h4 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 3px;
+}
+
+.demo-result-info h4 .e-number {
+  font-weight: 500;
+  color: var(--stone);
+  font-size: 0.82rem;
+  margin-left: 6px;
+}
+
+.demo-result-info p {
+  font-size: 0.82rem;
+  color: var(--stone);
+  line-height: 1.5;
+}
+
+.demo-result-info .source {
+  font-size: 0.75rem;
+  color: var(--stone-light);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ─── How It Works ─── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.step-card {
+  position: relative;
+  text-align: center;
+  padding: 2.5rem 2rem;
+}
+
+.step-number {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 4rem;
+  color: var(--emerald-100);
+  line-height: 1;
+  margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+.step-card:hover .step-number { color: var(--gold-200); }
+
+.step-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--emerald-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  box-shadow: 0 4px 16px rgba(6,78,59,0.2);
+}
+
+.step-icon svg { width: 26px; height: 26px; color: var(--white); }
+
+.step-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--emerald-950);
+  margin-bottom: 0.6rem;
+}
+
+.step-card p {
+  font-size: 0.92rem;
+  color: var(--stone);
+  line-height: 1.65;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.step-connector {
+  position: absolute;
+  top: 50%;
+  left: 33%;
+  right: 33%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--emerald-200) 0px,
+    var(--emerald-200) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  z-index: 0;
+  transform: translateY(-60px);
+}
+
+/* ─── Pricing ─── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.pricing-card {
+  background: var(--white);
+  border: 1.5px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.pricing-card.featured {
+  border-color: var(--gold-400);
+  box-shadow: var(--shadow-gold);
+  background: linear-gradient(135deg, #FFFBF0 0%, #FEF3C7 100%);
+}
+
+.pricing-popular {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-500);
+  color: var(--white);
+  padding: 4px 18px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pricing-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--emerald-950);
+  margin-bottom: 0.5rem;
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 0.3rem;
+}
+
+.pricing-amount {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: var(--emerald-950);
+  line-height: 1;
+}
+
+.pricing-period {
+  font-size: 0.9rem;
+  color: var(--stone);
+  font-weight: 500;
+}
+
+.pricing-subtitle {
+  font-size: 0.82rem;
+  color: var(--stone-light);
+  margin-bottom: 1.8rem;
+}
+
+.pricing-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 0.88rem;
+  color: var(--charcoal-light);
+}
+
+.pricing-features li svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--emerald-600);
+  margin-top: 1px;
+}
+
+.pricing-features li.disabled {
+  color: var(--stone-light);
+  text-decoration: line-through;
+}
+
+.pricing-features li.disabled svg { color: var(--stone-light); }
+
+.pricing-card .btn { width: 100%; justify-content: center; }
+
+/* ─── Code Examples ─── */
+.code-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 1;
+}
+
+.code-tab {
+  padding: 10px 20px;
+  background: var(--emerald-50);
+  border: 1.5px solid var(--emerald-100);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--stone);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.code-tab.active {
+  background: var(--emerald-950);
+  color: var(--white);
+  border-color: var(--emerald-950);
+}
+
+.code-block {
+  background: var(--emerald-950);
+  border-radius: 0 var(--radius) var(--radius) var(--radius);
+  padding: 1.5rem 2rem;
+  overflow-x: auto;
+  position: relative;
+}
+
+.code-block pre {
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.84rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
+}
+
+.code-block .comment { color: rgba(255,255,255,0.3); }
+.code-block .keyword { color: #F9A8D4; }
+.code-block .string { color: #86EFAC; }
+.code-block .method { color: #93C5FD; }
+.code-block .url { color: #FDE68A; }
+.code-block .header { color: #C4B5FD; }
+.code-block .number { color: #FDBA74; }
+
+.code-copy {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all 0.2s;
+}
+
+.code-copy:hover {
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.8);
+}
+
+.code-pane { display: none; }
+.code-pane.active { display: block; }
+
+/* ─── API Endpoints Table ─── */
+.endpoints-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0,0,0,0.04);
+  overflow: hidden;
+}
+
+.endpoints-header {
+  padding: 1.5rem 2rem;
+  background: var(--emerald-50);
+  border-bottom: 1px solid var(--emerald-100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.endpoints-header h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--emerald-950);
+}
+
+.endpoint-row {
+  display: flex;
+  align-items: center;
+  padding: 14px 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  transition: background 0.15s;
+  gap: 16px;
+}
+
+.endpoint-row:last-child { border-bottom: none; }
+.endpoint-row:hover { background: rgba(6,78,59,0.02); }
+
+.endpoint-method {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.endpoint-method.get { background: rgba(4,120,87,0.1); color: var(--halal); }
+.endpoint-method.post { background: rgba(217,119,6,0.1); color: var(--doubtful); }
+
+.endpoint-path {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.84rem;
+  color: var(--charcoal);
+  flex: 1;
+}
+
+.endpoint-desc {
+  font-size: 0.84rem;
+  color: var(--stone);
+  flex-shrink: 0;
+}
+
+/* ─── CTA ─── */
+.cta {
+  background: var(--emerald-950);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-geo {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.cta p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+/* ─── Footer ─── */
+.footer {
+  background: var(--emerald-950);
+  color: rgba(255,255,255,0.5);
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Intersection Observer reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+
+  .hero { padding: 100px 1.5rem 60px; min-height: auto; }
+  .hero-stats { gap: 2rem; margin-top: 2.5rem; }
+  .hero-stat-value { font-size: 1.4rem; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  .section { padding: 60px 1.5rem; }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .step-connector { display: none; }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .demo-textarea { min-height: 80px; }
+
+  .endpoint-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .code-block { padding: 1.2rem; }
+  .code-block pre { font-size: 0.78rem; }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2.2rem; }
+  .section-title { font-size: 1.8rem; }
+  .demo-body { padding: 1.5rem; }
 }
 </style>
 </head>
 <body>
 
-<!-- Navigation -->
-<nav id="nav">
-  <a href="#" class="nav-brand">
-    <div class="nav-logo">
-      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-    </div>
-    <span class="nav-name">Halal<span>Check</span></span>
-  </a>
-  <div class="nav-links" id="navLinks">
-    <a href="#how-it-works">How It Works</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#code">API Docs</a>
-    <a href="#endpoints">Endpoints</a>
-    <a href="#cta" class="nav-cta">Get API Key</a>
+<!-- ═══════ NAVIGATION ═══════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="17" stroke="#065F46" stroke-width="2" fill="#ECFDF5"/>
+        <path d="M18 6C14.5 6 11.5 8.5 10.5 12C8 12.5 6 14.8 6 17.5C6 20.8 8.7 23.5 12 23.5H25C27.8 23.5 30 21.3 30 18.5C30 15.8 27.5 13.5 24.8 13.5C24.5 9.4 21.6 6 18 6Z" fill="#065F46" opacity="0.15"/>
+        <path d="M18 8C15.2 8 12.8 10 12 12.5C9.8 12.8 8 14.7 8 17C8 19.5 10 21.5 12.5 21.5H25C27.2 21.5 29 19.7 29 17.5C29 15.4 27.2 13.5 25 13.5C24.8 10.5 22.7 8 20 8" stroke="#065F46" stroke-width="1.5" fill="none"/>
+        <path d="M13 18L16 21L23 14" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="nav-logo-text">HalalChecker</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#demo">Live Demo</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#api">API Docs</a></li>
+      <li><a href="#code">Code</a></li>
+      <li><a href="javascript:void(0)" class="nav-cta" onclick="scrollToRegister()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Get Free Key
+      </a></li>
+    </ul>
+
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
-  <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
-<!-- Hero -->
-<section class="hero">
+<!-- ═══════ HERO ═══════ -->
+<section class="hero" id="hero">
   <div class="hero-bg"></div>
-  <div class="geo-pattern"></div>
+
+  <!-- Islamic Geometric Pattern (decorative) -->
+  <svg class="geo-pattern" style="top:-100px;right:-100px;width:600px;height:600px" viewBox="0 0 200 200" fill="none">
+    <g stroke="#065F46" stroke-width="0.5">
+      <polygon points="100,10 190,60 190,140 100,190 10,140 10,60"/>
+      <polygon points="100,30 170,70 170,130 100,170 30,130 30,70"/>
+      <polygon points="100,50 150,80 150,120 100,150 50,120 50,80"/>
+      <line x1="100" y1="10" x2="100" y2="190"/>
+      <line x1="10" y1="60" x2="190" y2="140"/>
+      <line x1="10" y1="140" x2="190" y2="60"/>
+      <line x1="30" y1="70" x2="170" y2="130"/>
+      <line x1="30" y1="130" x2="170" y2="70"/>
+    </g>
+  </svg>
+
+  <svg class="geo-pattern" style="bottom:-50px;left:-80px;width:400px;height:400px" viewBox="0 0 200 200" fill="none">
+    <g stroke="#065F46" stroke-width="0.5">
+      <circle cx="100" cy="100" r="90"/>
+      <circle cx="100" cy="100" r="70"/>
+      <circle cx="100" cy="100" r="50"/>
+      <circle cx="100" cy="100" r="30"/>
+      <line x1="100" y1="10" x2="100" y2="190"/>
+      <line x1="10" y1="100" x2="190" y2="100"/>
+      <line x1="36" y1="36" x2="164" y2="164"/>
+      <line x1="164" y1="36" x2="36" y2="164"/>
+      <line x1="100" y1="10" x2="155" y2="145"/>
+      <line x1="100" y1="10" x2="45" y2="145"/>
+      <line x1="100" y1="190" x2="155" y2="55"/>
+      <line x1="100" y1="190" x2="45" y2="55"/>
+    </g>
+  </svg>
+
   <div class="hero-content">
-    <div class="hero-text">
-      <div class="hero-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
-        Trusted by developers worldwide
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      API v0.5 — Live & Operational
+    </div>
+
+    <h1>Know What's In<br>Your <span class="gold">Food</span>.</h1>
+
+    <p class="hero-sub">
+      Instantly verify any ingredient against halal standards.
+      Built for developers, food companies, and health apps
+      who take halal compliance seriously.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#demo" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Try Live Demo
+      </a>
+      <a href="#code" class="btn btn-secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        View Code Examples
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value">40+</div>
+        <div class="hero-stat-label">Ingredients in Database</div>
       </div>
-      <h1 class="hero-title">
-        <span class="line">Know what's in your</span>
-        <span class="line"><span class="accent">food. Instantly.</span></span>
-      </h1>
-      <p class="hero-subtitle">
-        The most comprehensive halal ingredient verification API. Check any ingredient, scan any barcode, get detailed sources — all in under 100ms.
-      </p>
-      <div class="hero-actions">
-        <a href="#cta" class="btn btn-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-          Get Free API Key
-        </a>
-        <a href="#code" class="btn btn-secondary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          View API Docs
-        </a>
+      <div class="hero-stat">
+        <div class="hero-stat-value">4</div>
+        <div class="hero-stat-label">API Endpoints</div>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-value">50K+</div>
-          <div class="hero-stat-label">Ingredients</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-value">&lt;100ms</div>
-          <div class="hero-stat-label">Response Time</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-value">99.9%</div>
-          <div class="hero-stat-label">Uptime</div>
-        </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">100%</div>
+        <div class="hero-stat-label">Free Tier Available</div>
       </div>
     </div>
-    <div class="hero-demo">
-      <div class="demo-card">
-        <div class="demo-header">
-          <div class="demo-dots"><span></span><span></span><span></span></div>
-          <div class="demo-header-title">Live Ingredient Checker</div>
+  </div>
+</section>
+
+<!-- ═══════ LIVE DEMO ═══════ -->
+<section class="section section-alt" id="demo">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Try It Now
+      </div>
+      <h2 class="section-title">Live Ingredient Checker</h2>
+      <p class="section-desc">Paste a list of ingredients from any food label and get instant halal verification — powered by our live API.</p>
+    </div>
+
+    <div class="demo-card reveal">
+      <div class="demo-header">
+        <span class="demo-dot r"></span>
+        <span class="demo-dot y"></span>
+        <span class="demo-dot g"></span>
+        <span class="demo-header-text">POST /api/v1/check</span>
+      </div>
+      <div class="demo-body">
+        <div class="demo-input-group">
+          <label class="demo-label">Enter ingredients (comma-separated)</label>
+          <textarea class="demo-textarea" id="ingredientInput" placeholder="e.g. gelatin, whey, lecithin, carmine, sucrose, citric acid">gelatin, whey, lecithin, carmine, sucrose, citric acid</textarea>
         </div>
-        <div class="demo-body">
-          <div class="demo-input-group">
-            <label class="demo-label" for="ingredientInput">Paste ingredients from any food label</label>
-            <textarea class="demo-input" id="ingredientInput" placeholder="e.g. gelatin, whey powder, E471, sodium caseinate, natural flavors, beet red..."></textarea>
-          </div>
-          <button class="demo-btn" id="checkBtn" onclick="checkIngredients()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
-            Verify Ingredients
+
+        <div class="demo-actions">
+          <button class="btn btn-primary" id="checkBtn" onclick="checkIngredients()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Check Ingredients
           </button>
-          <div id="demoResults"></div>
+          <div class="demo-loading" id="demoLoading">
+            <div class="spinner"></div>
+            Verifying ingredients...
+          </div>
+        </div>
+
+        <div class="demo-results" id="demoResults">
+          <!-- Filled dynamically -->
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- How It Works -->
-<section class="how-it-works" id="how-it-works">
-  <div class="geo-pattern"></div>
+<!-- ═══════ HOW IT WORKS ═══════ -->
+<section class="section" id="how-it-works">
   <div class="container">
-    <div class="section-label animate-in">How It Works</div>
-    <h2 class="section-title animate-in">Three steps to<br>halal certainty</h2>
-    <p class="section-subtitle animate-in">From ingredient text to verified halal status in milliseconds.</p>
+    <div class="section-header reveal">
+      <div class="section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Simple & Powerful
+      </div>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-desc">Three steps to integrate halal verification into your application or workflow.</p>
+    </div>
+
     <div class="steps-grid">
-      <div class="step-card animate-in">
-        <div class="step-number">1</div>
-        <svg class="step-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="8" y="6" width="32" height="36" rx="4"/>
-          <line x1="14" y1="16" x2="34" y2="16"/>
-          <line x1="14" y1="22" x2="28" y2="22"/>
-          <line x1="14" y1="28" x2="32" y2="28"/>
-        </svg>
-        <h3 class="step-title">Send Ingredients</h3>
-        <p class="step-desc">Paste a list of ingredients, scan a barcode, or send individual lookups via our REST API.</p>
-        <div class="step-connector"></div>
+      <div class="step-connector"></div>
+
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-number">01</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <h3>Register & Get Key</h3>
+        <p>Sign up with your email and receive a free API key instantly. No credit card required, no hidden fees.</p>
       </div>
-      <div class="step-card animate-in">
-        <div class="step-number">2</div>
-        <svg class="step-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="24" cy="24" r="16"/>
-          <path d="M16 24h16M24 16v16"/>
-        </svg>
-        <h3 class="step-title">Instant Analysis</h3>
-        <p class="step-desc">Our engine cross-references against 50,000+ ingredients, E-numbers, additives, and hidden derivatives.</p>
-        <div class="step-connector"></div>
+
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-number">02</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>Integrate the API</h3>
+        <p>Call our RESTful endpoints from any language. Check ingredients, scan barcodes, or batch verify — we handle the rest.</p>
       </div>
-      <div class="step-card animate-in">
-        <div class="step-number">3</div>
-        <svg class="step-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M24 4l6 12 13 2-9.5 9 2.5 13L24 33l-12 7 2.5-13L5 18l13-2z"/>
-        </svg>
-        <h3 class="step-title">Get Verified Status</h3>
-        <p class="step-desc">Receive halal, haram, or doubtful status with detailed source references and alternative suggestions.</p>
+
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-number">03</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Get Instant Results</h3>
+        <p>Each ingredient returns a halal/haram/doubtful verdict with scholarly sources and detailed explanations.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Pricing -->
-<section class="pricing" id="pricing">
-  <div class="geo-pattern-gold"></div>
+<!-- ═══════ PRICING ═══════ -->
+<section class="section section-alt" id="pricing">
   <div class="container">
-    <div class="section-label animate-in">Pricing</div>
-    <h2 class="section-title animate-in">Start free, scale<br>as you grow</h2>
-    <p class="section-subtitle animate-in">From side projects to enterprise food platforms — we have you covered.</p>
+    <div class="section-header reveal">
+      <div class="section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Pricing
+      </div>
+      <h2 class="section-title">Start Free, Scale as You Grow</h2>
+      <p class="section-desc">From hobbyist apps to enterprise food platforms — transparent pricing with no surprises.</p>
+    </div>
+
     <div class="pricing-grid">
       <!-- Free -->
-      <div class="pricing-card animate-in">
+      <div class="pricing-card reveal reveal-delay-1">
         <div class="pricing-name">Free</div>
-        <div class="pricing-price">$0<span>/mo</span></div>
-        <p class="pricing-desc">Perfect for trying out the API in your personal projects.</p>
+        <div class="pricing-price">
+          <span class="pricing-amount">$0</span>
+          <span class="pricing-period">/month</span>
+        </div>
+        <div class="pricing-subtitle">Perfect for testing & personal projects</div>
         <ul class="pricing-features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 100 requests/day</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 10 requests/minute</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Single ingredient lookup</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Barcode scanning</li>
-          <li class="disabled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Batch processing</li>
-          <li class="disabled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Detailed results &amp; sources</li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            100 requests/day
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            10 requests/minute
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Single ingredient check
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Barcode scanning
+          </li>
+          <li class="disabled">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Batch checking
+          </li>
+          <li class="disabled">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Detailed results with sources
+          </li>
         </ul>
-        <a href="#cta" class="pricing-btn">Get Started Free</a>
+        <a href="javascript:void(0)" class="btn btn-secondary" onclick="scrollToRegister()">Get Free Key</a>
       </div>
+
       <!-- Pro -->
-      <div class="pricing-card featured animate-in">
+      <div class="pricing-card featured reveal reveal-delay-2">
+        <span class="pricing-popular">Most Popular</span>
         <div class="pricing-name">Pro</div>
-        <div class="pricing-price">$9<span>/mo</span></div>
-        <p class="pricing-desc">For apps, health platforms, and food businesses.</p>
+        <div class="pricing-price">
+          <span class="pricing-amount">$9</span>
+          <span class="pricing-period">/month</span>
+        </div>
+        <div class="pricing-subtitle">For serious apps & small businesses</div>
         <ul class="pricing-features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 10,000 requests/day</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 100 requests/minute</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Single ingredient lookup</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Barcode scanning</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Batch processing (up to 50)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Detailed results &amp; sources</li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            10,000 requests/day
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            100 requests/minute
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Single ingredient check
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Barcode scanning
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Batch check (up to 50)
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Detailed results with sources
+          </li>
         </ul>
-        <a href="#cta" class="pricing-btn">Start Pro Trial</a>
+        <a href="javascript:void(0)" class="btn btn-gold" onclick="scrollToRegister()">Start Pro Trial</a>
       </div>
+
       <!-- Enterprise -->
-      <div class="pricing-card animate-in">
+      <div class="pricing-card reveal reveal-delay-3">
         <div class="pricing-name">Enterprise</div>
-        <div class="pricing-price">Custom</div>
-        <p class="pricing-desc">For large-scale platforms and food manufacturers.</p>
+        <div class="pricing-price">
+          <span class="pricing-amount">Custom</span>
+        </div>
+        <div class="pricing-subtitle">For food manufacturers & platforms</div>
         <ul class="pricing-features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 1,000,000 requests/day</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 500 requests/minute</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Single ingredient lookup</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Barcode scanning</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Batch processing (up to 50)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Dedicated support &amp; SLA</li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            1,000,000 requests/day
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            500 requests/minute
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            All Pro features
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Dedicated support
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Custom SLA & uptime
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Custom ingredient database
+          </li>
         </ul>
-        <a href="#cta" class="pricing-btn">Contact Sales</a>
+        <a href="mailto:hello@halalchecker.com" class="btn btn-secondary">Contact Sales</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Code Examples -->
-<section class="code-section" id="code">
-  <div class="geo-pattern-gold"></div>
+<!-- ═══════ API ENDPOINTS ═══════ -->
+<section class="section" id="api">
   <div class="container">
-    <div class="section-label animate-in">API Documentation</div>
-    <h2 class="section-title animate-in">Integrate in<br>under 5 minutes</h2>
-    <p class="section-subtitle animate-in">Clean REST API with examples in every popular language. Full Swagger docs available.</p>
-    <div class="code-tabs animate-in">
-      <button class="code-tab active" onclick="showCode('python',this)">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        Python
-      </button>
-      <button class="code-tab" onclick="showCode('javascript',this)">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v18H3V3zm4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7V17c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83zm5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8z"/></svg>
-        JavaScript
-      </button>
-      <button class="code-tab" onclick="showCode('curl',this)">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
-        cURL
-      </button>
+    <div class="section-header reveal">
+      <div class="section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        API Reference
+      </div>
+      <h2 class="section-title">RESTful API Endpoints</h2>
+      <p class="section-desc">Clean, predictable endpoints designed for developer happiness. Full interactive docs available on Swagger.</p>
     </div>
-    <div class="code-block animate-in">
-      <button class="copy-btn" onclick="copyCode()">Copy</button>
-      <pre id="codePython"><span class="cm"># Check a single ingredient</span>
-<span class="kw">import</span> requests
 
-response = requests.<span class="fn">get</span>(
-    <span class="str">"https://your-api.com/api/v1/ingredient/gelatin"</span>,
-    headers={<span class="str">"X-API-Key"</span>: <span class="str">"your-api-key"</span>}
-)
-<span class="fn">print</span>(response.<span class="fn">json</span>())
-
-<span class="cm"># Batch check multiple ingredients</span>
-response = requests.<span class="fn">post</span>(
-    <span class="str">"https://your-api.com/api/v1/batch"</span>,
-    headers={
-        <span class="str">"X-API-Key"</span>: <span class="str">"your-api-key"</span>,
-        <span class="str">"Content-Type"</span>: <span class="str">"application/json"</span>
-    },
-    json={<span class="str">"ingredients"</span>: [<span class="str">"gelatin"</span>, <span class="str">"whey"</span>, <span class="str">"E471"</span>]}
-)
-
-<span class="cm"># Scan a product barcode</span>
-response = requests.<span class="fn">get</span>(
-    <span class="str">"https://your-api.com/api/v1/barcode/3017620422003"</span>,
-    headers={<span class="str">"X-API-Key"</span>: <span class="str">"your-api-key"</span>}
-)</pre>
-      <pre id="codeJavascript" style="display:none"><span class="cm">// Check a single ingredient</span>
-<span class="kw">const</span> response = <span class="kw">await</span> <span class="fn">fetch</span>(
-  <span class="str">'https://your-api.com/api/v1/ingredient/gelatin'</span>,
-  {
-    headers: { <span class="str">'X-API-Key'</span>: <span class="str">'your-api-key'</span> }
-  }
-);
-<span class="kw">const</span> data = <span class="kw">await</span> response.<span class="fn">json</span>();
-console.<span class="fn">log</span>(data);
-
-<span class="cm">// Batch check multiple ingredients</span>
-<span class="kw">const</span> batch = <span class="kw">await</span> <span class="fn">fetch</span>(
-  <span class="str">'https://your-api.com/api/v1/batch'</span>,
-  {
-    method: <span class="str">'POST'</span>,
-    headers: {
-      <span class="str">'X-API-Key'</span>: <span class="str">'your-api-key'</span>,
-      <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span>
-    },
-    body: JSON.<span class="fn">stringify</span>({
-      ingredients: [<span class="str">'gelatin'</span>, <span class="str">'whey'</span>, <span class="str">'E471'</span>]
-    })
-  }
-);
-
-<span class="cm">// Scan a product barcode</span>
-<span class="kw">const</span> product = <span class="kw">await</span> <span class="fn">fetch</span>(
-  <span class="str">'https://your-api.com/api/v1/barcode/3017620422003'</span>,
-  { headers: { <span class="str">'X-API-Key'</span>: <span class="str">'your-api-key'</span> } }
-);</pre>
-      <pre id="codeCurl" style="display:none"><span class="cm"># Check a single ingredient</span>
-curl -X GET <span class="str">"https://your-api.com/api/v1/ingredient/gelatin"</span> \
-  -H <span class="str">"X-API-Key: your-api-key"</span>
-
-<span class="cm"># Batch check multiple ingredients</span>
-curl -X POST <span class="str">"https://your-api.com/api/v1/batch"</span> \
-  -H <span class="str">"X-API-Key: your-api-key"</span> \
-  -H <span class="str">"Content-Type: application/json"</span> \
-  -d <span class="str">'{"ingredients": ["gelatin", "whey", "E471"]}'</span>
-
-<span class="cm"># Scan a product barcode</span>
-curl -X GET <span class="str">"https://your-api.com/api/v1/barcode/3017620422003"</span> \
-  -H <span class="str">"X-API-Key: your-api-key"</span>
-
-<span class="cm"># Register for a free API key</span>
-curl -X POST <span class="str">"https://your-api.com/api/v1/auth/register"</span> \
-  -H <span class="str">"Content-Type: application/json"</span> \
-  -d <span class="str">'{"email": "dev@example.com"}'</span></pre>
+    <div class="endpoints-card reveal" id="apiEndpoints">
+      <!-- Filled by JS -->
     </div>
-    <div style="margin-top:1.5rem;text-align:center">
-      <a href="https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io/docs" target="_blank" class="btn btn-secondary" style="color:var(--gold);border-color:var(--gold)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        Open Full Swagger Docs
+
+    <div style="text-align:center;margin-top:1.5rem" class="reveal">
+      <a href="/docs" class="btn btn-secondary" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Open Interactive Swagger Docs
       </a>
     </div>
   </div>
 </section>
 
-<!-- API Endpoints -->
-<section class="endpoints-section" id="endpoints">
+<!-- ═══════ CODE EXAMPLES ═══════ -->
+<section class="section section-alt" id="code">
   <div class="container">
-    <div class="section-label animate-in">Endpoints</div>
-    <h2 class="section-title animate-in">Complete API<br>reference</h2>
-    <p class="section-subtitle animate-in">Everything you need to build halal verification into your application.</p>
-    <div class="endpoints-list animate-in">
-      <div class="endpoint-item">
-        <span class="endpoint-method get">GET</span>
-        <code class="endpoint-path">/api/v1/ingredient/{name}</code>
-        <span class="endpoint-desc">Look up a single ingredient by name or E-number</span>
+    <div class="section-header reveal">
+      <div class="section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Developer Friendly
       </div>
-      <div class="endpoint-item">
-        <span class="endpoint-method post">POST</span>
-        <code class="endpoint-path">/api/v1/check</code>
-        <span class="endpoint-desc">Check a list of ingredients at once</span>
+      <h2 class="section-title">Code Examples</h2>
+      <p class="section-desc">Start integrating in under 5 minutes. Works with any language that can make HTTP requests.</p>
+    </div>
+
+    <div class="reveal" style="max-width:780px;margin:0 auto">
+      <div class="code-tabs">
+        <button class="code-tab active" onclick="switchTab(this, 'python')">Python</button>
+        <button class="code-tab" onclick="switchTab(this, 'javascript')">JavaScript</button>
+        <button class="code-tab" onclick="switchTab(this, 'curl')">cURL</button>
       </div>
-      <div class="endpoint-item">
-        <span class="endpoint-method get">GET</span>
-        <code class="endpoint-path">/api/v1/barcode/{ean}</code>
-        <span class="endpoint-desc">Scan a product via EAN barcode (Open Food Facts)</span>
-      </div>
-      <div class="endpoint-item">
-        <span class="endpoint-method post">POST</span>
-        <code class="endpoint-path">/api/v1/batch</code>
-        <span class="endpoint-desc">Batch check up to 50 ingredients (Pro+)</span>
-      </div>
-      <div class="endpoint-item">
-        <span class="endpoint-method post">POST</span>
-        <code class="endpoint-path">/api/v1/auth/register</code>
-        <span class="endpoint-desc">Register to get a free API key</span>
-      </div>
-      <div class="endpoint-item">
-        <span class="endpoint-method get">GET</span>
-        <code class="endpoint-path">/api/v1/auth/subscription</code>
-        <span class="endpoint-desc">Check your current subscription status</span>
-      </div>
-      <div class="endpoint-item">
-        <span class="endpoint-method get">GET</span>
-        <code class="endpoint-path">/api/v1/health</code>
-        <span class="endpoint-desc">API health check and status</span>
+
+      <div class="code-block">
+        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+
+        <div class="code-pane active" id="pane-python">
+<pre><span class="comment"># Install: pip install requests</span>
+<span class="keyword">import</span> requests
+
+API_BASE = <span class="string">"https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io"</span>
+API_KEY  = <span class="string">"your_api_key_here"</span>
+
+headers = {<span class="string">"X-API-Key"</span>: API_KEY}
+
+<span class="comment"># Check multiple ingredients</span>
+resp = requests.<span class="method">post</span>(
+    <span class="url">f"{API_BASE}/api/v1/check"</span>,
+    headers=headers,
+    json={<span class="string">"ingredients"</span>: [<span class="string">"gelatin"</span>, <span class="string">"sucrose"</span>, <span class="string">"carmine"</span>]}
+)
+<span class="keyword">print</span>(resp.json())
+
+<span class="comment"># Lookup single ingredient</span>
+resp = requests.<span class="method">get</span>(
+    <span class="url">f"{API_BASE}/api/v1/ingredient/gelatin"</span>,
+    headers=headers
+)
+<span class="keyword">print</span>(resp.json())
+
+<span class="comment"># Scan barcode</span>
+resp = requests.<span class="method">get</span>(
+    <span class="url">f"{API_BASE}/api/v1/barcode/3017620422003"</span>,
+    headers=headers
+)
+<span class="keyword">print</span>(resp.json())</pre>
+        </div>
+
+        <div class="code-pane" id="pane-javascript">
+<pre><span class="comment">// Check multiple ingredients</span>
+<span class="keyword">const</span> response = <span class="keyword">await</span> <span class="method">fetch</span>(
+  <span class="url">'https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io/api/v1/check'</span>,
+  {
+    <span class="header">method</span>: <span class="string">'POST'</span>,
+    <span class="header">headers</span>: {
+      <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>,
+      <span class="string">'X-API-Key'</span>: <span class="string">'your_api_key_here'</span>
+    },
+    <span class="header">body</span>: JSON.<span class="method">stringify</span>({
+      <span class="header">ingredients</span>: [<span class="string">'gelatin'</span>, <span class="string">'sucrose'</span>, <span class="string">'carmine'</span>]
+    })
+  }
+);
+
+<span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="method">json</span>();
+console.<span class="method">log</span>(data);
+<span class="comment">// { total: 3, halal: 1, haram: 2, overall_verdict: "haram", results: [...] }</span></pre>
+        </div>
+
+        <div class="code-pane" id="pane-curl">
+<pre><span class="comment"># Check multiple ingredients</span>
+curl -X POST \
+  <span class="url">https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io/api/v1/check</span> \
+  -H <span class="string">"Content-Type: application/json"</span> \
+  -H <span class="string">"X-API-Key: your_api_key_here"</span> \
+  -d <span class="string">'{"ingredients": ["gelatin", "sucrose", "carmine"]}'</span>
+
+<span class="comment"># Lookup single ingredient</span>
+curl -X GET \
+  <span class="url">https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io/api/v1/ingredient/gelatin</span> \
+  -H <span class="string">"X-API-Key: your_api_key_here"</span>
+
+<span class="comment"># Scan barcode</span>
+curl -X GET \
+  <span class="url">https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io/api/v1/barcode/3017620422003</span> \
+  -H <span class="string">"X-API-Key: your_api_key_here"</span>
+
+<span class="comment"># Register for free API key</span>
+curl -X POST \
+  <span class="url">https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io/api/v1/auth/register</span> \
+  -H <span class="string">"Content-Type: application/json"</span> \
+  -d <span class="string">'{"name": "Your Name", "email": "you@example.com"}'</span></pre>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="cta">
-  <div class="geo-pattern"></div>
-  <div class="geo-pattern-gold"></div>
-  <div class="container">
-    <div class="section-label animate-in">Get Started</div>
-    <h2 class="section-title animate-in">Start building with<br>halal verification today</h2>
-    <p class="section-subtitle animate-in">Free forever tier. No credit card required. Your API key is ready in seconds.</p>
-    <div class="cta-form animate-in" id="registerForm">
-      <input type="email" id="emailInput" placeholder="Enter your email address" required>
-      <button class="btn" onclick="registerKey()">Get Free API Key</button>
+<!-- ═══════ CTA ═══════ -->
+<section class="section cta" id="register">
+  <svg class="cta-geo" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" fill="none">
+    <g stroke="white" stroke-width="0.3">
+      <polygon points="200,20 380,20 460,120 460,280 380,380 200,380 120,280 120,120"/>
+      <polygon points="400,20 580,20 660,120 660,280 580,380 400,380 320,280 320,120"/>
+      <polygon points="300,50 480,50 540,140 540,260 480,350 300,350 240,260 240,140"/>
+      <polygon points="500,50 620,50 670,120 670,280 620,350 500,350 450,280 450,120"/>
+    </g>
+  </svg>
+
+  <div class="cta-content reveal">
+    <h2>Start Building with<br>Halal Verification Today</h2>
+    <p>Get your free API key in seconds. 100 requests per day, no credit card required. Scale up whenever you're ready.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="/docs" class="btn btn-primary" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Get Free API Key
+      </a>
+      <a href="#demo" class="btn" style="background:rgba(255,255,255,0.08);color:white;border:1px solid rgba(255,255,255,0.15)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Try the Demo
+      </a>
     </div>
-    <div id="registerResult"></div>
-    <p class="cta-trust animate-in">Free tier includes 100 requests/day. Upgrade to Pro anytime.</p>
   </div>
 </section>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-links">
-    <a href="#how-it-works">How It Works</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#code">API Docs</a>
-    <a href="https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io/docs" target="_blank">Swagger</a>
-    <a href="https://github.com/HenkDz/Halal-Ingredient-Checker-API" target="_blank">GitHub</a>
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-copy">
+      &copy; 2026 Halal Ingredient Checker API. All rights reserved.
+    </div>
+    <div class="footer-links">
+      <a href="/docs" target="_blank">API Docs</a>
+      <a href="#pricing">Pricing</a>
+      <a href="mailto:hello@halalchecker.com">Contact</a>
+    </div>
   </div>
-  <p class="footer-copy">&copy; 2026 HalalCheck. Built with care for the Ummah.</p>
 </footer>
 
+<!-- ═══════ JAVASCRIPT ═══════ -->
 <script>
-// ── Configuration ──
-const API_BASE = 'https://m1217uhdtbxt9s1e06g0xe2h.69.57.161.140.sslip.io';
+// ─── Configuration ───
+const API_BASE = window.location.origin;
 
-// ── Navigation ──
+// ─── Navigation scroll effect ───
 const nav = document.getElementById('nav');
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-});
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
-
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
-});
-
-// ── Scroll Animations ──
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
+// ─── Intersection Observer for reveal animations ───
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), index * 80);
-      observer.unobserve(entry.target);
+      entry.target.classList.add('visible');
     }
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// ── Code Tabs ──
-function showCode(lang, btn) {
-  document.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('codePython').style.display = lang === 'python' ? 'block' : 'none';
-  document.getElementById('codeJavascript').style.display = lang === 'javascript' ? 'block' : 'none';
-  document.getElementById('codeCurl').style.display = lang === 'curl' ? 'block' : 'none';
+// ─── Live Ingredient Checker ───
+async function checkIngredients() {
+  const input = document.getElementById('ingredientInput').value.trim();
+  if (!input) return;
+
+  const btn = document.getElementById('checkBtn');
+  const loading = document.getElementById('demoLoading');
+  const results = document.getElementById('demoResults');
+
+  btn.style.display = 'none';
+  loading.classList.add('active');
+  results.classList.remove('active');
+
+  const ingredients = input.split(',').map(s => s.trim()).filter(Boolean);
+
+  try {
+    const resp = await fetch(`${API_BASE}/api/v1/check`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ingredients })
+    });
+
+    if (!resp.ok) throw new Error(`API returned ${resp.status}`);
+    const data = await resp.json();
+    renderResults(data);
+  } catch (err) {
+    results.innerHTML = `
+      <div class="demo-overall doubtful">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Unable to reach API — ${err.message}
+      </div>
+    `;
+    results.classList.add('active');
+  } finally {
+    btn.style.display = '';
+    loading.classList.remove('active');
+  }
 }
 
-function copyCode() {
-  const active = document.querySelector('.code-tab.active').textContent.trim().toLowerCase();
-  const map = { python: 'codePython', javascript: 'codeJavascript', curl: 'codeCurl' };
-  const text = document.getElementById(map[active]).textContent;
+function renderResults(data) {
+  const results = document.getElementById('demoResults');
+
+  const verdictIcons = {
+    halal: '✓', haram: '✕', doubtful: '?', unknown: '—'
+  };
+
+  const summaryLabels = {
+    halal: '✓ All ingredients are Halal',
+    haram: '✕ Contains Haram ingredient(s)',
+    doubtful: '? Contains Doubtful ingredient(s)',
+    unknown: '— Some ingredients are unknown'
+  };
+
+  let html = `
+    <div class="demo-overall ${data.overall_verdict}">
+      <strong>${summaryLabels[data.overall_verdict] || data.overall_verdict}</strong>
+      <span style="margin-left:auto;font-size:0.82rem;opacity:0.7">
+        ${data.halal} halal · ${data.haram} haram · ${data.doubtful} doubtful · ${data.unknown} unknown
+      </span>
+    </div>
+  `;
+
+  data.results.forEach(r => {
+    const eNum = r.e_number ? `<span class="e-number">${r.e_number}</span>` : '';
+    html += `
+      <div class="demo-result-item">
+        <div class="demo-verdict ${r.verdict}">${verdictIcons[r.verdict]}</div>
+        <div class="demo-result-info">
+          <h4>${r.name} ${eNum}</h4>
+          <p>${r.reason}</p>
+          <div class="source">Source: ${r.source || 'N/A'}</div>
+        </div>
+      </div>
+    `;
+  });
+
+  results.innerHTML = html;
+  results.classList.add('active');
+}
+
+// ─── API Endpoints Table ───
+function renderEndpoints() {
+  const endpoints = [
+    { method: 'POST', path: '/api/v1/check', desc: 'Check list of ingredients' },
+    { method: 'GET',  path: '/api/v1/ingredient/{name}', desc: 'Lookup single ingredient' },
+    { method: 'GET',  path: '/api/v1/barcode/{ean}', desc: 'Scan product barcode' },
+    { method: 'POST', path: '/api/v1/batch', desc: 'Batch check up to 50 items' },
+    { method: 'POST', path: '/api/v1/auth/register', desc: 'Register for free API key' },
+    { method: 'GET',  path: '/api/v1/auth/subscription', desc: 'Check subscription status' },
+    { method: 'GET',  path: '/api/v1/health', desc: 'API health check' },
+  ];
+
+  const container = document.getElementById('apiEndpoints');
+  container.innerHTML = `
+    <div class="endpoints-header">
+      <h3>Available Endpoints</h3>
+      <span style="font-size:0.82rem;color:var(--stone)">7 endpoints</span>
+    </div>
+    ${endpoints.map(ep => `
+      <div class="endpoint-row">
+        <span class="endpoint-method ${ep.method.toLowerCase()}">${ep.method}</span>
+        <span class="endpoint-path">${ep.path}</span>
+        <span class="endpoint-desc">${ep.desc}</span>
+      </div>
+    `).join('')}
+  `;
+}
+renderEndpoints();
+
+// ─── Code Tab Switching ───
+function switchTab(btn, lang) {
+  document.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.code-pane').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(`pane-${lang}`).classList.add('active');
+}
+
+// ─── Copy Code ───
+function copyCode(btn) {
+  const pane = btn.parentElement.querySelector('.code-pane.active pre');
+  const text = pane.textContent;
   navigator.clipboard.writeText(text).then(() => {
-    const btn = document.querySelector('.copy-btn');
     btn.textContent = 'Copied!';
     setTimeout(() => btn.textContent = 'Copy', 2000);
   });
 }
 
-// ── Demo Ingredient Checker ──
-let userApiKey = null;
-
-async function checkIngredients() {
-  const input = document.getElementById('ingredientInput').value.trim();
-  const resultsDiv = document.getElementById('demoResults');
-  const btn = document.getElementById('checkBtn');
-
-  if (!input) {
-    resultsDiv.innerHTML = '<div class="demo-error">Please enter at least one ingredient to check.</div>';
-    return;
-  }
-
-  const ingredients = input.split(/[,;\n]+/).map(s => s.trim()).filter(Boolean);
-  if (!ingredients.length) {
-    resultsDiv.innerHTML = '<div class="demo-error">No valid ingredients found. Separate with commas or new lines.</div>';
-    return;
-  }
-
-  btn.disabled = true;
-  btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" style="animation:spin 0.6s linear infinite"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg> Checking...';
-  resultsDiv.innerHTML = '<div class="demo-loading">Verifying ingredients</div>';
-
-  try {
-    const headers = { 'Content-Type': 'application/json' };
-    if (userApiKey) headers['X-API-Key'] = userApiKey;
-
-    const response = await fetch(`${API_BASE}/api/v1/check`, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify({ ingredients })
-    });
-
-    if (!response.ok) {
-      const err = await response.json().catch(() => ({}));
-      throw new Error(err.detail || `API returned ${response.status}`);
-    }
-
-    const data = await response.json();
-    resultsDiv.innerHTML = '';
-
-    const items = data.results || data.ingredients || (Array.isArray(data) ? data : [data]);
-
-    if (items.length === 0) {
-      resultsDiv.innerHTML = '<div class="demo-error">No results returned from the API.</div>';
-      return;
-    }
-
-    items.forEach((item, i) => {
-      const name = item.name || item.ingredient || ingredients[i] || 'Unknown';
-      const status = (item.status || item.halal_status || 'unknown').toLowerCase();
-      const source = item.source || item.description || '';
-
-      const statusClass = ['halal', 'haram', 'doubtful'].includes(status) ? status : 'unknown';
-      const div = document.createElement('div');
-      div.className = `demo-result-item ${statusClass}`;
-      div.style.animationDelay = `${i * 0.08}s`;
-      div.innerHTML = `
-        <div class="result-status ${statusClass}"></div>
-        <div style="flex:1">
-          <div class="result-name">${escapeHtml(name)}</div>
-          ${source ? `<div class="result-source">${escapeHtml(source)}</div>` : ''}
-        </div>
-        <span class="result-tag ${statusClass}">${statusClass === 'halal' ? 'Halal' : statusClass === 'haram' ? 'Haram' : statusClass === 'doubtful' ? 'Doubtful' : 'Unknown'}</span>
-      `;
-      resultsDiv.appendChild(div);
-    });
-
-  } catch (err) {
-    resultsDiv.innerHTML = `<div class="demo-error">Could not reach the API. ${escapeHtml(err.message)}.<br><small>The live demo requires the API server to be running. You can still try the API using the code examples above.</small></div>`;
-  } finally {
-    btn.disabled = false;
-    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> Verify Ingredients';
-  }
+// ─── Scroll to Register ───
+function scrollToRegister() {
+  document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
 }
 
-// ── Register API Key ──
-async function registerKey() {
-  const email = document.getElementById('emailInput').value.trim();
-  const resultDiv = document.getElementById('registerResult');
-
-  if (!email || !email.includes('@')) {
-    resultDiv.innerHTML = '<p style="color:rgba(192,57,43,0.9);margin-top:1rem;font-size:0.9rem">Please enter a valid email address.</p>';
-    return;
-  }
-
-  resultDiv.innerHTML = '<p style="color:rgba(255,255,255,0.6);margin-top:1rem;font-size:0.9rem">Registering...</p>';
-
-  try {
-    const response = await fetch(`${API_BASE}/api/v1/auth/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email })
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-      userApiKey = data.api_key || data.key || null;
-      resultDiv.innerHTML = `<div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:1.25rem;margin-top:1rem;text-align:left;max-width:460px;margin-left:auto;margin-right:auto">
-        <p style="color:#7EC699;font-weight:600;margin-bottom:0.5rem">Registration successful!</p>
-        ${userApiKey ? `<p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:0.3rem">Your API Key:</p><code style="display:block;background:rgba(0,0,0,0.3);padding:0.75rem 1rem;border-radius:8px;font-family:monospace;font-size:0.85rem;color:var(--gold-light);word-break:break-all">${escapeHtml(userApiKey)}</code><p style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:0.75rem">This key is now active in the live demo above.</p>` : `<p style="font-size:0.85rem;color:rgba(255,255,255,0.7)">Check your email for your API key details.</p>`}
-      </div>`;
-    } else {
-      resultDiv.innerHTML = `<p style="color:rgba(192,57,43,0.9);margin-top:1rem;font-size:0.9rem">${escapeHtml(data.detail || 'Registration failed. Please try again.')}</p>`;
-    }
-  } catch (err) {
-    resultDiv.innerHTML = `<p style="color:rgba(230,126,34,0.9);margin-top:1rem;font-size:0.9rem">Could not reach the API server. Please try again later.<br><small style="opacity:0.7">${escapeHtml(err.message)}</small></p>`;
-  }
-}
-
-// ── Utility ──
-function escapeHtml(text) {
-  const d = document.createElement('div');
-  d.textContent = text;
-  return d.innerHTML;
-}
-
-// ── Enter key in demo ──
-document.getElementById('ingredientInput').addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && !e.shiftKey) {
-    e.preventDefault();
-    checkIngredients();
-  }
-});
-
-// ── Enter key in email ──
-document.getElementById('emailInput').addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-    registerKey();
-  }
+// ─── Auto-run demo on load (with pre-filled ingredients) ───
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(checkIngredients, 800);
 });
 </script>
-
 </body>
 </html>
